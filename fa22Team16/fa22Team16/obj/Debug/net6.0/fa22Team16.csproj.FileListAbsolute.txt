@@ -1,0 +1,8 @@
+/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.csproj.AssemblyReference.cache
+/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.AssemblyInfoInputs.cache
+/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.AssemblyInfo.cs
+/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.csproj.CoreCompileInputs.cache
+/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.MvcApplicationPartsAssemblyInfo.cache
+/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.RazorAssemblyInfo.cache
+/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.RazorAssemblyInfo.cs
