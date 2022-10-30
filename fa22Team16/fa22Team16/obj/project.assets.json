@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/gkm/.nuget/packages/": {}
+    "/Users/gloriawang/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/fa22Team16.csproj",
+      "projectUniqueName": "/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/fa22Team16.csproj",
       "projectName": "fa22Team16",
-      "projectPath": "/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/fa22Team16.csproj",
-      "packagesPath": "/Users/gkm/.nuget/packages/",
-      "outputPath": "/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/",
+      "projectPath": "/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/fa22Team16.csproj",
+      "packagesPath": "/Users/gloriawang/.nuget/packages/",
+      "outputPath": "/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/gkm/.nuget/NuGet/NuGet.Config"
+        "/Users/gloriawang/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -62,7 +62,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.400/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.400/RuntimeIdentifierGraph.json"
       }
     }
   }
