@@ -20,6 +20,8 @@
     <None Remove="DAL\" />
     <None Remove="Seeding\" />
     <None Remove="Models\ViewModels\" />
+    <None Remove="Views\Account\" />
+    <None Remove="Views\Seed\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -31,6 +33,8 @@
     <Folder Include="DAL\" />
     <Folder Include="Seeding\" />
     <Folder Include="Models\ViewModels\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\Seed\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />

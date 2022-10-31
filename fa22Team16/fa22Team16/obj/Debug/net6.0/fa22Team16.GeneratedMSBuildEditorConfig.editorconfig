@@ -15,8 +15,32 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9DaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Seed/Confirm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VlZC9Db25maXJtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Seed/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VlZC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Shared/_Layout.cshtml]

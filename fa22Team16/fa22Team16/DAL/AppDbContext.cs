@@ -1,11 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 
-//TODO: Update this using statement to include your project name
 using fa22Team16.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-//TODO: Make this namespace match your project name
 namespace fa22Team16.DAL
 {
     //NOTE: This class definition references the user class for this project.  
