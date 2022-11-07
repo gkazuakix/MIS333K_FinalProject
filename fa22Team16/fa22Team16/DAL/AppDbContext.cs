@@ -21,7 +21,15 @@ namespace fa22Team16.DAL
             base.OnModelCreating(builder);
         }
 
-        //TODO: Add Dbsets here.  Products is included as an example.  
-        public DbSet<Product> Products { get; set; }
+        //to do: Add Dbsets here.  Products is included as an example.  
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Dispute> Disputes { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
+        public DbSet<StockPortfolio> StockPortfolios { get; set; }
+        public DbSet<StockTransaction> StockTransactions { get; set; }
+        public DbSet<StockType> StockTypes { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+
+
     }
 }

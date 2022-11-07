@@ -58,7 +58,8 @@ namespace fa22Team16.Controllers
                 //TODO: Add the rest of the custom user fields here
                 //FirstName is included as an example
                 FirstName = rvm.FirstName,
-                LastName = rvm.LastName
+                LastName = rvm.LastName,
+                Address = rvm.Address
 
             };
 
