@@ -45,6 +45,7 @@ namespace fa22Team16.Models
         }
 
         [Display(Name = "Birthday")]
+        [Required(ErrorMessage = "Birthday is required.")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime Birthday { get; set; }
 
