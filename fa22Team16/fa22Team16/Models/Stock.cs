@@ -10,6 +10,8 @@ namespace fa22Team16.Models
 {
     public class Stock
     {
+        public Int32 StockID { get; set; }
+
         [Display(Name = "Ticker")]
         public String Ticker { get; set; }
 

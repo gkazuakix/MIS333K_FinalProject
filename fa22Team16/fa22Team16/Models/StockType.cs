@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 {
     public class StockType
     {
+        public Int32 StockTypeID { get; set; }
+
         public List<Stock> Stocks { get; set; }
     }
 }
