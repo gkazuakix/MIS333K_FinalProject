@@ -1,7 +1,21 @@
 ﻿<Properties StartupConfiguration="{0F79FFD2-1FE6-4186-A055-DDC567664E64}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Controllers/HomeController.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/obj/Debug/net6.0/fa22Team16.AssemblyInfo.cs">
     <Files>
+      <File FileName="fa22Team16/Models/StockType.cs" Line="17" Column="1" />
       <File FileName="fa22Team16/Controllers/HomeController.cs" Line="21" Column="2" />
+      <File FileName="fa22Team16/Controllers/SeedController.cs" Line="1" Column="1" />
+      <File FileName="fa22Team16/Views/RoleAdmin/Edit.cshtml" Line="38" Column="18" />
+      <File FileName="fa22Team16/Seeding/SeedUsers.cs" Line="48" Column="23" />
+      <File FileName="fa22Team16/Seeding/SeedRoles.cs" Line="12" Column="19" />
+      <File FileName="fa22Team16/Models/ViewModels/RoleViewModels.cs" Line="4" Column="8" />
+      <File FileName="fa22Team16/Controllers/RoleAdminController.cs" Line="17" Column="42" />
+      <File FileName="fa22Team16/obj/Debug/net6.0/fa22Team16.AssemblyInfo.cs" Line="24" Column="1" />
+      <File FileName="fa22Team16/DAL/AppDbContext.cs" Line="21" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,9 +23,13 @@
           <Node name="fa22Team16" expanded="True">
             <Node name="fa22Team16" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Shared" expanded="True" />
-              </Node>
+              <Node name="DAL" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Seeding" expanded="True" />
+              <Node name="Utilities" expanded="True" />
+              <Node name="wwwroot" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -21,11 +39,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
