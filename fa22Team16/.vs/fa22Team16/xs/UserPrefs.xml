@@ -1,4 +1,31 @@
 ﻿<Properties StartupConfiguration="{0F79FFD2-1FE6-4186-A055-DDC567664E64}|Default">
-  <MonoDevelop.Ide.ItemProperties.fa22Team16 FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Controllers/HomeController.cs">
+    <Files>
+      <File FileName="fa22Team16/Controllers/HomeController.cs" Line="21" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="fa22Team16" expanded="True">
+            <Node name="fa22Team16" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
