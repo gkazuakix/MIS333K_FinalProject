@@ -319,3 +319,6 @@
 /Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.pdb
 /Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.genruntimeconfig.cache
 /Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/ref/fa22Team16.dll
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.dll
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/refint/fa22Team16.dll
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.pdb

@@ -12,9 +12,9 @@
 
     <div class="text-center">
         <div class="btn-group-lg">
-            <a asp-action="Accounts" asp-controller="AccountController" class="btn btn-outline-success">Manage Accounts</a>
-            <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Create Profile</a>
-            <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Manage Profile</a>
+            <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Manage Accounts</a>
+            <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Create Profile</a>
+            <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Manage Profile</a>
         </div>
     </div>
 }
@@ -25,12 +25,12 @@
 {
     <div class="text-center">
         <div class="btn-group-lg">
-            <a asp-action="Index" asp-controller="ManageUsers" class="btn btn-outline-success">Manage Users</a>
+            <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Manage Users</a>
 
 
             <a asp-action="Index" asp-controller="Disputes" class="btn btn-outline-success">Manage Disputes</a>
-            <a asp-action="" asp-controller="" class="btn btn-outline-success">Modify Employee Profiles</a>
-            <a asp-action="" asp-controller="" class="btn btn-outline-success">Manage Employees</a>
+            <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Modify Employee Profiles</a>
+            <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Manage Employees</a>
             <a asp-action="StockPortfolio" asp-controller="RoleAdminController" class="btn btn-outline-success">Process Stock Portfolios</a>
 
 
@@ -59,3 +59,24 @@
 <br />
 <br />
 
+
+
+
+
+@{ ViewData["Title"] = "Home"; }
+
+<h1>Welcome to Longhorn Bank and Trust!</h1>
+<a asp-action="Index" asp-controller="" class="btn btn-success"> </a>
+@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <a class="btn btn-info" href="/Dispute">Manage Disputes</a>
+    <a class="btn btn-danger" href="">Modify Employee Profiles</a>
+    <a class="btn btn-warning" href="/RoleAdmin">Manage Users</a>
+    <a class="btn btn-warning" href="/StockPortfolio">Process Stock Portfolios</a>
+    <a class="btn btn-warning" href="Transaction">Transaction Search</a>
+}
+@if (User.IsInRole("Customer"))
+{
+    <a class="btn btn-info" href="Account">Manage Accounts</a>
+    <a class="btn btn-info" href="AppUser">Modify Profile</a>
+}
