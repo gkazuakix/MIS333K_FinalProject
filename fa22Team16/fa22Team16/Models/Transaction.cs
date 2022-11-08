@@ -11,6 +11,7 @@ namespace fa22Team16.Models
 {
     public class Transaction
     {
+        public Int32 TransactionID { get; set; }
 
         [Display(Name = "Amount")]
         public Int32 Amount { get; set; }

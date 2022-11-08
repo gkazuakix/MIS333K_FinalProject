@@ -10,6 +10,8 @@ namespace fa22Team16.Models
 {
     public class StockPortfolio
     {
+        public Int32 StockPortfolioID { get; set; }
+
         [Display(Name = "User")]
         public AppUser AppUser { get; set; }
        

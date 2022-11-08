@@ -12,6 +12,7 @@ namespace fa22Team16.Models
     public class Dispute
     {
         // todo: Check this?
+        public Int32 DisputeID { get; set; }
 
         [Display(Name = "Transaction")]
         public Transaction Transaction { get; set; }

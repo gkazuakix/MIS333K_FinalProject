@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 //to do : Make this namespace match your project name
 namespace fa22Team16.Models
 {
-    public enum AccountTypw
+    public enum AccountType
     {
         Savings, Checkings, IRA
     }
@@ -17,6 +17,10 @@ namespace fa22Team16.Models
     public class Account
     {
        
+        public Int32 AccountID { get; set; }
+
+        [Display(Name = "Account Number")]
+        public Int32 AccountNumber { get; set; }
 
         public AppUser appUser { get; set; }
 
@@ -25,6 +29,9 @@ namespace fa22Team16.Models
 
         [Display(Name = "Balance")]
         public Int32 Balance { get; set; }
+
+        [Display(Name = "Account Type")]
+        public AccountType AccountType { get; set; }
 
     }
 }
