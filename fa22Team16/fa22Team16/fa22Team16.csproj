@@ -2,45 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Models\" />
-    <None Remove="Controllers\" />
-    <None Remove="Views\" />
-    <None Remove="Views\Shared\" />
-    <None Remove="Views\Home\" />
-    <None Remove="Microsoft.EntityFrameworkCore" />
-    <None Remove="Microsoft.EntityFrameworkCore.Design" />
-    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
-    <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
-    <None Remove="Utilities\" />
-    <None Remove="DAL\" />
-    <None Remove="Seeding\" />
-    <None Remove="Models\ViewModels\" />
-    <None Remove="Views\Account\" />
-    <None Remove="Views\Seed\" />
-    <None Remove="Microsoft.AspNetCore.Identity.UI" />
-    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
-    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
-    <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
-    <None Remove="Swashbuckle.AspNetCore" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Views\" />
-    <Folder Include="Views\Shared\" />
-    <Folder Include="Views\Home\" />
-    <Folder Include="Utilities\" />
-    <Folder Include="DAL\" />
-    <Folder Include="Seeding\" />
-    <Folder Include="Models\ViewModels\" />
-    <Folder Include="Views\Account\" />
-    <Folder Include="Views\Seed\" />
-  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">

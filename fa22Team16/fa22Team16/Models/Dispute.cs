@@ -13,6 +13,7 @@ namespace fa22Team16.Models
     {
         // todo: Check this?
 
+
         [Display(Name = "Transaction")]
         public Transaction Transaction { get; set; }
 
