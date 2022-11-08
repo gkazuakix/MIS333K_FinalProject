@@ -1,6 +1,61 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{ ViewData["Title"] = "Home"; }
+
+<div class="text-center">
+    <h1> Welcome to Longhorn Bank and Trust! </h1>
+    <h2>@User.Identity.Name</h2>
+</div>
+
+<br />
+
+@if (User.Identity.IsAuthenticated && User.IsInRole("Customer"))
+{
+
+    <div class="text-center">
+        <div class="btn-group-lg">
+            <a asp-action="Accounts" asp-controller="AccountController" class="btn btn-outline-success">Manage Accounts</a>
+            <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Create Profile</a>
+            <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Manage Profile</a>
+        </div>
+    </div>
 }
+
+
+
+@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <div class="text-center">
+        <div class="btn-group-lg">
+            <a asp-action="Index" asp-controller="ManageUsers" class="btn btn-outline-success">Manage Users</a>
+
+
+            <a asp-action="Index" asp-controller="Disputes" class="btn btn-outline-success">Manage Disputes</a>
+            <a asp-action="" asp-controller="" class="btn btn-outline-success">Modify Employee Profiles</a>
+            <a asp-action="" asp-controller="" class="btn btn-outline-success">Manage Employees</a>
+            <a asp-action="StockPortfolio" asp-controller="RoleAdminController" class="btn btn-outline-success">Process Stock Portfolios</a>
+
+
+            <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Modify Profile</a>
+            <a asp-action="index" asp-controller="" class="btn btn-outline-success">Transaction Search</a>
+
+        </div>
+    </div>
+}
+
+@if (User.Identity.IsAuthenticated && User.IsInRole("Employee"))
+{
+    <div class="text-center">
+        <div class="btn-group-lg">
+
+            <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Modify Profile</a>
+            <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Manage Users</a>
+            <a asp-action="index" asp-controller="" class="btn btn-outline-success">Transaction Search</a>
+
+        </div>
+    </div>
+}
+
+
+<br />
+<br />
+<br />
 
