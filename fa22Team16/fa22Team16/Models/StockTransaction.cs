@@ -10,6 +10,8 @@ namespace fa22Team16.Models
 {
     public class StockTransaction
     {
+        public Int32 StockTransactionID { get; set; }
+
         [Display(Name = "Number of Shares")]
         public Int32 NumberOfShares { get; set; }
 
