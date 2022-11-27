@@ -19,6 +19,10 @@ namespace fa22Team16.Models
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal Price { get; set; }
 
+        //[Display(Name = "Fees")]
+        //[DisplayFormat(DataFormatString = "{0:c}")]
+        //public Decimal Fees { get; set; }
+
         public StockType StockType { get; set; }
 
         public List<StockTransaction> StockTransactions { get; set;}
