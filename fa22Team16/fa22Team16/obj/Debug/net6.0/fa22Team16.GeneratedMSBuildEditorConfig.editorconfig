@@ -31,6 +31,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzcHV0ZS9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

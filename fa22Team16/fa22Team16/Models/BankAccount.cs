@@ -14,6 +14,11 @@ namespace fa22Team16.Models
         Savings, Checkings, IRA
     }
 
+    public enum ActiveStatus
+    {
+        Active, Nonactive
+    }
+
     public class Account
     {
        
@@ -33,5 +38,7 @@ namespace fa22Team16.Models
         [Display(Name = "Account Type")]
         public AccountType AccountType { get; set; }
 
+        [Display(Name = "Active Status")]
+        public ActiveStatus ActiveStatus { get; set; }
     }
 }

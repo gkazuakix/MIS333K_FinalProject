@@ -16,9 +16,14 @@ namespace fa22Team16.Models
         [Display(Name = "Ticker")]
         public String Ticker { get; set; }
 
+        [Display(Name = "Name")]
+        public String Name { get; set; }
+
         [Display(Name = "Price")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal Price { get; set; }
+
+        
 
         //[Display(Name = "Fees")]
         //[DisplayFormat(DataFormatString = "{0:c}")]

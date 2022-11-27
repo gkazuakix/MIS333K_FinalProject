@@ -16,6 +16,10 @@ namespace fa22Team16.Models
         public AppUser AppUser { get; set; }
        
         public List<StockTransaction> StockTransactions { get; set; }
+
+        [Display(Name = "Active Status")]
+        public ActiveStatus ActiveStatus { get; set; }
+
     }
 }
 
