@@ -17,7 +17,7 @@ namespace fa22Team16.Models
         public String FirstName { get; set; }
 
         [Display(Name = "Middle Initial")]
-        public String MiddleInitial { get; set; }
+        public String? MiddleInitial { get; set; }
 
         [Display(Name = "Last Name")]
         [Required(ErrorMessage = "Last Name is required.")]
