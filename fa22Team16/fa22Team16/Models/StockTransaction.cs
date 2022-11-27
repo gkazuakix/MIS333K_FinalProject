@@ -21,6 +21,8 @@ namespace fa22Team16.Models
 
         public StockPortfolio StockPortfolio { get; set; }
 
+        [Display(Name ="Stock")]
+        [Required(ErrorMessage = "Stock is required.")]
         public Stock Stock { get; set; }
 
         //[Display(Name = "Number of Shares")]

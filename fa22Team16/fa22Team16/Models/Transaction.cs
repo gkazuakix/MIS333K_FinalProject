@@ -14,9 +14,11 @@ namespace fa22Team16.Models
         public Int32 TransactionID { get; set; }
 
         [Display(Name = "Amount")]
+        [Required(ErrorMessage = "Amount is required.")]
         public Int32 Amount { get; set; }
 
-        [Display(Name = "Transaction")]
+        [Display(Name = "Account")]
+        [Required(ErrorMessage = "Account is required.")]
         public Account Account { get; set; }
 
         public List<Dispute> Dispute { get; set; }

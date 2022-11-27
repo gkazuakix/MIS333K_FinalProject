@@ -20,12 +20,12 @@ namespace fa22Team16.Models
         public Int32 AccountID { get; set; }
 
         [Display(Name = "Account Number")]
+        [Required(ErrorMessage = "Account Number is required.")]
         public Int32 AccountNumber { get; set; }
 
         public AppUser appUser { get; set; }
 
         public List<Transaction> Transactions { get; set; }
-
 
         [Display(Name = "Balance")]
         public Int32 Balance { get; set; }
