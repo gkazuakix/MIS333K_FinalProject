@@ -11,16 +11,16 @@ namespace fa22Team16.Models
 {
     public enum AccountType
     {
-        Savings, Checkings, IRA
+        Savings, Checking, IRA
     }
-    public class Account
+    public class BankAccount
     {
        
-        public Int32 AccountID { get; set; }
+        public Int32 BankAccountID { get; set; }
 
         [Display(Name = "Account Number")]
         [Required(ErrorMessage = "Account Number is required.")]
-        public Int32 AccountNumber { get; set; }
+        public Int64 AccountNumber { get; set; }
 
         public AppUser appUser { get; set; }
 
@@ -31,12 +31,20 @@ namespace fa22Team16.Models
 
         [Display(Name = "Balance")]
         [DisplayFormat(DataFormatString = "{0:c}")]
-        public Int32 Balance { get; set; }
+        public Decimal Balance { get; set; }
 
         [Display(Name = "Account Type")]
         public AccountType AccountType { get; set; }
 
         [Display(Name = "Active Status")]
         public Boolean ActiveStatus { get; set; }
+
+        public BankAccount()
+        {
+            if (Transactions == null)
+            {
+                Transactions = new List<Transaction>();
+            }
+        }
     }
 }

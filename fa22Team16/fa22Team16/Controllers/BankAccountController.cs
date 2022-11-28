@@ -26,19 +26,19 @@ namespace fa22Team16
         // GET: BankAccount
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Accounts.ToListAsync());
+              return View(await _context.BankAccounts.ToListAsync());
         }
 
         // GET: BankAccount/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Accounts == null)
+            if (id == null || _context.BankAccounts == null)
             {
                 return NotFound();
             }
 
-            var account = await _context.Accounts
-                .FirstOrDefaultAsync(m => m.AccountID == id);
+            var account = await _context.BankAccounts
+                .FirstOrDefaultAsync(m => m.BankAccountID == id);
             if (account == null)
             {
                 return NotFound();
@@ -59,7 +59,7 @@ namespace fa22Team16
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AccountID,AccountNumber,Balance,AccountType,ActiveStatus")] Account account)
+        public async Task<IActionResult> Create([Bind("AccountID,AccountNumber,Balance,AccountType,ActiveStatus")] BankAccount account)
         {
             if (ModelState.IsValid)
             {
@@ -73,12 +73,12 @@ namespace fa22Team16
         // GET: BankAccount/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Accounts == null)
+            if (id == null || _context.BankAccounts == null)
             {
                 return NotFound();
             }
 
-            var account = await _context.Accounts.FindAsync(id);
+            var account = await _context.BankAccounts.FindAsync(id);
             if (account == null)
             {
                 return NotFound();
@@ -91,9 +91,9 @@ namespace fa22Team16
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AccountID,AccountNumber,Balance,AccountType,ActiveStatus")] Account account)
+        public async Task<IActionResult> Edit(int id, [Bind("AccountID,AccountNumber,Balance,AccountType,ActiveStatus")] BankAccount account)
         {
-            if (id != account.AccountID)
+            if (id != account.BankAccountID)
             {
                 return NotFound();
             }
@@ -107,7 +107,7 @@ namespace fa22Team16
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AccountExists(account.AccountID))
+                    if (!AccountExists(account.BankAccountID))
                     {
                         return NotFound();
                     }
@@ -160,7 +160,7 @@ namespace fa22Team16
 
         private bool AccountExists(int id)
         {
-          return _context.Accounts.Any(e => e.AccountID == id);
+          return _context.BankAccounts.Any(e => e.BankAccountID == id);
         }
     }
 }

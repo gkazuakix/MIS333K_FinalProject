@@ -34,6 +34,13 @@ namespace fa22Team16.Models
 
         public List<StockTransaction> StockTransactions { get; set;}
 
+        public Stock()
+        {
+            if (StockTransactions == null)
+            {
+                StockTransactions = new List<StockTransaction>();
+            }
+        }
     }
 }
 

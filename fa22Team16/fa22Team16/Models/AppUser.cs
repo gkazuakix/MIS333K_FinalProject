@@ -53,9 +53,18 @@ namespace fa22Team16.Models
         [Display(Name = "Active Status")]
         public Boolean ActiveStatus { get; set; }
 
-        public List<Account> Accounts { get; set; }
+        public List<BankAccount> BankAccounts { get; set; }
 
         public StockPortfolio StockPortfolio { get; set; }
+
+
+        public AppUser()
+        {
+            if (BankAccounts == null)
+            {
+                BankAccounts = new List<BankAccount>();
+            }
+        }
 
 
     }

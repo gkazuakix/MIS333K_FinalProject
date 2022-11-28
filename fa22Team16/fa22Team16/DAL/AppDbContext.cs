@@ -34,7 +34,7 @@ namespace fa22Team16.DAL
         }
 
         //to do: Add Dbsets here.  Products is included as an example.  
-        public DbSet<Account> Accounts { get; set; }
+        public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<Dispute> Disputes { get; set; }
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<StockPortfolio> StockPortfolios { get; set; }

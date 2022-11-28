@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using fa22Team16.DAL;
 
@@ -11,9 +12,11 @@ using fa22Team16.DAL;
 namespace fa22Team16.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221128072656_UpdateModels")]
+    partial class UpdateModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -385,12 +388,6 @@ namespace fa22Team16.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockTransactionID"));
 
-                    b.Property<int?>("BankAccountID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("NumberOfShares")
                         .HasColumnType("int");
 
@@ -403,12 +400,7 @@ namespace fa22Team16.Migrations
                     b.Property<int?>("StockPortfolioID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
-
                     b.HasKey("StockTransactionID");
-
-                    b.HasIndex("BankAccountID");
 
                     b.HasIndex("StockID");
 
@@ -442,13 +434,13 @@ namespace fa22Team16.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactionID"));
 
-                    b.Property<int>("AccountBankAccountID")
+                    b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<bool>("Approved")
+                        .HasColumnType("bit");
 
-                    b.Property<int>("Approved")
+                    b.Property<int>("BankAccountID")
                         .HasColumnType("int");
 
                     b.Property<string>("Comments")
@@ -457,12 +449,9 @@ namespace fa22Team16.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
-
                     b.HasKey("TransactionID");
 
-                    b.HasIndex("AccountBankAccountID");
+                    b.HasIndex("BankAccountID");
 
                     b.ToTable("Transactions");
                 });
@@ -530,7 +519,7 @@ namespace fa22Team16.Migrations
             modelBuilder.Entity("fa22Team16.Models.Dispute", b =>
                 {
                     b.HasOne("fa22Team16.Models.Transaction", "Transaction")
-                        .WithMany("Disputes")
+                        .WithMany("Dispute")
                         .HasForeignKey("TransactionID");
 
                     b.Navigation("Transaction");
@@ -556,10 +545,6 @@ namespace fa22Team16.Migrations
 
             modelBuilder.Entity("fa22Team16.Models.StockTransaction", b =>
                 {
-                    b.HasOne("fa22Team16.Models.BankAccount", "BankAccount")
-                        .WithMany()
-                        .HasForeignKey("BankAccountID");
-
                     b.HasOne("fa22Team16.Models.Stock", "Stock")
                         .WithMany("StockTransactions")
                         .HasForeignKey("StockID")
@@ -570,8 +555,6 @@ namespace fa22Team16.Migrations
                         .WithMany("StockTransactions")
                         .HasForeignKey("StockPortfolioID");
 
-                    b.Navigation("BankAccount");
-
                     b.Navigation("Stock");
 
                     b.Navigation("StockPortfolio");
@@ -579,13 +562,13 @@ namespace fa22Team16.Migrations
 
             modelBuilder.Entity("fa22Team16.Models.Transaction", b =>
                 {
-                    b.HasOne("fa22Team16.Models.BankAccount", "Account")
+                    b.HasOne("fa22Team16.Models.BankAccount", "BankAccount")
                         .WithMany("Transactions")
-                        .HasForeignKey("AccountBankAccountID")
+                        .HasForeignKey("BankAccountID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Account");
+                    b.Navigation("BankAccount");
                 });
 
             modelBuilder.Entity("fa22Team16.Models.AppUser", b =>
@@ -617,7 +600,7 @@ namespace fa22Team16.Migrations
 
             modelBuilder.Entity("fa22Team16.Models.Transaction", b =>
                 {
-                    b.Navigation("Disputes");
+                    b.Navigation("Dispute");
                 });
 #pragma warning restore 612, 618
         }

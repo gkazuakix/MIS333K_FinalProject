@@ -19,6 +19,14 @@ using Microsoft.AspNetCore.Mvc;
         public String TypeName { get; set; }
 
         public List<Stock> Stocks { get; set; }
+
+        public StockType()
+        {
+            if (Stocks == null)
+            {
+                Stocks = new List<Stock>();
+            }
+        }
     }
 }
 

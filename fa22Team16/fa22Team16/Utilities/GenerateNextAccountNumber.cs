@@ -16,13 +16,13 @@ namespace fa22Team16.Utilities
             Int64 intMaxAccountNumber; //the current maximum course number
             Int64 intNextAccountNumber; //the course number for the next class
 
-            if (_context.Accounts.Count() == 0) //there are no registrations in the database yet
+            if (_context.BankAccounts.Count() == 0) //there are no registrations in the database yet
             {
                 intMaxAccountNumber = START_NUMBER; //registration numbers start at 101
             }
             else
             {
-                intMaxAccountNumber = _context.Accounts.Max(c => c.AccountNumber); //this is the highest number in the database right now
+                intMaxAccountNumber = _context.BankAccounts.Max(c => c.AccountNumber); //this is the highest number in the database right now
             }
 
             //You added records to the datbase before you realized 

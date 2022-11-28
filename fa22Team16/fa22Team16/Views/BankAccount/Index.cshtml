@@ -1,4 +1,4 @@
-@model IEnumerable<fa22Team16.Models.Account>
+@model IEnumerable<fa22Team16.Models.BankAccount>
 
 @{
     ViewData["Title"] = "Index";
@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.ActiveStatus)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.AccountID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AccountID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AccountID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.BankAccountID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BankAccountID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BankAccountID">Delete</a>
             </td>
         </tr>
 }
