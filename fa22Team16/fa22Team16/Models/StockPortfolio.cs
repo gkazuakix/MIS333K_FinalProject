@@ -18,7 +18,7 @@ namespace fa22Team16.Models
         public List<StockTransaction> StockTransactions { get; set; }
 
         [Display(Name = "Active Status")]
-        public ActiveStatus ActiveStatus { get; set; }
+        public Boolean ActiveStatus { get; set; }
 
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using fa22Team16.DAL;
 
@@ -11,9 +12,11 @@ using fa22Team16.DAL;
 namespace fa22Team16.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221127211233_Setup2")]
+    partial class Setup2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -169,17 +172,14 @@ namespace fa22Team16.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountID"));
 
-                    b.Property<string>("AccountName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("AccountNumber")
                         .HasColumnType("int");
 
                     b.Property<int>("AccountType")
                         .HasColumnType("int");
 
-                    b.Property<bool>("ActiveStatus")
-                        .HasColumnType("bit");
+                    b.Property<int>("ActiveStatus")
+                        .HasColumnType("int");
 
                     b.Property<int>("Balance")
                         .HasColumnType("int");
@@ -201,9 +201,6 @@ namespace fa22Team16.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
-
-                    b.Property<bool>("ActiveStatus")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime2");
@@ -344,8 +341,8 @@ namespace fa22Team16.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockPortfolioID"));
 
-                    b.Property<bool>("ActiveStatus")
-                        .HasColumnType("bit");
+                    b.Property<int>("ActiveStatus")
+                        .HasColumnType("int");
 
                     b.Property<string>("AppUserForeignKey")
                         .HasColumnType("nvarchar(450)");

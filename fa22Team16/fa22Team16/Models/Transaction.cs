@@ -23,6 +23,16 @@ namespace fa22Team16.Models
 
         public List<Dispute> Dispute { get; set; }
 
+        [Display(Name = "Date")]
+        public DateTime Date { get; set; }
+
+        [Display(Name = "Comments")]
+        public String Comments { get; set; }
+
+        [Display(Name = "Approved")]
+        public Boolean Approved { get; set; }
+
+
 
         //[Display(Name = "Balance")]
         //public Int32 Balance { get; set; }

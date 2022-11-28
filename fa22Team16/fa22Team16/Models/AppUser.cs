@@ -49,6 +49,10 @@ namespace fa22Team16.Models
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime Birthday { get; set; }
 
+
+        [Display(Name = "Active Status")]
+        public Boolean ActiveStatus { get; set; }
+
         public List<Account> Accounts { get; set; }
 
         public StockPortfolio StockPortfolio { get; set; }
