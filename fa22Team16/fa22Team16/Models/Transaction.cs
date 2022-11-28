@@ -23,6 +23,9 @@ namespace fa22Team16.Models
     {
         public Int32 TransactionID { get; set; }
 
+        [Display(Name = "Transaction Num")]
+        public Int32 TransactionNum { get; set; }
+
         [Display(Name = "Amount")]
         [Required(ErrorMessage = "Amount is required.")]
         [DisplayFormat(DataFormatString = "{0:c}")]
