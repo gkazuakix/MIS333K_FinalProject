@@ -11,7 +11,7 @@ namespace fa22Team16.Models
 {
     public enum TransactionType
     {
-        Deposit, Withdraw, Transfer
+        Deposit, Withdraw, Transfer, Fee
     }
 
     public enum Approved
