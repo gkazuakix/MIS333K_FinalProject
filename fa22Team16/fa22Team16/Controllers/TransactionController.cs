@@ -90,11 +90,11 @@ namespace fa22Team16
 
             if (transaction.Type == TransactionType.Deposit)
             {
-                return RedirectToAction("Deposit", "Transaction", new { TransactionID = transaction.TransactionID });
+                return RedirectToAction("DepositCreate", "Transaction", new { TransactionID = transaction.TransactionID });
             }
             else if (transaction.Type == TransactionType.Withdraw)
             {
-                return RedirectToAction("Withdraw", "Transaction", new { TransactionID = transaction.TransactionID });
+                return RedirectToAction("WithdrawCreate", "Transaction", new { TransactionID = transaction.TransactionID });
             }
             //// todo: add transfer
             else
@@ -125,12 +125,11 @@ namespace fa22Team16
             {
                 transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
             }
-            _context.Add(transaction);
-            await _context.SaveChangesAsync();
+            // await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Transaction");
         }
 
-        public async Task<IActionResult> Withdraw(Transaction transaction)
+        public async Task<IActionResult> WithdrawCreate(Transaction transaction)
         {
             if (transaction.Amount < transaction.Account.Balance)
             { 
