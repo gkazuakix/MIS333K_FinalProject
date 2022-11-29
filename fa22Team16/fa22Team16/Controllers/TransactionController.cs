@@ -115,7 +115,7 @@ namespace fa22Team16
             //return RedirectToAction("Create", "TransactionDetails", new { TransactionID = transaction.TransactionID });
         }
 
-        public async Task<IActionResult> Deposit (Transaction transaction)
+        public async Task<IActionResult> DepositCreate (Transaction transaction)
         {
             if (transaction.Amount > 5000)
             {

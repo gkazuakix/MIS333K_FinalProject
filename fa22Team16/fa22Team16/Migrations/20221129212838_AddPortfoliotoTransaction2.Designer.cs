@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using fa22Team16.DAL;
 
@@ -11,9 +12,11 @@ using fa22Team16.DAL;
 namespace fa22Team16.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221129212838_AddPortfoliotoTransaction2")]
+    partial class AddPortfoliotoTransaction2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -437,7 +440,7 @@ namespace fa22Team16.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactionID"));
 
-                    b.Property<int?>("AccountBankAccountID")
+                    b.Property<int>("AccountBankAccountID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Amount")
@@ -452,7 +455,7 @@ namespace fa22Team16.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("StockPortfolioID")
+                    b.Property<int>("StockPortfolioID")
                         .HasColumnType("int");
 
                     b.Property<int>("TransactionNum")
@@ -578,11 +581,15 @@ namespace fa22Team16.Migrations
                 {
                     b.HasOne("fa22Team16.Models.BankAccount", "Account")
                         .WithMany("Transactions")
-                        .HasForeignKey("AccountBankAccountID");
+                        .HasForeignKey("AccountBankAccountID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("fa22Team16.Models.StockPortfolio", "StockPortfolio")
                         .WithMany("Transactions")
-                        .HasForeignKey("StockPortfolioID");
+                        .HasForeignKey("StockPortfolioID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Account");
 

@@ -32,8 +32,10 @@ namespace fa22Team16.Models
         public Decimal Amount { get; set; }
 
         [Display(Name = "Account")]
-        [Required(ErrorMessage = "Account is required.")]
-        public BankAccount Account { get; set; }
+        public BankAccount? Account { get; set; }
+
+        [Display(Name = "Stock Portfolio")]
+        public StockPortfolio? StockPortfolio { get; set; }
 
         //[Display(Name = "From Account")]
         //[Required(ErrorMessage = "From Account is required.")]
