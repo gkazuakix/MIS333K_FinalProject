@@ -110,7 +110,7 @@ namespace fa22Team16.Seeding
     {
         TransactionNum = Convert.ToInt32(7.0),
                 Type = TransactionType.Transfer,
-                Account = db.BankAccounts.FirstOrDefault(a => a.AccountNumber == Convert.ToInt64(2290000024.0)),
+                StockPortfolio = db.StockPortfolios.FirstOrDefault(a => a.AccountNumber == Convert.ToInt64(2290000024.0)),
                 Amount = -3000.0m, 
                 Date = Convert.ToDateTime("2022-04-20 00:00:00"), 
                 Approved = Approved.Yes,
@@ -183,9 +183,9 @@ namespace fa22Team16.Seeding
                 foreach (Transaction seedTransaction in AllTransactions)
                 {
                     //updates the counters to get info on where the problem is
-                    intTransactionNum = seedTransaction.TransactionID;
+                    intTransactionNum = seedTransaction.TransactionNum;
 
-                    //try to find the artist in the database
+                    //try to find the transaction in the database
                     Transaction dbTransaction = db.Transactions.FirstOrDefault(c => c.TransactionID == seedTransaction.TransactionID);
 
                     //if the artist isn't in the database, dbArtist will be null
@@ -219,7 +219,7 @@ namespace fa22Team16.Seeding
                 StringBuilder msg = new StringBuilder();
 
                 msg.Append("There was an error adding the ");
-                msg.Append(" transaction (TransactionID = ");
+                msg.Append(" transaction (TransactionNum = ");
                 msg.Append(intTransactionNum);
                 msg.Append(")");
 

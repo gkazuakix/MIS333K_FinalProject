@@ -37,6 +37,7 @@ namespace fa22Team16.Models
         //}
 
         public List<StockTransaction> StockTransactions { get; set; }
+        public List<Transaction> Transactions { get; set; }
 
         [Display(Name = "Status")]
         public StockStatus Status { get; set; }
@@ -47,6 +48,10 @@ namespace fa22Team16.Models
             if (StockTransactions == null)
             {
                 StockTransactions = new List<StockTransaction>();
+            }
+            if (Transactions == null)
+            {
+                Transactions = new List<Transaction>();
             }
         }
     }
