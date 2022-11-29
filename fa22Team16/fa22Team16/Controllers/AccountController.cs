@@ -13,10 +13,10 @@ namespace fa22Team16.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private readonly SignInManager<AppUser> _signInManager;
-        private readonly UserManager<AppUser> _userManager;
-        private readonly PasswordValidator<AppUser> _passwordValidator;
-        private readonly AppDbContext _context;
+        private SignInManager<AppUser> _signInManager;
+        private UserManager<AppUser> _userManager;
+        private PasswordValidator<AppUser> _passwordValidator;
+        private AppDbContext _context;
 
         public AccountController(AppDbContext appDbContext, UserManager<AppUser> userManager, SignInManager<AppUser> signIn)
         {
@@ -175,10 +175,64 @@ namespace fa22Team16.Controllers
         //    return View();
         //}
 
+        //Get: Account/Edit
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return View("Error", new String[] { "Please specify a profile to edit!" });
+            }
+
+            //find the profile in the database
+            AppUser appUser = await _context.Users.FindAsync(id);
+
+            //see if the profile exists in the database
+            if (appUser == null)
+            {
+                return View("Error", new String[] { "This profile does not exist in the database!" });
+            }
+
+            //send the user to the edit profile page
+            return View(appUser);
+        }
+
+        // POST: Account/Edit/
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("FirstName,LastName,MiddleInitial,StreetAddress,City,State,Zip,PhoneNumber")] AppUser appUser)
+        {
+            //this is a security measure to make sure they are editing the correct profile
+            if (id != Convert.ToInt32(appUser.Id))
+            {
+                return View("Error", new String[] { "There was a problem editing this profile. Try again!" });
+            }
+
+            //if the user messed up, send them back to the view to try again
+            if (ModelState.IsValid == false)
+            {
+                return View(appUser);
+            }
+
+            //if code gets this far, make the updates
+            try
+            {
+                _context.Update(appUser);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return View("Error", new String[] { "There was a problem editing this profile.", ex.Message });
+            }
+
+            //send the user back to the view with all the suppliers
+            return RedirectToAction(nameof(appUser));
+        }
 
 
-        //GET: Account/Index
-        public IActionResult Index()
+//GET: Account/Index
+public IActionResult Index()
         {
             IndexViewModel ivm = new IndexViewModel();
 

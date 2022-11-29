@@ -7,13 +7,15 @@
 @model fa22Team16.Models.AppUser
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Settings";
 }
 
 @*Customers should be able to view all their information: first name, last name, middle initial, address, city, state, zip, phone
     31 number, email. Passwords should not be visible.*@
 
 <div>
+     @*<Input type="hidden" asp-for="Id" />
+    <form asp-action="Edit">*@
     <h4>View your info</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -45,6 +47,7 @@
         <dd>@Model.Email</dd>
 
     </dl>
+   
 </div>
 
 <div>
@@ -53,4 +56,6 @@
 
 <div>
     <a asp-action="Edit">Edit Info</a>
+    
+    
 </div>
