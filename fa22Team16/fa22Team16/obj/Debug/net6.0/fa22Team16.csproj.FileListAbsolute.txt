@@ -322,3 +322,12 @@
 /Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.dll
 /Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/refint/fa22Team16.dll
 /Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.pdb
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.csproj.AssemblyReference.cache
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.AssemblyInfoInputs.cache
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.AssemblyInfo.cs
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.csproj.CoreCompileInputs.cache
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.MvcApplicationPartsAssemblyInfo.cs
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.MvcApplicationPartsAssemblyInfo.cache
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.RazorAssemblyInfo.cache
+/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/obj/Debug/net6.0/fa22Team16.RazorAssemblyInfo.cs
