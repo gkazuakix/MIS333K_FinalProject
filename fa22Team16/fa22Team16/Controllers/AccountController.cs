@@ -161,19 +161,19 @@ namespace fa22Team16.Controllers
         }
 
 
-        //GET: Account/Edit
-        public IActionResult Edit(int? id)
-        {
-            return View();
-        }
+        ////GET: Account/Edit
+        //public IActionResult Edit(int? id)
+        //{
+        //    return View();
+        //}
 
-        //Post: Account/Edit
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public Task<IActionResult> Edit(AppUser appUser)
-        {
-            return View();
-        }
+        ////Post: Account/Edit
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public Task<IActionResult> Edit(AppUser appUser)
+        //{
+        //    return View();
+        //}
 
 
 
