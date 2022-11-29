@@ -1,33 +1,22 @@
-﻿@{ ViewData["Title"] = "Home"; }
+﻿<h2>Press these buttons to seed your roles and users!</h2>
 
-<div class="text-center">
-    <h1> Welcome to Longhorn Bank and Trust! </h1>
-    <h2>@User.Identity.Name</h2>
-</div>
+<a asp-action="SeedRoles" asp-controller="Seed" class="btn btn-primary">Seed Roles</a>
 
-<br />
+<a asp-action="SeedPeople" asp-controller="Seed" class="btn btn-info">Seed People</a>
 
-@if (User.Identity.IsAuthenticated && User.IsInRole("Customer"))
-{
+<a asp-action="SeedBankAccounts" asp-controller="Seed" class="btn btn-info">Seed Bank Accounts</a>
 
-    <div class="text-center">
-        <div class="btn-group-lg">
-            <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Manage Accounts</a>
-            <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Create Profile</a>
-            <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Manage Profile</a>
-        </div>
-    </div>
-}
+<a asp-action="SeedStocks" asp-controller="Seed" class="btn btn-info">Seed Stocks</a>
 
+<a asp-action="SeedStockPortfolios" asp-controller="Seed" class="btn btn-info">Seed Stock Portfolios</a>
 
+@*<a asp-action="SeedTransactions" asp-controller="Seed" class="btn btn-info">Seed Transactions</a>*@
 
-@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-{
-    <div class="text-center">
-        <div class="btn-group-lg">
-            <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Manage Users</a>
+<a asp-action="SeedStockTransactions" asp-controller="Seed" class="btn btn-info">Seed Stock Transactions</a>
 
+<a asp-action="SeedDisputes" asp-controller="Seed" class="btn btn-info">Seed Disputes</a>
 
+<<<<<<< HEAD
             <a asp-action="Index" asp-controller="Dispute" class="btn btn-outline-success">Manage Disputes</a>
             <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Modify Employee Profiles</a>
             <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Manage Employees</a>
@@ -58,6 +47,8 @@
 <br />
 <br />
 <br />
+=======
+>>>>>>> b0f3eaad5b8822af36b5e41a254dd377c452baec
 
 
 
@@ -65,18 +56,83 @@
 
 @{ ViewData["Title"] = "Home"; }
 
-<h1>Welcome to Longhorn Bank and Trust!</h1>
-<a asp-action="Index" asp-controller="" class="btn btn-success"> </a>
-@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-{
-    <a class="btn btn-info" href="/Dispute">Manage Disputes</a>
-    <a class="btn btn-danger" href="">Modify Employee Profiles</a>
-    <a class="btn btn-warning" href="/RoleAdmin">Manage Users</a>
-    <a class="btn btn-warning" href="/StockPortfolio">Process Stock Portfolios</a>
-    <a class="btn btn-warning" href="Transaction">Transaction Search</a>
-}
-@if (User.IsInRole("Customer"))
-{
-    <a class="btn btn-info" href="Account">Manage Accounts</a>
-    <a class="btn btn-info" href="AppUser">Modify Profile</a>
-}
+    <div class="text-center">
+        <h1> Welcome to Longhorn Bank and Trust! </h1>
+        <h2>@User.Identity.Name</h2>
+    </div>
+
+    <br />
+
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Customer"))
+    {
+
+        <div class="text-center">
+            <div class="btn-group-lg">
+                <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Manage Accounts</a>
+                <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Create Profile</a>
+                <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Manage Profile</a>
+            </div>
+        </div>
+    }
+
+
+
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <div class="text-center">
+            <div class="btn-group-lg">
+                <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Manage Users</a>
+
+
+                <a asp-action="Index" asp-controller="Disputes" class="btn btn-outline-success">Manage Disputes</a>
+                <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Modify Employee Profiles</a>
+                <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Manage Employees</a>
+                <a asp-action="StockPortfolio" asp-controller="RoleAdminController" class="btn btn-outline-success">Process Stock Portfolios</a>
+
+
+                <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Modify Profile</a>
+                <a asp-action="index" asp-controller="" class="btn btn-outline-success">Transaction Search</a>
+
+            </div>
+        </div>
+    }
+
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Employee"))
+    {
+        <div class="text-center">
+            <div class="btn-group-lg">
+
+                <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Modify Profile</a>
+                <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Manage Users</a>
+                <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Transaction Search</a>
+
+            </div>
+        </div>
+    }
+
+
+    <br />
+    <br />
+    <br />
+
+
+
+
+
+    @*@{ ViewData["Title"] = "Home"; }
+
+    <h1>Welcome to Longhorn Bank and Trust!</h1>
+    <a asp-action="Index" asp-controller="" class="btn btn-success"> </a>
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <a class="btn btn-info" href="/Dispute">Manage Disputes</a>
+        <a class="btn btn-danger" href="">Modify Employee Profiles</a>
+        <a class="btn btn-warning" href="/RoleAdmin">Manage Users</a>
+        <a class="btn btn-warning" href="/StockPortfolio">Process Stock Portfolios</a>
+        <a class="btn btn-warning" href="Transaction">Transaction Search</a>
+    }
+    @if (User.IsInRole("Customer"))
+    {
+        <a class="btn btn-info" href="Account">Manage Accounts</a>
+        <a class="btn btn-info" href="AppUser">Modify Profile</a>
+    }*@

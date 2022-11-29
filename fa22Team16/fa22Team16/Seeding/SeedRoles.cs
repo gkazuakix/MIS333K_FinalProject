@@ -8,7 +8,7 @@ namespace fa22Team16.Seeding
     {
         public static async Task AddAllRoles(RoleManager<IdentityRole> roleManager)
         {
-            //TODO: Add the needed roles - admin and customer are provided
+            //to do: Add the needed roles - admin and customer are provided
             //as examples
             //if the admin role doesn't exist, add it
             if (await roleManager.RoleExistsAsync("Admin") == false)
@@ -24,6 +24,11 @@ namespace fa22Team16.Seeding
                 await roleManager.CreateAsync(new IdentityRole("Customer"));
             }
 
+            if (await roleManager.RoleExistsAsync("Employee") == false)
+            {
+                //this code uses the role manager object to create the customer role
+                await roleManager.CreateAsync(new IdentityRole("Employee"));
+            }
         }
     }
 }

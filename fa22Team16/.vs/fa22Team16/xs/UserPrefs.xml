@@ -1,8 +1,7 @@
 ﻿<Properties StartupConfiguration="{0F79FFD2-1FE6-4186-A055-DDC567664E64}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Views/Home/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Models/StockTransaction.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="fa22Team16/Models/StockType.cs" Line="19" Column="1" />
       <File FileName="fa22Team16/Controllers/HomeController.cs" Line="21" Column="2" />
       <File FileName="fa22Team16/Controllers/SeedController.cs" Line="1" Column="1" />
@@ -35,6 +34,17 @@
       <File FileName="fa22Team16/Models/StockPortfolio.cs" Line="1" Column="1" />
       <File FileName="fa22Team16/Models/Transaction.cs" Line="1" Column="1" />
 >>>>>>> Stashed changes
+=======
+      <File FileName="fa22Team16/Controllers/SeedController.cs" Line="203" Column="18" />
+      <File FileName="fa22Team16/Views/Home/Index.cshtml" Line="9" Column="55" />
+      <File FileName="fa22Team16/Seeding/SeedAccounts.cs" Line="228" Column="24" />
+      <File FileName="fa22Team16/Seeding/SeedStocks.cs" Line="25" Column="33" />
+      <File FileName="fa22Team16/Seeding/SeedPortfolios.cs" Line="110" Column="22" />
+      <File FileName="fa22Team16/Models/Transaction.cs" Line="40" Column="12" />
+      <File FileName="fa22Team16/Seeding/SeedTransactions.cs" Line="22" Column="1" />
+      <File FileName="fa22Team16/Models/BankAccount.cs" Line="45" Column="14" />
+      <File FileName="fa22Team16/Models/StockTransaction.cs" Line="38" Column="25" />
+>>>>>>> b0f3eaad5b8822af36b5e41a254dd377c452baec
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -46,10 +56,10 @@
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
-              <Node name="Properties" expanded="True" />
               <Node name="Seeding" expanded="True" />
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 <Node name="Account" expanded="True" />
                 <Node name="Home" expanded="True" />
@@ -58,9 +68,12 @@
                   <Node name="Index.cshtml" selected="True" />
                 </Node>
 >>>>>>> Stashed changes
+=======
+                <Node name="BankAccount" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Seed" expanded="True" />
+>>>>>>> b0f3eaad5b8822af36b5e41a254dd377c452baec
               </Node>
-              <Node name="wwwroot" expanded="True" />
-              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -70,9 +83,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

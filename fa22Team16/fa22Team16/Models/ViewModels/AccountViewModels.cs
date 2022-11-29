@@ -51,9 +51,25 @@ namespace fa22Team16.Models
         [Display(Name = "Last Name")]
         public String LastName { get; set; }
 
-        [Required(ErrorMessage = "Address is required.")]
-        [Display(Name = "Address")]
-        public String Address { get; set; }
+        [Required(ErrorMessage = "Street address is required.")]
+        [Display(Name = "Street address")]
+        public String StreetAddress { get; set; }
+
+        [Display(Name = "City")]
+        [Required(ErrorMessage = "City is required.")]
+        public String City { get; set; }
+
+        [Display(Name = "State")]
+        [Required(ErrorMessage = "State is required.")]
+        public String State { get; set; }
+
+        [Display(Name = "Zip Code")]
+        public String ZipCode { get; set; }
+
+        [Display(Name = "Birthday")]
+        [Required(ErrorMessage = "Birthday is required.")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime Birthday { get; set; }
 
 
         //NOTE: Here is the logic for putting in a password

@@ -17,7 +17,7 @@ namespace fa22Team16.Models
         public String FirstName { get; set; }
 
         [Display(Name = "Middle Initial")]
-        public String MiddleInitial { get; set; }
+        public String? MiddleInitial { get; set; }
 
         [Display(Name = "Last Name")]
         [Required(ErrorMessage = "Last Name is required.")]
@@ -45,12 +45,26 @@ namespace fa22Team16.Models
         }
 
         [Display(Name = "Birthday")]
+        [Required(ErrorMessage = "Birthday is required.")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime Birthday { get; set; }
 
-        public List<Account> Accounts { get; set; }
+
+        [Display(Name = "Active Status")]
+        public Boolean ActiveStatus { get; set; }
+
+        public List<BankAccount> BankAccounts { get; set; }
 
         public StockPortfolio StockPortfolio { get; set; }
+
+
+        public AppUser()
+        {
+            if (BankAccounts == null)
+            {
+                BankAccounts = new List<BankAccount>();
+            }
+        }
 
 
     }

@@ -59,7 +59,11 @@ namespace fa22Team16.Controllers
                 //FirstName is included as an example
                 FirstName = rvm.FirstName,
                 LastName = rvm.LastName,
-                Address = rvm.Address
+                StreetAddress = rvm.StreetAddress,
+                City = rvm.City,
+                State = rvm.State,
+                ZipCode = rvm.ZipCode,
+                Birthday = rvm.Birthday
 
             };
 

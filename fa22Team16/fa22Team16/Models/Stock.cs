@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace fa22Team16.Models
 {
+
     public class Stock
     {
         public Int32 StockID { get; set; }
@@ -15,14 +16,31 @@ namespace fa22Team16.Models
         [Display(Name = "Ticker")]
         public String Ticker { get; set; }
 
+        [Display(Name = "Name")]
+        public String Name { get; set; }
+
         [Display(Name = "Price")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal Price { get; set; }
 
+        
+
+        //[Display(Name = "Fees")]
+        //[DisplayFormat(DataFormatString = "{0:c}")]
+        //public Decimal Fees { get; set; }
+
+        [Display(Name ="Stock Type")]
         public StockType StockType { get; set; }
 
         public List<StockTransaction> StockTransactions { get; set;}
 
+        public Stock()
+        {
+            if (StockTransactions == null)
+            {
+                StockTransactions = new List<StockTransaction>();
+            }
+        }
     }
 }
 

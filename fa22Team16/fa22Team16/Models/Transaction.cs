@@ -9,21 +9,62 @@ using Microsoft.AspNetCore.Mvc;
 //to do : Make this namespace match your project name
 namespace fa22Team16.Models
 {
+    public enum TransactionType
+    {
+        Deposit, Withdraw, Transfer, Fee
+    }
+
+    public enum Approved
+    {
+        Yes, No
+    }
+
     public class Transaction
     {
         public Int32 TransactionID { get; set; }
 
+        [Display(Name = "Transaction Num")]
+        public Int32 TransactionNum { get; set; }
+
         [Display(Name = "Amount")]
-        public Int32 Amount { get; set; }
+        [Required(ErrorMessage = "Amount is required.")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
+        public Decimal Amount { get; set; }
 
-        [Display(Name = "Transaction")]
-        public Account Account { get; set; }
+        [Display(Name = "Account")]
+        [Required(ErrorMessage = "Account is required.")]
+        public BankAccount Account { get; set; }
 
-        public List<Dispute> Dispute { get; set; }
+        //[Display(Name = "FromAccount")]
+        //[Required(ErrorMessage = "FromAccount is required.")]
+        //public BankAccount? FromAccount
+        //{
+        //    get; set;
+        //}
+
+        public List<Dispute> Disputes { get; set; }
+
+        [Display(Name = "Date")]
+        public DateTime Date { get; set; }
+
+        [Display(Name = "Comments")]
+        public String? Comments { get; set; }
+
+        [Display(Name = "Approved")]
+        public Approved Approved { get; set; }
+
+        [Display(Name = "Transaction Type")]
+        public TransactionType Type { get; set; }
 
 
         //[Display(Name = "Balance")]
         //public Int32 Balance { get; set; }
-
+        public Transaction()
+        {
+            if (Disputes == null)
+            {
+                Disputes = new List<Dispute>();
+            }
+        }
     }
 }
