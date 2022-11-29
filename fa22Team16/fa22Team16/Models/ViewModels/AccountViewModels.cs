@@ -51,6 +51,10 @@ namespace fa22Team16.Models
         [Display(Name = "Last Name")]
         public String LastName { get; set; }
 
+  
+        [Display(Name = "Middle Initial")]
+        public String MiddleInitial { get; set; }
+
         [Required(ErrorMessage = "Street address is required.")]
         [Display(Name = "Street address")]
         public String StreetAddress { get; set; }
