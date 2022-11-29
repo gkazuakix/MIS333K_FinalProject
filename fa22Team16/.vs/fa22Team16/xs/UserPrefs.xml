@@ -1,4 +1,5 @@
 ﻿<Properties StartupConfiguration="{0F79FFD2-1FE6-4186-A055-DDC567664E64}|Default">
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Models/StockPortfolio.cs">
     <Files>
       <File FileName="fa22Team16/Seeding/SeedTransactions.cs" Line="116" Column="41" />
@@ -14,12 +15,29 @@
       <File FileName="fa22Team16/Models/StockPortfolio.cs" Line="44" Column="1" />
       <File FileName="fa22Team16/Models/Stock.cs" Line="1" Column="1" />
       <File FileName="fa22Team16/Models/StockTransaction.cs" Line="27" Column="1" />
+=======
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Controllers/AccountController.cs">
+    <Files>
+      <File FileName="fa22Team16/Views/Transaction/Create.cshtml" Line="1" Column="1" />
+      <File FileName="fa22Team16/Controllers/AccountController.cs" Line="176" Column="12" />
+      <File FileName="fa22Team16/Controllers/BankAccountController.cs" Line="8" Column="22" />
+      <File FileName="fa22Team16/Views/Account/Index.cshtml" Line="1" Column="1" />
+      <File FileName="fa22Team16/Views/BankAccount/Create.cshtml" Line="1" Column="1" />
+      <File FileName="fa22Team16/Views/BankAccount/Details.cshtml" Line="1" Column="1" />
+      <File FileName="fa22Team16/Views/BankAccount/Index.cshtml" Line="1" Column="1" />
+      <File FileName="fa22Team16/Views/BankAccount/Edit.cshtml" Line="34" Column="35" />
+      <File FileName="fa22Team16/Models/BankAccount.cs" Line="1" Column="1" />
+>>>>>>> 74ab7385c056f5c2a2fb6e81b4f96e07b57b05fc
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="fa22Team16" expanded="True">
             <Node name="fa22Team16" expanded="True">
+<<<<<<< HEAD
               <Node name="Dependencies" expanded="True">
                 <Node name="FrameworkReferences" expanded="True" />
                 <Node name="PackageDependencies" expanded="True" />
@@ -29,15 +47,23 @@
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
+=======
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+>>>>>>> 74ab7385c056f5c2a2fb6e81b4f96e07b57b05fc
               <Node name="Seeding" expanded="True" />
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True" />
                 <Node name="BankAccount" expanded="True" />
+<<<<<<< HEAD
                 <Node name="Home" expanded="True" />
                 <Node name="Seed" expanded="True" />
                 <Node name="Shared" expanded="True" />
                 <Node name="Stock" expanded="True" />
+=======
+>>>>>>> 74ab7385c056f5c2a2fb6e81b4f96e07b57b05fc
                 <Node name="Transaction" expanded="True" />
               </Node>
             </Node>
@@ -49,13 +75,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Seeding/SeedTransactions.cs" relfile="fa22Team16/Seeding/SeedTransactions.cs" line="183" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
