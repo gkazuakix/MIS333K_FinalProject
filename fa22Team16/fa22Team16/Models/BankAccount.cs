@@ -29,6 +29,18 @@ namespace fa22Team16.Models
         [Display(Name = "Account Name")]
         public String AccountName { get; set; }
 
+        public String AccountInfo
+        {
+            get
+            {
+                String MaskedAccountNumber = Convert.ToString(AccountNumber);
+                var result = new String('X', MaskedAccountNumber.Length - 4) + MaskedAccountNumber.Substring(MaskedAccountNumber.Length - 4);
+                result = result + AccountName + Convert.ToString(Balance);
+                return result;
+            }
+
+        }
+
         [Display(Name = "Balance")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal Balance { get; set; }

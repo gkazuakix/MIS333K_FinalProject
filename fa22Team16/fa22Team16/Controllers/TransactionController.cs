@@ -35,9 +35,10 @@ namespace fa22Team16
             {
                 return NotFound();
             }
+            Transaction transaction = new Transaction();
 
-            var transaction = await _context.Transactions
-                .FirstOrDefaultAsync(m => m.TransactionID == id);
+            transaction = _context.Transactions.FirstOrDefault(m => m.TransactionID == id);
+
             if (transaction == null)
             {
                 return NotFound();
@@ -55,18 +56,10 @@ namespace fa22Team16
         [Authorize(Roles = "Customer")]
         public IActionResult Create()
         {
+ 
             Transaction transaction = new Transaction();
 
-            //if (User.IsInRole("Admin") == false && transaction.Account.appUser.UserName != User.Identity.Name)
-            //{
-            //    return View("Error", new string[] { "You are not authorized to create this transaction!" });
-            //}
-
             ViewBag.AllAccounts = GetAllAccountsSelectList();
-
-            //make sure a customer isn't trying to look at someone else's order
-            
-
             return View(transaction);
 
         }
@@ -78,25 +71,40 @@ namespace fa22Team16
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Transaction transaction, int AccountNumber)
         {
+            
+
             //find the registration that should be associated with this registration
             BankAccount dbAccount = _context.BankAccounts.Find(AccountNumber);
 
-            //set the new registration detail's registration equal to the registration you just found
+            //make sure a customer isn't trying to look at someone else's order
+
+            
+
+            // set the new registration detail's registration equal to the registration you just found
             transaction.Account = dbAccount;
+
+            if (User.IsInRole("Admin") == false && transaction.Account.appUser.UserName != User.Identity.Name)
+            {
+                return View("Error", new string[] { "You are not authorized to create this transaction!" });
+            }
 
             if (transaction.Type == TransactionType.Deposit)
             {
-                transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
+                return RedirectToAction("Deposit", "Transaction", new { TransactionID = transaction.TransactionID });
             }
             else if (transaction.Type == TransactionType.Withdraw)
             {
-                transaction.Account.Balance = transaction.Account.Balance - transaction.Amount;
+                return RedirectToAction("Withdraw", "Transaction", new { TransactionID = transaction.TransactionID });
             }
-            // todo: add transfer
+            //// todo: add transfer
+            else
+            {
+                return View();
+            }
 
 
-            _context.Add(transaction);
-            await _context.SaveChangesAsync();
+            //_context.Add(transaction);
+            //await _context.SaveChangesAsync();
 
             //if (ModelState.IsValid)
             //{
@@ -104,7 +112,35 @@ namespace fa22Team16
             //    await _context.SaveChangesAsync();
             //    return RedirectToAction(nameof(Index));
             //}
-            return RedirectToAction("Create", "TransactionDetails", new { TransactionID = transaction.TransactionID });
+            //return RedirectToAction("Create", "TransactionDetails", new { TransactionID = transaction.TransactionID });
+        }
+
+        public async Task<IActionResult> Deposit (Transaction transaction)
+        {
+            if (transaction.Amount > 5000)
+            {
+                transaction.Approved = Approved.No;
+            }
+            if (transaction.Approved == Approved.Yes)
+            {
+                transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
+            }
+            _context.Add(transaction);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Transaction");
+        }
+
+        public async Task<IActionResult> Withdraw(Transaction transaction)
+        {
+            if (transaction.Amount < transaction.Account.Balance)
+            { 
+                transaction.Account.Balance = transaction.Account.Balance - transaction.Amount;
+                return RedirectToAction("Index", "Transaction");
+            }
+            else
+            {
+                return View("Error", new string[] { "You don't have enough money to withdraw this amount" });
+            }
         }
 
         // GET: Transaction/Edit/5
@@ -117,15 +153,15 @@ namespace fa22Team16
             }
 
             var transaction = await _context.Transactions.FindAsync(id);
-            if (transaction == null)
-            {
-                return NotFound();
-            }
+            //if (transaction == null)
+            //{
+            //    return NotFound();
+            //}
 
-            if (User.IsInRole("Admin") == false && transaction.Account.appUser.UserName != User.Identity.Name)
-            {
-                return View("Error", new string[] { "You are not authorized to edit this transaction!" });
-            }
+            //if (User.IsInRole("Admin") == false && transaction.Account.appUser.UserName != User.Identity.Name)
+            //{
+            //    return View("Error", new string[] { "You are not authorized to edit this transaction!" });
+            //}
 
             return View(transaction);
         }

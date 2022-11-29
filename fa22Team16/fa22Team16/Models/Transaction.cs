@@ -35,14 +35,12 @@ namespace fa22Team16.Models
         [Required(ErrorMessage = "Account is required.")]
         public BankAccount Account { get; set; }
 
-        //[Display(Name = "FromAccount")]
-        //[Required(ErrorMessage = "FromAccount is required.")]
-        //public BankAccount? FromAccount
-        //{
-        //    get; set;
-        //}
+        //[Display(Name = "From Account")]
+        //[Required(ErrorMessage = "From Account is required.")]
+        //public BankAccount? FromAccount { get; set; }
 
         public List<Dispute> Disputes { get; set; }
+        //public List<BankAccount> BankAccounts { get; set; }
 
         [Display(Name = "Date")]
         public DateTime Date { get; set; }
