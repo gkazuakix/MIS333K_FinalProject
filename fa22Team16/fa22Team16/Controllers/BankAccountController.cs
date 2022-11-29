@@ -26,7 +26,13 @@ namespace fa22Team16
         // GET: BankAccount
         public async Task<IActionResult> Index()
         {
-              return View(await _context.BankAccounts.ToListAsync());
+            List<BankAccount> bankAccounts = new List<BankAccount>();
+
+            bankAccounts = _context.BankAccounts.Where(o => o.appUser.UserName == User.Identity.Name).Include(ba => ba.Transactions).ToList();
+            
+
+            return View(bankAccounts);
+            //return View(await _context.BankAccounts.ToListAsync());
         }
 
         // GET: BankAccount/Details/5
@@ -78,7 +84,7 @@ namespace fa22Team16
             await _context.SaveChangesAsync();
 
             
-            return RedirectToAction("Create", "AccountDetails", new { accountID = account.BankAccountID });
+            return RedirectToAction("Index", "BankAccount", new { accountID = account.BankAccountID });
         }
 
         // GET: BankAccount/Edit/5

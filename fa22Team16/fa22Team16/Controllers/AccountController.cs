@@ -55,7 +55,7 @@ namespace fa22Team16.Controllers
                 Email = rvm.Email,
                 PhoneNumber = rvm.PhoneNumber,
 
-                //TODO: Add the rest of the custom user fields here
+                //to do: Add the rest of the custom user fields here
                 //FirstName is included as an example
                 FirstName = rvm.FirstName,
                 LastName = rvm.LastName,
@@ -153,6 +153,29 @@ namespace fa22Team16.Controllers
         {
             return View("Error", new string[] { "You are not authorized for this resource" });
         }
+
+        //GET: Account/Settings
+        public IActionResult Settings()
+        {
+            return View();
+        }
+
+
+        //GET: Account/Edit
+        public IActionResult Edit(int? id)
+        {
+            return View();
+        }
+
+        //Post: Account/Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public Task<IActionResult> Edit(AppUser appUser)
+        {
+            return View();
+        }
+
+
 
         //GET: Account/Index
         public IActionResult Index()

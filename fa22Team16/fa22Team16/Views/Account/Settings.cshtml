@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model fa22Team16.Models.AppUser
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@*Customers should be able to view all their information: first name, last name, middle initial, address, city, state, zip, phone
+    31 number, email. Passwords should not be visible.*@
+
+<div>
+    <h4>View your info</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>First Name:</dt>
+        <dd>@Model.FirstName</dd>
+
+        <dt>Last Name:</dt>
+        <dd>@Model.LastName</dd>
+
+        <dt>Middlle Initial:</dt>
+        <dd>@Model.MiddleInitial</dd>
+
+        <dt>Street Address</dt>
+        <dd>@Model.StreetAddress</dd>
+
+        <dt>City</dt>
+        <dd>@Model.City</dd>
+
+        <dt>State</dt>
+        <dd>@Model.State</dd>
+
+        <dt>Zip</dt>
+        <dd>@Model.ZipCode</dd>
+
+        <dt>Phone</dt>
+        <dd>@Model.PhoneNumber</dd>
+
+        <dt>Email</dt>
+        <dd>@Model.Email</dd>
+
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Index">Change Password</a>
+</div>
+
+<div>
+    <a asp-action="Edit">Edit Info</a>
+</div>

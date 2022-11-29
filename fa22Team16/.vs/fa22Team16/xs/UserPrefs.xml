@@ -1,91 +1,41 @@
 ﻿<Properties StartupConfiguration="{0F79FFD2-1FE6-4186-A055-DDC567664E64}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Views/Transaction/Create.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/DAL/AppDbContext.cs">
     <Files>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-      <File FileName="fa22Team16/Models/StockType.cs" Line="19" Column="1" />
-      <File FileName="fa22Team16/Controllers/HomeController.cs" Line="21" Column="2" />
-      <File FileName="fa22Team16/Controllers/SeedController.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Views/RoleAdmin/Edit.cshtml" Line="38" Column="18" />
-      <File FileName="fa22Team16/Seeding/SeedUsers.cs" Line="48" Column="23" />
-      <File FileName="fa22Team16/Seeding/SeedRoles.cs" Line="12" Column="19" />
-      <File FileName="fa22Team16/Models/ViewModels/RoleViewModels.cs" Line="4" Column="8" />
-      <File FileName="fa22Team16/Controllers/RoleAdminController.cs" Line="17" Column="42" />
-      <File FileName="fa22Team16/obj/Debug/net6.0/fa22Team16.AssemblyInfo.cs" Line="24" Column="1" />
-<<<<<<< Updated upstream
-      <File FileName="fa22Team16/DAL/AppDbContext.cs" Line="7" Column="25" />
-      <File FileName="fa22Team16/Views/Home/Index.cshtml" Line="22" Column="1" />
-      <File FileName="fa22Team16/Models/StockPortfolio.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Models/Transaction.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Models/Dispute.cs" Line="31" Column="1" />
-      <File FileName="fa22Team16/Models/AppUser.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Utilities/AddUser.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Views/Account/ChangePassword.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Views/Account/Index.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Views/Account/Login.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Views/Account/Register.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Views/RoleAdmin/Create.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/libman.json" Line="1" Column="1" />
-      <File FileName="fa22Team16/Program.cs" Line="12" Column="44" />
-      <File FileName="fa22Team16/Controllers/AccountController.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Models/Account.cs" Line="1" Column="1" />
-=======
-      <File FileName="fa22Team16/DAL/AppDbContext.cs" Line="21" Column="32" />
-      <File FileName="fa22Team16/Views/Home/Index.cshtml" Line="19" Column="11" />
-      <File FileName="fa22Team16/Models/StockPortfolio.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Models/Transaction.cs" Line="1" Column="1" />
->>>>>>> Stashed changes
-=======
-      <File FileName="fa22Team16/Controllers/SeedController.cs" Line="203" Column="18" />
-      <File FileName="fa22Team16/Views/Home/Index.cshtml" Line="9" Column="55" />
-      <File FileName="fa22Team16/Seeding/SeedAccounts.cs" Line="228" Column="24" />
-      <File FileName="fa22Team16/Seeding/SeedStocks.cs" Line="25" Column="33" />
-      <File FileName="fa22Team16/Seeding/SeedPortfolios.cs" Line="110" Column="22" />
-      <File FileName="fa22Team16/Models/Transaction.cs" Line="40" Column="12" />
-      <File FileName="fa22Team16/Seeding/SeedTransactions.cs" Line="22" Column="1" />
-      <File FileName="fa22Team16/Models/BankAccount.cs" Line="45" Column="14" />
-      <File FileName="fa22Team16/Models/StockTransaction.cs" Line="38" Column="25" />
->>>>>>> b0f3eaad5b8822af36b5e41a254dd377c452baec
-=======
-      <File FileName="fa22Team16/Controllers/TransactionController.cs" Line="43" Column="16" />
-      <File FileName="fa22Team16/Views/Transaction/Create.cshtml" Line="39" Column="86" />
+      <File FileName="fa22Team16/Controllers/TransactionController.cs" Line="142" Column="108" />
+      <File FileName="fa22Team16/Views/Transaction/Create.cshtml" Line="18" Column="1" />
       <File FileName="fa22Team16/Views/Transaction/Index.cshtml" Line="21" Column="1" />
-      <File FileName="fa22Team16/Models/Transaction.cs" Line="42" Column="42" />
-      <File FileName="fa22Team16/Views/Home/Index.cshtml" Line="29" Column="11" />
-      <File FileName="fa22Team16/DAL/AppDbContext.cs" Line="1" Column="1" />
->>>>>>> Stashed changes
+      <File FileName="fa22Team16/Models/Transaction.cs" Line="40" Column="41" />
+      <File FileName="fa22Team16/Views/Home/Index.cshtml" Line="62" Column="11" />
+      <File FileName="fa22Team16/Controllers/DisputeController.cs" Line="1" Column="1" />
+      <File FileName="fa22Team16/Controllers/BankAccountController.cs" Line="7" Column="27" />
+      <File FileName="fa22Team16/Models/BankAccount.cs" Line="1" Column="1" />
+      <File FileName="fa22Team16/DAL/AppDbContext.cs" Line="4" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="fa22Team16" expanded="True">
             <Node name="fa22Team16" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" expanded="True" />
+                <Node name="PackageDependencies" expanded="True">
+                  <Node name="Microsoft.EntityFrameworkCore" expanded="True" />
+                </Node>
+              </Node>
               <Node name="Controllers" expanded="True" />
-              <Node name="DAL" expanded="True" />
+              <Node name="DAL" expanded="True">
+                <Node name="AppDbContext.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
               <Node name="Seeding" expanded="True" />
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-                <Node name="Account" expanded="True" />
-                <Node name="Home" expanded="True" />
-=======
-                <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
->>>>>>> Stashed changes
-=======
                 <Node name="BankAccount" expanded="True" />
                 <Node name="Home" expanded="True" />
                 <Node name="Seed" expanded="True" />
-<<<<<<< Updated upstream
->>>>>>> b0f3eaad5b8822af36b5e41a254dd377c452baec
-=======
                 <Node name="Transaction" expanded="True" />
->>>>>>> Stashed changes
               </Node>
             </Node>
           </Node>

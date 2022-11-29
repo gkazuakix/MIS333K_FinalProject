@@ -16,7 +16,7 @@
 
 <a asp-action="SeedDisputes" asp-controller="Seed" class="btn btn-info">Seed Disputes</a>
 
-<<<<<<< HEAD
+@*<<<<<<< HEAD
             <a asp-action="Index" asp-controller="Dispute" class="btn btn-outline-success">Manage Disputes</a>
             <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Modify Employee Profiles</a>
             <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Manage Employees</a>
@@ -28,9 +28,9 @@
 
         </div>
     </div>
-}
+}*@
 
-@if (User.Identity.IsAuthenticated && User.IsInRole("Employee"))
+@*@if (User.Identity.IsAuthenticated && User.IsInRole("Employee"))
 {
     <div class="text-center">
         <div class="btn-group-lg">
@@ -48,7 +48,7 @@
 <br />
 <br />
 =======
->>>>>>> b0f3eaad5b8822af36b5e41a254dd377c452baec
+>>>>>>> b0f3eaad5b8822af36b5e41a254dd377c452baec*@
 
 
 
@@ -68,9 +68,9 @@
 
         <div class="text-center">
             <div class="btn-group-lg">
-                <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Manage Accounts</a>
-                <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Create Profile</a>
-                <a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Manage Profile</a>
+                <a asp-action="Index" asp-controller="BankAccount" class="btn btn-outline-success">Manage Accounts</a>
+                @*<a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Create Profile</a>*@
+                <a asp-action="Settings" asp-controller="Account" class="btn btn-outline-success">Manage Profile</a>
             </div>
         </div>
     }

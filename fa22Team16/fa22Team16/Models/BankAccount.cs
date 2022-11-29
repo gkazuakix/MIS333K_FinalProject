@@ -34,8 +34,8 @@ namespace fa22Team16.Models
             get
             {
                 String MaskedAccountNumber = Convert.ToString(AccountNumber);
-                var result = new String('X', MaskedAccountNumber.Length - 4) + MaskedAccountNumber.Substring(MaskedAccountNumber.Length - 4);
-                result = result + AccountName + Convert.ToString(Balance);
+                //var result = new String('X', MaskedAccountNumber.Length - 4) + MaskedAccountNumber.Substring(MaskedAccountNumber.Length - 4);
+                String result =  MaskedAccountNumber +AccountName + Convert.ToString(Balance);
                 return result;
             }
 

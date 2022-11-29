@@ -10,33 +10,71 @@
     <h4>Account</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccountName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccountName)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.AccountNumber)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AccountNumber)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Balance)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Balance)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.AccountType)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AccountType)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ActiveStatus)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ActiveStatus)
         </dd>
     </dl>
 </div>
+<th>Transactions </th>
+@if (User.Identity.IsAuthenticated)
+{
+        <table>
+            @foreach (Transaction transaction in Model.Transactions)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => transaction.TransactionID)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => transaction.Amount)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => transaction.Account)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => transaction.Type)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => transaction.Comments)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => transaction.Approved)</td>
+                </tr>
+            }
+        </table>
+}
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.BankAccountID">Edit</a> |
+    @if (User.IsInRole("Admin"))
+    {
+            <p>
+                <a asp-action="Edit" asp-route-id="@Model?.BankAccountID">Edit</a>
+            </p>
+    }
     <a asp-action="Index">Back to List</a>
 </div>
