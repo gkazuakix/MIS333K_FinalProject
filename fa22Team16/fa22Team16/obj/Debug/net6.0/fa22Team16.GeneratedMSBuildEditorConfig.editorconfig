@@ -31,11 +31,19 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9TZXR0aW5ncy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Create.cshtml]
+=======
+[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9TZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Create.cshtml]
+>>>>>>> fc3a0a6a65dc7421a74c515e82a5bb260da98969
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
