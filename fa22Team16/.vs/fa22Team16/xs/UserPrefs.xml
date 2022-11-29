@@ -3,7 +3,7 @@
   <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Views/Home/Index.cshtml">
     <Files>
-      <File FileName="fa22Team16/Models/StockType.cs" Line="17" Column="1" />
+      <File FileName="fa22Team16/Models/StockType.cs" Line="19" Column="1" />
       <File FileName="fa22Team16/Controllers/HomeController.cs" Line="21" Column="2" />
       <File FileName="fa22Team16/Controllers/SeedController.cs" Line="1" Column="1" />
       <File FileName="fa22Team16/Views/RoleAdmin/Edit.cshtml" Line="38" Column="18" />
@@ -11,9 +11,9 @@
       <File FileName="fa22Team16/Seeding/SeedRoles.cs" Line="12" Column="19" />
       <File FileName="fa22Team16/Models/ViewModels/RoleViewModels.cs" Line="4" Column="8" />
       <File FileName="fa22Team16/Controllers/RoleAdminController.cs" Line="17" Column="42" />
-      <File FileName="fa22Team16/obj/Debug/net6.0/fa22Team16.AssemblyInfo.cs" Line="23" Column="1" />
+      <File FileName="fa22Team16/obj/Debug/net6.0/fa22Team16.AssemblyInfo.cs" Line="24" Column="1" />
       <File FileName="fa22Team16/DAL/AppDbContext.cs" Line="7" Column="25" />
-      <File FileName="fa22Team16/Views/Home/Index.cshtml" Line="32" Column="52" />
+      <File FileName="fa22Team16/Views/Home/Index.cshtml" Line="22" Column="1" />
       <File FileName="fa22Team16/Models/StockPortfolio.cs" Line="1" Column="1" />
       <File FileName="fa22Team16/Models/Transaction.cs" Line="1" Column="1" />
       <File FileName="fa22Team16/Models/Dispute.cs" Line="31" Column="1" />
@@ -27,6 +27,7 @@
       <File FileName="fa22Team16/libman.json" Line="1" Column="1" />
       <File FileName="fa22Team16/Program.cs" Line="12" Column="44" />
       <File FileName="fa22Team16/Controllers/AccountController.cs" Line="1" Column="1" />
+      <File FileName="fa22Team16/Models/Account.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -43,9 +44,7 @@
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True" />
-                <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True" />
               <Node name="appsettings.json" expanded="True" />
