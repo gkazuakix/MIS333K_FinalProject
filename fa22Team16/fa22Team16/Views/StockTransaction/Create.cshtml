@@ -55,7 +55,15 @@ Table of Stocks
                 <input asp-for="NumberOfShares" class="form-control" />
                 <span asp-validation-for="NumberOfShares" class="text-danger"></span>
             </div>
-
+            <!--
+    <div class="form-group">
+        <label asp-for="SelectedClass" class="control-label"></label><br />
+        <input type="radio" class="radio" asp-for="SelectedClass" value="Classification.Freshman" /> Freshman<br />
+        <input type="radio" class="radio" asp-for="SelectedClass" value="Classification.Sophomore" /> Sophomore<br />
+        <input type="radio" class="radio" asp-for="SelectedClass" value="Classification.Junior" /> Junior<br />
+        <input type="radio" class="radio" asp-for="SelectedClass" value="Classification.Senior" /> Senior<br />
+    </div>
+        -->
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
