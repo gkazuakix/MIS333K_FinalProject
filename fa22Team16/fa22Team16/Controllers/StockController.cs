@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using fa22Team16.DAL;
 using fa22Team16.Models;
+using Microsoft.AspNetCore.Authorization; //authorization library :)
 
 namespace fa22Team16
 {
@@ -43,6 +44,7 @@ namespace fa22Team16
             return View(stock);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Stock/Create
         public IActionResult Create()
         {

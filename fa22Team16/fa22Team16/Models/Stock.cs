@@ -13,10 +13,12 @@ namespace fa22Team16.Models
     {
         public Int32 StockID { get; set; }
 
-        [Display(Name = "Ticker")]
+        [Display(Name = "Ticker Symbol")]
+        [Required(ErrorMessage = "Ticker Symbol is required.")]
         public String Ticker { get; set; }
 
-        [Display(Name = "Name")]
+        [Display(Name = "Stock Name")]
+        [Required(ErrorMessage = "Stock Name is required.")]
         public String Name { get; set; }
 
         [Display(Name = "Price")]
@@ -30,6 +32,7 @@ namespace fa22Team16.Models
         //public Decimal Fees { get; set; }
 
         [Display(Name ="Stock Type")]
+        [Required(ErrorMessage = "Stock Type is required.")]
         public StockType StockType { get; set; }
 
         public List<StockTransaction> StockTransactions { get; set;}
