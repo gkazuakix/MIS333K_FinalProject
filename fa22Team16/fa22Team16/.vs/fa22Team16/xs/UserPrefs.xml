@@ -3,12 +3,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/StockTransactionController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/StockTransaction/Create.cshtml">
     <Files>
-      <File FileName="Seeding/SeedStockTransactions.cs" Line="1" Column="1" IsPinned="True" />
-      <File FileName="Views/StockTransaction/Create.cshtml" Line="52" Column="19" IsPinned="True" />
-      <File FileName="Models/StockTransaction.cs" Line="1" Column="1" IsPinned="True" />
-      <File FileName="Controllers/StockTransactionController.cs" Line="52" Column="1" IsPinned="True" />
+      <File FileName="Seeding/SeedStockTransactions.cs" />
       <File FileName="Views/StockTransaction/Edit.cshtml" />
       <File FileName="Views/StockTransaction/Details.cshtml" />
       <File FileName="Models/StockPortfolio.cs" />
@@ -20,12 +17,20 @@
       <File FileName="DAL/AppDbContext.cs" />
       <File FileName="Controllers/SeedController.cs" />
       <File FileName="Models/StockType.cs" />
-      <File FileName="Views/StockTransaction/Index.cshtml" />
+      <File FileName="Views/StockTransaction/Index.cshtml" Line="1" Column="1" />
       <File FileName="Views/Seed/Index.cshtml" />
       <File FileName="Views/Seed/Confirm.cshtml" />
       <File FileName="Views/Home/Index.cshtml" />
       <File FileName="Seeding/SeedPortfolios.cs" />
+      <File FileName="Seeding/SeedAccounts.cs" />
       <File FileName="Models/BankAccount.cs" />
+      <File FileName="Views/StockTransaction/Create.cshtml" Line="66" Column="12" />
+      <File FileName="Views/StockPortfolio/Index.cshtml" />
+      <File FileName="Controllers/StockPortfolioController.cs" />
+      <File FileName="Controllers/BankAccountController.cs" Line="30" Column="1" />
+      <File FileName="Controllers/StockTransactionController.cs" />
+      <File FileName="Views/BankAccount/Index.cshtml" Line="1" Column="50" />
+      <File FileName="Seeding/SeedUsers.cs" Line="29" Column="54" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -39,12 +44,15 @@
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True" />
+                <Node name="BankAccount" expanded="True" />
                 <Node name="Home" expanded="True" />
                 <Node name="Seed" expanded="True" />
                 <Node name="Shared" expanded="True" />
                 <Node name="Stock" expanded="True" />
                 <Node name="StockPortfolio" expanded="True" />
-                <Node name="StockTransaction" expanded="True" />
+                <Node name="StockTransaction" expanded="True">
+                  <Node name="Create.cshtml" selected="True" />
+                </Node>
                 <Node name="StockType" expanded="True" />
               </Node>
             </Node>

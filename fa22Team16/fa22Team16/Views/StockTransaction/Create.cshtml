@@ -13,7 +13,7 @@ Table of Stocks
 (will try to implement later, for now there is a button to redirect to the "Stock Index" Page)
 -->
 <div>
-    <a asp-action="Index" asp-controller="Stock">Visit List of Stocks for Purchase</a>
+    <a asp-action="Index" asp-controller="Stock">Visit List of Stocks for Purchase</a><br />
 </div>
 
 
@@ -22,11 +22,11 @@ Table of Stocks
 <h5>Account Balances</h5>
 <table class="table table-sm table-bordered" style="width:50%">
     <tr>
-        <th colspan="2" style="text-align:center">Order Summary</th>
+        <th colspan="2" style="text-align:center">Balances of Your Accounts</th>
     </tr>
     <tr>
         <td>Checking:</td>
-        <td>@Html.DisplayFor(model => model.StockPortfolio.StockPortfolioID)</td>
+        <td>@Html.DisplayFor(model => model.StockPortfolio.AppUser.BankAccounts)</td>
     </tr>
     <tr>
         <td>Savings:</td>
@@ -55,15 +55,17 @@ Table of Stocks
                 <input asp-for="NumberOfShares" class="form-control" />
                 <span asp-validation-for="NumberOfShares" class="text-danger"></span>
             </div>
-            <!--
-    <div class="form-group">
-        <label asp-for="SelectedClass" class="control-label"></label><br />
-        <input type="radio" class="radio" asp-for="SelectedClass" value="Classification.Freshman" /> Freshman<br />
-        <input type="radio" class="radio" asp-for="SelectedClass" value="Classification.Sophomore" /> Sophomore<br />
-        <input type="radio" class="radio" asp-for="SelectedClass" value="Classification.Junior" /> Junior<br />
-        <input type="radio" class="radio" asp-for="SelectedClass" value="Classification.Senior" /> Senior<br />
-    </div>
-        -->
+            <div class="form-group">
+                <label asp-for="WithdrawalAccount" class="control-label"></label><br />
+                <input type="radio" class="radio" asp-for="WithdrawalAccount" value="1" /> Checking<br />
+                <input type="radio" class="radio" asp-for="WithdrawalAccount" value="2" /> Savings<br />
+                <input type="radio" class="radio" asp-for="WithdrawalAccount" value="3" /> Cash-Value of Portfolio<br />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

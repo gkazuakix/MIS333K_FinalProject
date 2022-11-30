@@ -26,8 +26,8 @@ namespace fa22Team16.Models
 
         public StockPortfolio StockPortfolio { get; set; }
 
-        [Display(Name = "Associated Bank Account")]
-        public BankAccount BankAccount { get; set; }
+        [Display(Name = "Bank Account for Withdrawal")]
+        public Int32 WithdrawalAccount { get; set; }
 
         [Display(Name ="Stock")]
         [Required(ErrorMessage = "Stock is required.")]
