@@ -13,11 +13,21 @@
     </p>
 }
 
+<div>
+    <a asp-action="Create" asp-controller="StockTransaction" class="btn btn-primary">Purchase Stock</a>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Ticker)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockType)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
@@ -30,15 +40,21 @@
         {
             <tr>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Ticker)
+                </td>
+                <!--Why isn't this working-->
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockType.TypeName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.StockID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.StockID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.StockID">Delete</a>
+                    <!--Details page needed?-->
+                    <a asp-action="Details" asp-route-id="@item.StockID">Details</a>
                 </td>
             </tr>
         }

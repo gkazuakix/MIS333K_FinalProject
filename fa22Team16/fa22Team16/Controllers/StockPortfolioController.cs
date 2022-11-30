@@ -157,5 +157,8 @@ namespace fa22Team16
         {
           return _context.StockPortfolios.Any(e => e.StockPortfolioID == id);
         }
+
+
+    
     }
 }
