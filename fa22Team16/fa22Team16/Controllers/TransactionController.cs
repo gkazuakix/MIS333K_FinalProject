@@ -53,78 +53,105 @@ namespace fa22Team16
         }
 
         // GET: Transaction/Create
-        [Authorize(Roles = "Customer")]
-        public IActionResult Create()
-        {
- 
-            Transaction transaction = new Transaction();
+        //[Authorize(Roles = "Customer")]
 
-            ViewBag.AllAccounts = GetAllAccountsSelectList();
-            return View(transaction);
+        //public IActionResult Create()
+        //{
 
-        }
+        //}
+        //public IActionResult Create()
+        //{
+
+        //    Transaction transaction = new Transaction();
+
+        //    ViewBag.AllAccounts = GetAllAccountsSelectList();
+        //    return View(transaction);
+
+        //}
 
         // POST: Transaction/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create(Transaction transaction, int AccountNumber)
+        //{
+
+
+        //    //find the registration that should be associated with this registration
+        //    BankAccount dbAccount = _context.BankAccounts.Find(AccountNumber);
+
+        //    //make sure a customer isn't trying to look at someone else's order
+
+
+
+        //    // set the new registration detail's registration equal to the registration you just found
+        //    transaction.Account = dbAccount;
+
+        //    if (User.IsInRole("Admin") == false && transaction.Account.appUser.UserName != User.Identity.Name)
+        //    {
+        //        return View("Error", new string[] { "You are not authorized to create this transaction!" });
+        //    }
+
+        //    if (transaction.Amount >= 0)
+        //    {
+        //        return RedirectToAction("DepositCreate", "Transaction", new { TransactionID = transaction.TransactionID });
+        //    }
+        //    else if (transaction.Amount >= 0)
+        //    {
+        //        return RedirectToAction("WithdrawCreate", "Transaction", new { TransactionID = transaction.TransactionID });
+        //    }
+        //    //// todo: add transfer
+        //    else
+        //    {
+        //        return View();
+        //    }
+
+
+        //_context.Add(transaction);
+        //await _context.SaveChangesAsync();
+
+        //if (ModelState.IsValid)
+        //{
+        //    _context.Add(transaction);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
+        //return RedirectToAction("Create", "TransactionDetails", new { TransactionID = transaction.TransactionID });
+        // }
+        //  GET: Transaction/DepositCreate
+        [Authorize(Roles = "Customer")]
+        public async Task<IActionResult> DepositCreate()
+        {
+            ViewBag.AllAccounts = GetAllAccountsSelectList();
+            return View();
+        }
+
+        // Post: Transaction/Deposit Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Transaction transaction, int AccountNumber)
         {
+            if (ModelState.IsValid)
+            {
+                if (transaction.Amount > 5000)
+                {
+                    transaction.Approved = Approved.No;
+                }
+                if (transaction.Approved == Approved.Yes)
+                {
+                    transaction.Account = _context.BankAccounts.Find(SelectedAccount);
+                    transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
+                    transaction.Date = DateTime.Now();
+
+                    _context.Add(transaction);
+                    await _context.SaveChangesAsync();
+                }
+
+            }
             
 
-            //find the registration that should be associated with this registration
-            BankAccount dbAccount = _context.BankAccounts.Find(AccountNumber);
-
-            //make sure a customer isn't trying to look at someone else's order
-
             
-
-            // set the new registration detail's registration equal to the registration you just found
-            transaction.Account = dbAccount;
-
-            if (User.IsInRole("Admin") == false && transaction.Account.appUser.UserName != User.Identity.Name)
-            {
-                return View("Error", new string[] { "You are not authorized to create this transaction!" });
-            }
-
-            if (transaction.Type == TransactionType.Deposit)
-            {
-                return RedirectToAction("DepositCreate", "Transaction", new { TransactionID = transaction.TransactionID });
-            }
-            else if (transaction.Type == TransactionType.Withdraw)
-            {
-                return RedirectToAction("WithdrawCreate", "Transaction", new { TransactionID = transaction.TransactionID });
-            }
-            //// todo: add transfer
-            else
-            {
-                return View();
-            }
-
-
-            //_context.Add(transaction);
-            //await _context.SaveChangesAsync();
-
-            //if (ModelState.IsValid)
-            //{
-            //    _context.Add(transaction);
-            //    await _context.SaveChangesAsync();
-            //    return RedirectToAction(nameof(Index));
-            //}
-            //return RedirectToAction("Create", "TransactionDetails", new { TransactionID = transaction.TransactionID });
-        }
-
-        public async Task<IActionResult> DepositCreate (Transaction transaction)
-        {
-            if (transaction.Amount > 5000)
-            {
-                transaction.Approved = Approved.No;
-            }
-            if (transaction.Approved == Approved.Yes)
-            {
-                transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
-            }
             // await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Transaction");
         }
