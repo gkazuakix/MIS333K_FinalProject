@@ -3,10 +3,15 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/StockTransaction/Create.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/StockTransactionController.cs">
     <Files>
+      <File FileName="Seeding/SeedStockTransactions.cs" Line="1" Column="1" IsPinned="True" />
+      <File FileName="Views/StockTransaction/Create.cshtml" Line="52" Column="19" IsPinned="True" />
+      <File FileName="Models/StockTransaction.cs" Line="1" Column="1" IsPinned="True" />
+      <File FileName="Controllers/StockTransactionController.cs" Line="52" Column="1" IsPinned="True" />
+      <File FileName="Views/StockTransaction/Edit.cshtml" />
+      <File FileName="Views/StockTransaction/Details.cshtml" />
       <File FileName="Models/StockPortfolio.cs" />
-      <File FileName="Views/StockPortfolio/Index.cshtml" />
       <File FileName="Controllers/StockController.cs" />
       <File FileName="Models/Stock.cs" />
       <File FileName="Seeding/SeedStocks.cs" />
@@ -15,20 +20,18 @@
       <File FileName="DAL/AppDbContext.cs" />
       <File FileName="Controllers/SeedController.cs" />
       <File FileName="Models/StockType.cs" />
-      <File FileName="Views/StockTransaction/Create.cshtml" Line="20" Column="17" />
       <File FileName="Views/StockTransaction/Index.cshtml" />
       <File FileName="Views/Seed/Index.cshtml" />
-      <File FileName="Views/StockTransaction/Edit.cshtml" />
       <File FileName="Views/Seed/Confirm.cshtml" />
+      <File FileName="Views/Home/Index.cshtml" />
+      <File FileName="Seeding/SeedPortfolios.cs" />
+      <File FileName="Models/BankAccount.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="fa22Team16" expanded="True">
             <Node name="fa22Team16" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True" />

@@ -12,6 +12,7 @@ namespace fa22Team16.Models
     {
         Purchase, Sell
     }
+
     public class StockTransaction
     {
         public Int32 StockTransactionID { get; set; }
@@ -25,8 +26,8 @@ namespace fa22Team16.Models
 
         public StockPortfolio StockPortfolio { get; set; }
 
-        //[Display(Name = "Associated Bank Account")]
-        //public BankAccount BankAccount { get; set; }
+        [Display(Name = "Associated Bank Account")]
+        public BankAccount BankAccount { get; set; }
 
         [Display(Name ="Stock")]
         [Required(ErrorMessage = "Stock is required.")]

@@ -46,6 +46,8 @@ namespace fa22Team16
         // GET: StockTransaction/Create
         public IActionResult Create()
         {
+            ViewBag.AllStocks = GetAllStockSelectList();
+
             return View();
         }
 
@@ -151,6 +153,16 @@ namespace fa22Team16
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        private SelectList GetAllStockSelectList()
+        {
+            List<Stock> allStocks = _context.Stocks.ToList();
+
+            //use the constructor on select list to create a new select list with the options
+            SelectList slAllStocks = new SelectList(allStocks, nameof(Stock.StockID), nameof(Stock.Name));
+
+            return slAllStocks;
         }
 
         private bool StockTransactionExists(int id)

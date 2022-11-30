@@ -6,59 +6,56 @@
 
 <h1>Purchase Stock</h1>
 
-<h2>Stocks Available for Purchase</h2>
 <!--
 Table of Stocks
 [stock name] [stock ticker symbol] [type of stock] [current share price] [fess (if any)]
+
+(will try to implement later, for now there is a button to redirect to the "Stock Index" Page)
 -->
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Stock.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Stock.Ticker)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Stock.StockType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Stock.Price)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Stock)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Stock.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-            </tr>
-        }
-    </tbody>
+<div>
+    <a asp-action="Index" asp-controller="Stock">Visit List of Stocks for Purchase</a>
+</div>
+
+
+<!--Balances of Your Accounts-->
+<!--How do I do this-->
+<h5>Account Balances</h5>
+<table class="table table-sm table-bordered" style="width:50%">
+    <tr>
+        <th colspan="2" style="text-align:center">Order Summary</th>
+    </tr>
+    <tr>
+        <td>Checking:</td>
+        <td>@Html.DisplayFor(model => model.StockPortfolio.StockPortfolioID)</td>
+    </tr>
+    <tr>
+        <td>Savings:</td>
+        <td>@Html.DisplayFor(model => model.NumberOfShares)</td>
+    </tr>
+    <tr>
+        <td>Cash-Value of Portfolio:</td>
+        <td>@Html.DisplayFor(model => model.StockPortfolio)</td>
+    </tr>
+
 </table>
 
 
 <!--Stock Purchasing Form-->
+<h5>Stock Purchasing Form</h5>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label class="control-label">Select Stock</label>
+                @Html.DropDownList("SelectedStock", (SelectList)ViewBag.AllStocks, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
                 <label asp-for="NumberOfShares" class="control-label"></label>
                 <input asp-for="NumberOfShares" class="form-control" />
                 <span asp-validation-for="NumberOfShares" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
