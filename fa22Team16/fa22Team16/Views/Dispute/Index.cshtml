@@ -12,18 +12,74 @@
 <table class="table">
     <thead>
         <tr>
-            <th></th>
+            <th>
+                <td>
+                @Html.DisplayNameFor(model => model.Transaction.Account.appUser.FirstName)
+                </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Transaction.Account.appUser.LastName)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Transaction.Account.appUser.Id)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Transaction.TransactionNum)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Transaction.Amount)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.CorrectAmount)
+            </td>
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DisputeID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DisputeID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DisputeID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+        @foreach (var item in Model)
+        {
+            @*if (item.Status == Status.Submitted)
+            {*@
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Transaction.TransactionNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Transaction.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CorrectAmount)
+                    </td>
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.TransactionName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CorrectTransactionAmount)
+        </td>*@
+                    <td>
+                </tr>
+
+
+            @*}*@
+
+
+
+<td>
+                        <a asp-action="Edit" asp-route-id="@item.DisputeID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.DisputeID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.DisputeID">Delete</a>
+                    </td>
+                }
+            </tbody>
 </table>
