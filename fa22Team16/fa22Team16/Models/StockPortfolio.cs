@@ -12,6 +12,7 @@ namespace fa22Team16.Models
     {
         Balanced, Unbalanced
     }
+
     public class StockPortfolio
     {
         public Int32 StockPortfolioID { get; set; }
@@ -24,6 +25,9 @@ namespace fa22Team16.Models
 
         [Display(Name = "Account Name")]
         public String AccountName { get; set; }
+
+
+
 
         [Display(Name = "Cash Balance")]
         [DisplayFormat(DataFormatString = "{0:c}")]

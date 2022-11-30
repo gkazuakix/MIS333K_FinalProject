@@ -37,9 +37,6 @@ namespace fa22Team16.Models
 
         [Display(Name = "Date")]
         public DateTime Date { get; set; }
-
-        //[Display(Name = "Number of Shares")]
-        //public Int32 NumberOfShares { get; set; }
     }
 }
 
