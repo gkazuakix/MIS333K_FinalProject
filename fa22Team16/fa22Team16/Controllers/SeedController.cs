@@ -269,6 +269,37 @@ namespace fa22Team16.Controllers
                 return View("Error", errorList);
             }
 
+
+            //this is the happy path - seeding worked!
+            return View("Confirm");
+        }
+        public async Task<IActionResult> SeedStockType()
+        {
+            try
+            {
+                //call the method to seed the users
+                Seeding.SeedStockType.SeedAllStockType(_context);
+            }
+            catch (Exception ex)
+            {
+                //add the error messages to a list of strings
+                List<String> errorList = new List<String>();
+
+                //Add the outer message
+                errorList.Add(ex.Message);
+
+                ////Add the message from the inner exception
+                //errorList.Add(ex.InnerException.Message);
+
+                //Add additional inner exception messages, if there are any
+                if (ex.InnerException.InnerException != null)
+                {
+                    errorList.Add(ex.InnerException.InnerException.Message);
+                }
+
+                return View("Error", errorList);
+            }
+
             //this is the happy path - seeding worked!
             return View("Confirm");
         }
