@@ -130,7 +130,7 @@ namespace fa22Team16
         // Post: Transaction/Deposit Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Transaction transaction, int AccountNumber)
+        public async Task<IActionResult> Create(Transaction transaction, int AccountNumber, int[] SelectedAccount)
         {
             if (ModelState.IsValid)
             {
@@ -140,9 +140,9 @@ namespace fa22Team16
                 }
                 if (transaction.Approved == Approved.Yes)
                 {
-                    // transaction.Account = _context.BankAccounts.Find(SelectedAccount);
+                    transaction.Account = _context.BankAccounts.Find(SelectedAccount);
                     transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
-                    // transaction.Date = DateTime.Now();
+                    transaction.Date = DateTime.Now;
 
                     _context.Add(transaction);
                     await _context.SaveChangesAsync();
