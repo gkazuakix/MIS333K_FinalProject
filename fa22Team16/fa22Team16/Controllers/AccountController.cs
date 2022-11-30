@@ -173,27 +173,23 @@ namespace fa22Team16.Controllers
         //public Task<IActionResult> Edit(AppUser appUser)
         //{
         //    return View();
-        //}
+        //} 
 
         //Get: Account/Edit
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return View("Error", new String[] { "Please specify a profile to edit!" });
-            }
+           
+            ////find the profile in the database
+            //AppUser appUser = await _context.Users.FindAsync(id);
 
-            //find the profile in the database
-            AppUser appUser = await _context.Users.FindAsync(id);
-
-            //see if the profile exists in the database
-            if (appUser == null)
-            {
-                return View("Error", new String[] { "This profile does not exist in the database!" });
-            }
+            ////see if the profile exists in the database
+            //if (appUser == null)
+            //{
+            //    return View("Error", new String[] { "This profile does not exist in the database!" });
+            //}
 
             //send the user to the edit profile page
-            return View(appUser);
+            return View();
         }
 
         // POST: Account/Edit/
