@@ -23,7 +23,7 @@ namespace fa22Team16.Seeding
 
             AllDisputes.Add(new Dispute
             {
-                Transaction = db.Transactions.FirstOrDefault(a => a.TransactionID == 8),
+                Transaction = db.Transactions.FirstOrDefault(a => a.TransactionNum == 8),
                 Description = "I don’t remember buying so many snacks",
                 Status = Status.Submitted,
                 CorrectAmount = 300.0m,
@@ -32,7 +32,7 @@ namespace fa22Team16.Seeding
 
             AllDisputes.Add(new Dispute
             {
-                Transaction = db.Transactions.FirstOrDefault(a => a.TransactionID == 10),
+                Transaction = db.Transactions.FirstOrDefault(a => a.TransactionNum == 10),
                 Description = "You rapscallions are trying to steal my money!!!",
                 Status = Status.Submitted ,
                 CorrectAmount = 0.0m,
