@@ -143,15 +143,15 @@ namespace fa22Team16
                     transaction.Account = _context.BankAccounts.Find(SelectedAccount);
                     transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
                     transaction.Date = DateTime.Now;
-
                     _context.Add(transaction);
                     await _context.SaveChangesAsync();
                 }
+             return RedirectToAction(nameof(Index));
 
             }
-            
 
-            
+
+
             // await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Transaction");
         }
