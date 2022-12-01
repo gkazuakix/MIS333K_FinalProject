@@ -8,18 +8,190 @@
 
 @if (User.Identity.IsAuthenticated)
 
+{
+    @if (User.IsInRole("Customer"))
     {
-        @if (User.IsInRole("Customer"))
-        {
 
-            <p>
-                <a asp-action="Create">Create New</a>
-            </p>
-}
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
     }
+}
 
 
-<table class="table">
+@if (User.Identity.IsAuthenticated)
+
+{
+    @if (User.IsInRole("Customer"))
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TransactionNum)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Amount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Comments)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Approved)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Type)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Account)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    @*if ((item.Account != null && item.Account.appUser.UserName == User.Identity.Name) || (item.Account != null && item.StockPortfolio.AppUser.UserName == User.Identity.Name))*@
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TransactionNum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Comments)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Approved)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Type)
+                        </td>
+                        if (item.Account == null)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StockPortfolio)
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Account)
+                            </td>
+                        }
+
+                }
+                <tr>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.TransactionID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.TransactionID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.TransactionID">Delete</a>
+                    </td>
+                </tr>
+            }
+                </tbody>
+            </table>
+        }
+}
+
+
+
+@if (User.Identity.IsAuthenticated)
+
+{
+    @if (User.IsInRole("Admin"))
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TransactionNum)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Amount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Comments)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Approved)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Type)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Account)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.Approved == Approved.No)
+                    {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransactionNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comments)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Approved)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    if (item.Account == null)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StockPortfolio)
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Account)
+                        </td>
+                    }
+
+                }
+                <tr>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.TransactionID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.TransactionID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.TransactionID">Delete</a>
+                    </td>
+                </tr>
+            }
+                </tbody>
+            </table>
+        }
+}
+
+
+
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -43,4 +215,4 @@
             </tr>
         }
     </tbody>
-</table>
+</table>*@
