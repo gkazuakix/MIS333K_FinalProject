@@ -21,6 +21,8 @@ namespace fa22Team16.Models
 
     public class Transaction
     {
+        internal static readonly object BankAccount;
+
         public Int32 TransactionID { get; set; }
 
         [Display(Name = "Transaction Num")]
