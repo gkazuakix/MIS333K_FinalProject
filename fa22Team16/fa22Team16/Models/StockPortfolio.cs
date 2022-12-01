@@ -26,22 +26,38 @@ namespace fa22Team16.Models
         [Display(Name = "Account Name")]
         public String AccountName { get; set; }
 
+        [Display(Name = "Gains")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
+        public Decimal Gains
+        {
+            get { return StockTransactions.Sum(s => s.IndividualGain); }
+        }
 
+        [Display(Name = "Fees")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
+        public Decimal Fees { get; set; }
 
-
-        [Display(Name = "Cash Balance")]
+        [Display(Name = "Available Cash")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal Balance { get; set; }
 
-        //[Display(Name = "Value")]
-        //[DisplayFormat(DataFormatString = "{0:c}")]
-        //public Decimal Value
-        //{
+        [Display(Name = "Sum of All Stock Values")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
+        public Decimal SumCurrentValue
+        {
+            get { return StockTransactions.Sum(s => s.CurrentValue); }
+        }
 
-        //}
+        [Display(Name = "Value")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
+        public Decimal Value
+        {
+            get { return SumCurrentValue + Gains - Fees + Balance; }
+        }
 
         public List<StockTransaction> StockTransactions { get; set; }
         public List<Transaction> Transactions { get; set; }
+
 
         [Display(Name = "Status")]
         public StockStatus Status { get; set; }

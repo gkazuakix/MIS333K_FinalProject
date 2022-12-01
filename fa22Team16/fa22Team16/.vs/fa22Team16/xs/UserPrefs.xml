@@ -3,34 +3,25 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/StockTransaction/Create.cshtml">
+<<<<<<< Updated upstream
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/StockPortfolioController.cs">
     <Files>
-      <File FileName="Seeding/SeedStockTransactions.cs" />
-      <File FileName="Views/StockTransaction/Edit.cshtml" />
-      <File FileName="Views/StockTransaction/Details.cshtml" />
-      <File FileName="Models/StockPortfolio.cs" />
-      <File FileName="Controllers/StockController.cs" />
+      <File FileName="Models/StockTransaction.cs" Line="27" Column="22" />
+      <File FileName="Models/StockPortfolio.cs" Line="52" Column="52" />
       <File FileName="Models/Stock.cs" />
-      <File FileName="Seeding/SeedStocks.cs" />
-      <File FileName="Views/Stock/Index.cshtml" />
-      <File FileName="Controllers/TransactionController.cs" />
-      <File FileName="DAL/AppDbContext.cs" />
-      <File FileName="Controllers/SeedController.cs" />
-      <File FileName="Models/StockType.cs" />
-      <File FileName="Views/StockTransaction/Index.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Seed/Index.cshtml" />
-      <File FileName="Views/Seed/Confirm.cshtml" />
-      <File FileName="Views/Home/Index.cshtml" />
-      <File FileName="Seeding/SeedPortfolios.cs" />
-      <File FileName="Seeding/SeedAccounts.cs" />
-      <File FileName="Models/BankAccount.cs" />
-      <File FileName="Views/StockTransaction/Create.cshtml" Line="66" Column="12" />
-      <File FileName="Views/StockPortfolio/Index.cshtml" />
-      <File FileName="Controllers/StockPortfolioController.cs" />
-      <File FileName="Controllers/BankAccountController.cs" Line="30" Column="1" />
-      <File FileName="Controllers/StockTransactionController.cs" />
-      <File FileName="Views/BankAccount/Index.cshtml" Line="1" Column="50" />
-      <File FileName="Seeding/SeedUsers.cs" Line="29" Column="54" />
+      <File FileName="Views/StockPortfolio/Index.cshtml" Line="40" Column="21" />
+      <File FileName="Controllers/StockPortfolioController.cs" Line="27" Column="1" />
+      <File FileName="Views/StockTransaction/Index.cshtml" Line="47" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Seeding/SeedStockTransactions.cs">
+    <Files>
+      <File FileName="Models/StockTransaction.cs" Line="39" Column="61" />
+      <File FileName="Views/StockPortfolio/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Seeding/SeedPortfolios.cs" Line="1" Column="1" />
+      <File FileName="Models/StockPortfolio.cs" Line="41" Column="1" />
+      <File FileName="Models/Stock.cs" Line="34" Column="1" />
+>>>>>>> Stashed changes
+      <File FileName="Seeding/SeedStockTransactions.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -40,19 +31,15 @@
               <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Seeding" expanded="True" />
+              <Node name="Seeding" expanded="True">
+                <Node name="SeedStockTransactions.cs" selected="True" />
+              </Node>
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
-                <Node name="BankAccount" expanded="True" />
-                <Node name="Home" expanded="True" />
-                <Node name="Seed" expanded="True" />
                 <Node name="Shared" expanded="True" />
                 <Node name="Stock" expanded="True" />
                 <Node name="StockPortfolio" expanded="True" />
-                <Node name="StockTransaction" expanded="True">
-                  <Node name="Create.cshtml" selected="True" />
-                </Node>
+                <Node name="StockTransaction" expanded="True" />
                 <Node name="StockType" expanded="True" />
               </Node>
             </Node>
