@@ -66,19 +66,27 @@ namespace fa22Team16
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Customer")]
-        public async Task<IActionResult> Create([Bind("AccountID,AccountNumber,Balance,AccountType,ActiveStatus")] BankAccount account)
+        public async Task<IActionResult> Create([Bind("AccountID,AccountName, AccountNumber,Balance,AccountType,ActiveStatus")] BankAccount account)
         {
             account.AccountNumber = Utilities.GenerateNextAccountNumber.GetNextAccountNumber(_context);
 
            
             account.appUser = _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+         
 
             
             if (ModelState.IsValid == false)
             {
                 return View(account);
             }
-
+            if (account.Balance > 5000)
+            {
+                account.ActiveStatus = false;
+            }
+            else
+            {
+                account.ActiveStatus = true;
+            }
             
             _context.Add(account);
             await _context.SaveChangesAsync();
