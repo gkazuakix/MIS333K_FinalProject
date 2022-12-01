@@ -37,11 +37,9 @@ namespace fa22Team16
 
 
             //need to allow only the user who owns portfolio to see
-
-            StockPortfolio myportfolio = await _context.StockPortfolios
-                .Include(m => m.StockTransactions)
-                .Where(m => m.AppUser.UserName == User.Identity.Name)
-                .FirstOrDefaultAsync(m => m.StockPortfolioID == id);
+            /*
+            StockPortfolio myportfolio = _context.StockPortfolios
+                .Where(m => m.AppUser.UserName == User.Identity.Name);
 
             if (myportfolio == null)
             {
@@ -49,8 +47,8 @@ namespace fa22Team16
             }
 
             return View(myportfolio);
-
-            // return View(await _context.StockPortfolios.ToListAsync());
+            */
+            return View(await _context.StockPortfolios.ToListAsync());
         }
 
         // GET: StockPortfolio/Details/5
