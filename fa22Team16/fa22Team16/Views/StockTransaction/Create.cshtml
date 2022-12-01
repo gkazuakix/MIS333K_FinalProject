@@ -19,25 +19,26 @@ Table of Stocks
 
 <!--Balances of Your Accounts-->
 <!--How do I do this-->
+<!--
 <h5>Account Balances</h5>
-<table class="table table-sm table-bordered" style="width:50%">
+<table class="table table-primary">
     <tr>
-        <th colspan="2" style="text-align:center">Balances of Your Accounts</th>
+        <th>Account Number</th>
+        <th>Account Type</th>
+        <th>Account Name</th>
+        <th>Balance</th>
     </tr>
-    <tr>
-        <td>Checking:</td>
-        <td>@Html.DisplayFor(model => model.StockPortfolio.AppUser.BankAccounts)</td>
-    </tr>
-    <tr>
-        <td>Savings:</td>
-        <td>@Html.DisplayFor(model => model.NumberOfShares)</td>
-    </tr>
-    <tr>
-        <td>Cash-Value of Portfolio:</td>
-        <td>@Html.DisplayFor(model => model.StockPortfolio)</td>
-    </tr>
-
+    foreach (BankAccount ba in Model.StockPortfolio.AppUser.BankAccounts)
+    {
+        <tr>
+            <td>Html.DisplayFor(ModelItem => ba.AccountNumber)</td>
+            <td>Html.DisplayFor(ModelItem => ba.AccountType)</td>
+            <td>Html.DisplayFor(ModelItem => ba.AccountName)</td>
+            <td>Html.DisplayFor(ModelItem => ba.Balance)</td>
+        </tr>
+    }
 </table>
+-->
 
 
 <!--Stock Purchasing Form-->

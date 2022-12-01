@@ -41,6 +41,7 @@ namespace fa22Team16
             }
 
             return View(stockTransaction);
+
         }
 
         // GET: StockTransaction/Create
@@ -85,13 +86,13 @@ namespace fa22Team16
             //calc current value
             stockTransaction.CurrentValue = stockTransaction.NumberOfShares * stockTransaction.Price;
 
-            //subtract from cash-value of portfolio
+            //subtract from your selected account
             dbstockportfolio.StockPortfolioCashBalance = dbstockportfolio.StockPortfolioCashBalance - stockTransaction.CurrentValue;
 
             //you can't buy something you can't afford
             if (stockTransaction.CurrentValue > dbstockportfolio.StockPortfolioCashBalance)
             {
-                ViewBag.Error = "You can't afford this broke ah";
+                ViewBag.Error = "You can't afford this puchase! Try again.";
 
                 return View("Index");
             }
@@ -99,9 +100,8 @@ namespace fa22Team16
             _context.Add(stockTransaction);
             await _context.SaveChangesAsync();
 
-
             //redirect to confirm page
-            return View();
+            return View("Confirm");
         }
 
         // GET: StockTransaction/Edit/5
