@@ -44,10 +44,7 @@ namespace fa22Team16.Models
 
         [Display(Name = "Current Value")]
         [DisplayFormat(DataFormatString = "{0:c}")]
-        public Decimal CurrentValue
-        {
-            get { return NumberOfShares * Price; }
-        }
+        public Decimal CurrentValue { get; set; }
 
         [Display(Name = "Individual Gain")]
         [DisplayFormat(DataFormatString = "{0:c}")]
