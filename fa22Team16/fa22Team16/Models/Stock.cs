@@ -25,11 +25,12 @@ namespace fa22Team16.Models
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal Price { get; set; }
 
-        
+
 
         //[Display(Name = "Fees")]
         //[DisplayFormat(DataFormatString = "{0:c}")]
         //public Decimal Fees { get; set; }
+
 
         [Display(Name ="Stock Type")]
         [Required(ErrorMessage = "Stock Type is required.")]

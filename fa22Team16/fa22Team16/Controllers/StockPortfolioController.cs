@@ -22,7 +22,20 @@ namespace fa22Team16
         // GET: StockPortfolio
         public async Task<IActionResult> Index()
         {
-              return View(await _context.StockPortfolios.ToListAsync());
+            //need to pass through list of StockTransactions that are related to signed in user
+
+            /*
+            List<StockTransaction> stocktransactions;
+
+            stocktransactions = _context.StockTransactions
+                                            .Include(r => r.StockPortfolio)
+                                            .Where(r => r.User.UserName == User.Identity.Name)
+                                            .ToList();
+
+            return View(stocktransactions);
+            */
+
+            return View(await _context.StockPortfolios.ToListAsync());
         }
 
         // GET: StockPortfolio/Details/5

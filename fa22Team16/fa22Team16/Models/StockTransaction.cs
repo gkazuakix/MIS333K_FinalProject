@@ -24,6 +24,7 @@ namespace fa22Team16.Models
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal Price { get; set; }
 
+        // relational
         public StockPortfolio StockPortfolio { get; set; }
 
         [Display(Name = "Bank Account for Withdrawal")]
@@ -36,8 +37,25 @@ namespace fa22Team16.Models
         [Display(Name ="Type")]
         public StockTransactionType Type { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [Display(Name = "Date")]
         public DateTime Date { get; set; }
+
+
+        [Display(Name = "Current Value")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
+        public Decimal CurrentValue
+        {
+            get { return NumberOfShares * Price; }
+        }
+
+        [Display(Name = "Individual Gain")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
+        public Decimal IndividualGain
+        {
+            get { return CurrentValue - (NumberOfShares * Stock.Price); }
+        }
+
     }
 }
 
