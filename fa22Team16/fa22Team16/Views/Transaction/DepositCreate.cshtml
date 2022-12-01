@@ -37,8 +37,8 @@
                 <span asp-validation-for="Amount" class="text-danger"></span>
             </div>
             <div class="form-group">
-            <label asp-for="Account.AccountNumber" class="control-label"></label>
-            @Html.DropDownListFor(model => model.Account.BankAccountID, (SelectList)ViewBag.AllBankAccounts, new { @class = "form-control" })
+            @*<label asp-for="BankAccountID" class="control-label"></label>*@
+            @Html.DropDownList("BankAccountID", (SelectList)ViewBag.AllAccounts, new { @class = "form-control" })
         </div>
             <div class="form-group">
                 <label asp-for="Comments" class="control-label"></label>
