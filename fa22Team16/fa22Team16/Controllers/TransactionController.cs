@@ -150,8 +150,6 @@ namespace fa22Team16
 
             }
 
-
-
             // await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Transaction");
         }
