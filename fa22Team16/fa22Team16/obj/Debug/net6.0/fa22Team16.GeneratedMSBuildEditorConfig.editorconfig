@@ -8,229 +8,239 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = fa22Team16
 build_property.RootNamespace = fa22Team16
-build_property.ProjectDir = /Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/
+build_property.ProjectDir = /Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16
+build_property.MSBuildProjectDirectory = /Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/ChangePassword.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9DaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/CustomerEdit.cshtml]
+<<<<<<< Updated upstream
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/CustomerEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9DdXN0b21lckVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/EmployeeEdit.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/EmployeeEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9FbXBsb3llZUVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Index.cshtml]
+=======
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+>>>>>>> Stashed changes
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Login.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/ManageAccount.cshtml]
+<<<<<<< Updated upstream
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/ManageAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9NYW5hZ2VBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Register.cshtml]
+=======
+>>>>>>> Stashed changes
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Settings.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Account/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9TZXR0aW5ncy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Create.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Details.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Edit.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Index.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/Create.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzcHV0ZS9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/Delete.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzcHV0ZS9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/Details.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzcHV0ZS9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/Edit.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzcHV0ZS9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/Index.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzcHV0ZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Home/Index.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/RoleAdmin/Create.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/RoleAdmin/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUm9sZUFkbWluL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/RoleAdmin/Edit.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/RoleAdmin/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUm9sZUFkbWluL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/RoleAdmin/Index.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/RoleAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUm9sZUFkbWluL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Seed/Confirm.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Seed/Confirm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VlZC9Db25maXJtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Seed/Index.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Seed/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VlZC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Shared/Error.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Shared/_Layout.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Shared/_LoginPartial.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Stock/Create.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Stock/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2svQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Stock/Delete.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Stock/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2svRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Stock/Details.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Stock/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2svRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Stock/Edit.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Stock/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2svRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Stock/Index.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Stock/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2svSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockPortfolio/Create.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockPortfolio/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tQb3J0Zm9saW8vQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockPortfolio/Delete.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockPortfolio/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tQb3J0Zm9saW8vRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockPortfolio/Details.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockPortfolio/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tQb3J0Zm9saW8vRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockPortfolio/Edit.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockPortfolio/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tQb3J0Zm9saW8vRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockPortfolio/Index.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockPortfolio/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tQb3J0Zm9saW8vSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Confirm.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Confirm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tUcmFuc2FjdGlvbi9Db25maXJtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Create.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tUcmFuc2FjdGlvbi9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Delete.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tUcmFuc2FjdGlvbi9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Details.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tUcmFuc2FjdGlvbi9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Edit.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tUcmFuc2FjdGlvbi9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Index.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockTransaction/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tUcmFuc2FjdGlvbi9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockType/Create.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockType/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tUeXBlL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockType/Delete.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockType/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tUeXBlL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockType/Details.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockType/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tUeXBlL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockType/Edit.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockType/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tUeXBlL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockType/Index.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/StockType/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvY2tUeXBlL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Transaction/Delete.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Transaction/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY3Rpb24vRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Transaction/DepositCreate.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Transaction/DepositCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY3Rpb24vRGVwb3NpdENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Transaction/Details.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Transaction/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY3Rpb24vRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Transaction/Edit.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Transaction/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY3Rpb24vRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Transaction/Index.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Transaction/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY3Rpb24vSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/_ViewImports.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sofiachang/Documents/MIS333k/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/_ViewStart.cshtml]
+[/Users/gkm/Documents/COLLEGE/semsters/Fall 2022/MIS333K/GitHub/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

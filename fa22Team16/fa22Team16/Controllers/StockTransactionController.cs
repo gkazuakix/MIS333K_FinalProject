@@ -56,15 +56,52 @@ namespace fa22Team16
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StockTransactionID,NumberOfShares,Price")] StockTransaction stockTransaction)
+        public async Task<IActionResult> Create(StockTransaction stockTransaction, int SelectedStock)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid == false)
             {
-                _context.Add(stockTransaction);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                ViewBag.AllStocks = GetAllStockSelectList();
+                return View(stockTransaction);
             }
-            return View(stockTransaction);
+
+            //this is a purchase
+            stockTransaction.Type = StockTransactionType.Purchase;
+
+            //find the stock associated with the purchase
+            Stock dbstock = _context.Stocks.Find(SelectedStock);
+
+            //set the stock equal
+            stockTransaction.Stock = dbstock;
+
+            //find the correct stock portfolio
+            StockPortfolio dbstockportfolio = _context.StockPortfolios.Find(stockTransaction.StockPortfolio.StockPortfolioID);
+
+            //set equal
+            stockTransaction.StockPortfolio = dbstockportfolio;
+
+            //set price
+            stockTransaction.Price = dbstock.Price;
+
+            //calc current value
+            stockTransaction.CurrentValue = stockTransaction.NumberOfShares * stockTransaction.Price;
+
+            //subtract from cash-value of portfolio
+            dbstockportfolio.StockPortfolioCashBalance = dbstockportfolio.StockPortfolioCashBalance - stockTransaction.CurrentValue;
+
+            //you can't buy something you can't afford
+            if (stockTransaction.CurrentValue > dbstockportfolio.StockPortfolioCashBalance)
+            {
+                ViewBag.Error = "You can't afford this broke ah";
+
+                return View("Index");
+            }
+
+            _context.Add(stockTransaction);
+            await _context.SaveChangesAsync();
+
+
+            //redirect to confirm page
+            return View();
         }
 
         // GET: StockTransaction/Edit/5

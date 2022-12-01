@@ -41,6 +41,11 @@ namespace fa22Team16.Models
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal Balance { get; set; }
 
+        //Stock bonus (10%)
+        [Display(Name = "Bonus")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
+        public Decimal Bonus { get; set; }
+
         [Display(Name = "Sum of All Stock Values")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal SumCurrentValue
@@ -48,11 +53,21 @@ namespace fa22Team16.Models
             get { return StockTransactions.Sum(s => s.CurrentValue); }
         }
 
+        //cash-value portion of portfolio
+        [Display(Name = "Available Cash")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
+        public Decimal StockPortfolioCashBalance
+        {
+            get { return Balance + Bonus + Gains + Fees; }
+            set { }
+        }
+
+        //total value of portfolio
         [Display(Name = "Value")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal Value
         {
-            get { return SumCurrentValue + Gains - Fees + Balance; }
+            get { return SumCurrentValue + StockPortfolioCashBalance; }
         }
 
         public List<StockTransaction> StockTransactions { get; set; }
