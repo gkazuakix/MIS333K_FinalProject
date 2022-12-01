@@ -1,0 +1,20 @@
+﻿
+@model fa22Team16.Models.AppUser
+
+@{
+    ViewData["Title"] = "ManageAccount";
+}
+
+
+
+<div>
+    <a asp-action="Index">Change Password</a>
+</div>
+
+<div>
+    <a asp-action="Settings" asp-route-id ="@Model.Id">View your info</a>
+</div>
+
+<div>
+    <a asp-action="Edit">Edit Info</a>
+</div>

@@ -119,4 +119,27 @@ namespace fa22Team16.Models
         public String Email { get; set; }
         public String UserID { get; set; }
     }
+
+    public class UserProfileEdit
+    {
+        
+        public String FirstName { get; set; }
+
+        public String? MiddleInitial { get; set; }
+
+        
+        public String LastName { get; set; }
+
+        public String StreetAddress { get; set; }
+
+        public String PhoneNumber { get; set; }
+
+
+
+        public String City { get; set; }
+
+        public String State { get; set; }
+
+        public String ZipCode { get; set; }
+    }
 }

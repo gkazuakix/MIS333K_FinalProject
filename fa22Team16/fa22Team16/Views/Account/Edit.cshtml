@@ -4,7 +4,7 @@
 @{
 }
 
-@model fa22Team16.Models.AppUser
+@model fa22Team16.Models.UserProfileEdit
 
 @{
     ViewData["Title"] = "Edit";
@@ -13,15 +13,17 @@
 <h1>Edit</h1>
 
 
-<h4>Profile</h4>
+<h4>To edit your inforamtion, re-enter all your info correctly </h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <Input type="hidden" asp-for="Id" />
-        <form asp-action="Edit">
-     
+        @*<Input type="hidden" asp-for="Id" />
+        <form asp-action="Edit">*@
+            <form asp-action="Edit">
+                @*@Html.HiddenFor(m => m.Id)*@
+
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="Id" />
+                @*<input type="hidden" asp-for="Id" />*@
                 <div class="form-group">
                     <label asp-for="FirstName" class="control-label"></label>
                     <input asp-for="FirstName" class="form-control" />
@@ -66,7 +68,7 @@
                     <input type="submit" value="Save" class="btn btn-primary" />
                 </div>
             </form>
-    </div>
+</div>
 </div>
 
 <div>

@@ -34,6 +34,7 @@ namespace fa22Team16.Controllers
             return View();
         }
 
+
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
@@ -155,11 +156,28 @@ namespace fa22Team16.Controllers
         }
 
         //GET: Account/Settings
-        public IActionResult Settings()
+        public async Task<IActionResult> Settings()
         {
-            return View();
-        }
+            AppUser appUser = _context.Users.FirstOrDefault(m => m.UserName == User.Identity.Name);
+            if (appUser == null)
+            {
+                return NotFound();
+            }
 
+            //AppUser appUser = _context.Users.FirstOrDefault(m => m.Id == id);
+
+            //if (appUser == null)
+            //{
+            //    return NotFound();
+            //}
+
+            //if (User.IsInRole("Customer") == false)
+            //{
+            //    return View("Error", new String[] { "This is not your order!  Don't be such a snoop!" });
+            //}
+
+            return View(appUser);
+        }
 
         ////GET: Account/Edit
         //public IActionResult Edit(int? id)
@@ -176,9 +194,9 @@ namespace fa22Team16.Controllers
         //} 
 
         //Get: Account/Edit
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit()
         {
-           
+
             ////find the profile in the database
             //AppUser appUser = await _context.Users.FindAsync(id);
 
@@ -189,7 +207,20 @@ namespace fa22Team16.Controllers
             //}
 
             //send the user to the edit profile page
-            return View();
+            AppUser appUser = new AppUser();
+            appUser = await _userManager.FindByNameAsync(User.Identity.Name);
+
+//# make view model
+            UserProfileEdit model = new UserProfileEdit();
+            model.FirstName = appUser.FirstName;
+            model.LastName = appUser.LastName;
+            model.MiddleInitial = appUser.MiddleInitial;
+            model.StreetAddress = appUser.StreetAddress;
+            model.City = appUser.City;
+            model.ZipCode = appUser.ZipCode;
+            model.State = appUser.State;
+            model.PhoneNumber = appUser.PhoneNumber;
+            return View(model);
         }
 
         // POST: Account/Edit/
@@ -197,24 +228,39 @@ namespace fa22Team16.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("FirstName,LastName,MiddleInitial,StreetAddress,City,State,Zip,PhoneNumber")] AppUser appUser)
+        public async Task<IActionResult> Edit( UserProfileEdit userProfile)
         {
             //this is a security measure to make sure they are editing the correct profile
-            if (id != Convert.ToInt32(appUser.Id))
-            {
-                return View("Error", new String[] { "There was a problem editing this profile. Try again!" });
-            }
+            //if (id != appUser.Id)
+            //{
+            //    return View("Error", new String[] { "There was a problem editing this profile. Try again!" });
+            //}
 
             //if the user messed up, send them back to the view to try again
             if (ModelState.IsValid == false)
             {
-                return View(appUser);
+                return View(userProfile);
             }
 
             //if code gets this far, make the updates
             try
             {
-                _context.Update(appUser);
+                string username = User.Identity.Name;
+                // Get the userprofile
+                AppUser user = _context.Users.FirstOrDefault(u => u.UserName.Equals(username));
+
+                // Update fields
+                user.FirstName = userProfile.FirstName;
+                user.LastName = userProfile.LastName;
+                user.MiddleInitial = userProfile.MiddleInitial;
+                user.StreetAddress = userProfile.StreetAddress;
+                user.City = userProfile.City;
+                user.ZipCode = userProfile.ZipCode;
+                user.State = userProfile.State;
+                user.PhoneNumber = userProfile.PhoneNumber;
+
+
+                _context.Users.Update(user);
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
@@ -223,7 +269,7 @@ namespace fa22Team16.Controllers
             }
 
             //send the user back to the view with all the suppliers
-            return RedirectToAction(nameof(appUser));
+            return RedirectToAction(nameof(Settings));
         }
 
 
