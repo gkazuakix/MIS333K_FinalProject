@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using fa22Team16.DAL;
 
@@ -11,9 +12,11 @@ using fa22Team16.DAL;
 namespace fa22Team16.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221201163951_Gabriel5")]
+    partial class Gabriel5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -399,9 +402,6 @@ namespace fa22Team16.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockTransactionID"));
 
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<decimal>("CurrentValue")
                         .HasColumnType("decimal(18,2)");
 
@@ -427,8 +427,6 @@ namespace fa22Team16.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("StockTransactionID");
-
-                    b.HasIndex("AppUserId");
 
                     b.HasIndex("StockID");
 
@@ -586,10 +584,6 @@ namespace fa22Team16.Migrations
 
             modelBuilder.Entity("fa22Team16.Models.StockTransaction", b =>
                 {
-                    b.HasOne("fa22Team16.Models.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId");
-
                     b.HasOne("fa22Team16.Models.Stock", "Stock")
                         .WithMany("StockTransactions")
                         .HasForeignKey("StockID")
@@ -599,8 +593,6 @@ namespace fa22Team16.Migrations
                     b.HasOne("fa22Team16.Models.StockPortfolio", "StockPortfolio")
                         .WithMany("StockTransactions")
                         .HasForeignKey("StockPortfolioID");
-
-                    b.Navigation("AppUser");
 
                     b.Navigation("Stock");
 

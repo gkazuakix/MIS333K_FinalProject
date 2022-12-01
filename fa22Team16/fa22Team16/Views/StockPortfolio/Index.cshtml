@@ -11,16 +11,16 @@
 <!-- fuck this
 Html.DisplayFor(model => model.Status)
 -->
-
 <!--Total balance-->
 <h5>Your Total Balance Is:</h5>
-<<<<<<< Updated upstream
-=======
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fees)
             </th>
         </tr>
     </thead>
@@ -31,6 +31,9 @@ Html.DisplayFor(model => model.Status)
                 <td>
                     @Html.DisplayFor(modelItem => item.Value)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fees)
+                </td>
             </tr>
         }
     </tbody>
@@ -39,14 +42,54 @@ Html.DisplayFor(model => model.Status)
 
 
 <!--Cash-Value Portion-->
-
-<!--Stock Portion-->
->>>>>>> Stashed changes
+<h5>Cash-Value of Portfolio:</h5>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Value)
+                @Html.DisplayNameFor(model => model.StockPortfolioCashBalance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gains)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockPortfolioCashBalance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gains)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fees)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Balance)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<!--Stock Portion-->
+<h5>Your Stocks</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model)
             </th>
         </tr>
     </thead>

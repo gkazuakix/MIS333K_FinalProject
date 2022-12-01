@@ -2,11 +2,15 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Controllers/StockTransactionController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Controllers/StockPortfolioController.cs">
     <Files>
-      <File FileName="fa22Team16/Models/StockPortfolio.cs" Line="69" Column="69" />
-      <File FileName="fa22Team16/Controllers/StockTransactionController.cs" Line="58" Column="35" />
-      <File FileName="fa22Team16/Views/StockTransaction/Create.cshtml" Line="1" Column="1" />
+      <File FileName="fa22Team16/Controllers/StockTransactionController.cs" />
+      <File FileName="fa22Team16/Views/StockTransaction/Create.cshtml" />
+      <File FileName="fa22Team16/Models/StockTransaction.cs" />
+      <File FileName="fa22Team16/Controllers/StockPortfolioController.cs" Line="89" Column="42" />
+      <File FileName="fa22Team16/Seeding/SeedPortfolios.cs" />
+      <File FileName="fa22Team16/Views/StockPortfolio/Index.cshtml" />
+      <File FileName="fa22Team16/Models/StockPortfolio.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,9 +27,9 @@
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True" />
                 <Node name="BankAccount" expanded="True" />
-                <Node name="StockTransaction" expanded="True">
-                  <Node name="Create.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
+                <Node name="StockPortfolio" expanded="True" />
+                <Node name="StockTransaction" expanded="True" />
               </Node>
             </Node>
           </Node>

@@ -26,6 +26,7 @@ namespace fa22Team16.Models
 
         // relational
         public StockPortfolio StockPortfolio { get; set; }
+        public AppUser AppUser { get; set; }
 
         [Display(Name = "Bank Account for Withdrawal")]
         public Int32 WithdrawalAccount { get; set; }

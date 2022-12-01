@@ -7,35 +7,44 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using fa22Team16.DAL;
 using fa22Team16.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace fa22Team16
 {
     public class StockPortfolioController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly UserManager<AppUser> _userManager;
 
-        public StockPortfolioController(AppDbContext context)
+        public StockPortfolioController(AppDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: StockPortfolio
         public async Task<IActionResult> Index()
         {
-            //need to pass through list of StockTransactions that are related to signed in user
 
-            /*
-            List<StockTransaction> stocktransactions;
+            //need to allow only the user who owns portfolio to see
 
-            stocktransactions = _context.StockTransactions
-                                            .Include(r => r.StockPortfolio)
-                                            .Where(r => r.User.UserName == User.Identity.Name)
-                                            .ToList();
+            List<StockPortfolio> myportfolio;
 
-            return View(stocktransactions);
-            */
+            myportfolio = _context.StockPortfolios
+                .Where(m => m.AppUser.UserName == User.Identity.Name)
+                .ToList();
 
-            return View(await _context.StockPortfolios.ToListAsync());
+            if (myportfolio == null)
+            {
+                return NotFound();
+            }
+
+            return View(myportfolio);
+
+
+
+            //return View(await _context.StockPortfolios.ToListAsync());
         }
 
         // GET: StockPortfolio/Details/5
@@ -69,13 +78,18 @@ namespace fa22Team16
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("StockPortfolioID")] StockPortfolio stockPortfolio)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid == false)
             {
-                _context.Add(stockPortfolio);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return View(stockPortfolio);
             }
-            return View(stockPortfolio);
+
+            //order.OrderNumber = Utilities.GenerateNextOrderNumber.GetNextOrderNumber(_context);
+            stockPortfolio.AppUser = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            _context.Add(stockPortfolio);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
         }
 
         // GET: StockPortfolio/Edit/5
