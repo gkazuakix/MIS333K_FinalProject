@@ -104,7 +104,15 @@
 <div>
     <a asp-action="Index">Change Password</a>
 </div>
-
-<div>
-    <a asp-action="Edit">Edit Info</a>
-</div>
+@if (User.IsInRole("Customer"))
+{
+    <div>
+        <a asp-action="CustomerEdit">Edit Info</a>
+    </div>
+}
+@if (User.IsInRole("Employee"))
+{
+    <div>
+        <a asp-action="EmployeeEdit">Edit Info</a>
+    </div>
+}

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using fa22Team16.DAL;
 using fa22Team16.Models;
 using fa22Team16.Utilities;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace fa22Team16.Controllers
 {
@@ -194,7 +196,7 @@ namespace fa22Team16.Controllers
         //} 
 
         //Get: Account/Edit
-        public async Task<IActionResult> Edit()
+        public async Task<IActionResult> CustomerEdit()
         {
 
             ////find the profile in the database
@@ -228,7 +230,7 @@ namespace fa22Team16.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit( UserProfileEdit userProfile)
+        public async Task<IActionResult> CustomerEdit( UserProfileEdit userProfile)
         {
             //this is a security measure to make sure they are editing the correct profile
             //if (id != appUser.Id)
@@ -273,8 +275,82 @@ namespace fa22Team16.Controllers
         }
 
 
-//GET: Account/Index
-public IActionResult Index()
+        public async Task<IActionResult> EmployeeEdit()
+        {
+
+            ////find the profile in the database
+            //AppUser appUser = await _context.Users.FindAsync(id);
+
+            ////see if the profile exists in the database
+            //if (appUser == null)
+            //{
+            //    return View("Error", new String[] { "This profile does not exist in the database!" });
+            //}
+
+            //send the user to the edit profile page
+            AppUser appUser = new AppUser();
+            appUser = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            //# make view model
+            UserProfileEdit model = new UserProfileEdit();
+            model.StreetAddress = appUser.StreetAddress;
+            model.City = appUser.City;
+            model.ZipCode = appUser.ZipCode;
+            model.State = appUser.State;
+            model.PhoneNumber = appUser.PhoneNumber;
+            return View(model);
+        }
+
+        // POST: Account/Edit/
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EmployeeEdit(UserProfileEdit userProfile)
+        {
+            //this is a security measure to make sure they are editing the correct profile
+            //if (id != appUser.Id)
+            //{
+            //    return View("Error", new String[] { "There was a problem editing this profile. Try again!" });
+            //}
+
+            //if the user messed up, send them back to the view to try again
+            if (ModelState.IsValid == false)
+            {
+                return View(userProfile);
+            }
+
+            //if code gets this far, make the updates
+            try
+            {
+                string username = User.Identity.Name;
+                // Get the userprofile
+                AppUser user = _context.Users.FirstOrDefault(u => u.UserName.Equals(username));
+
+                // Update fields
+                
+                user.StreetAddress = userProfile.StreetAddress;
+                user.City = userProfile.City;
+                user.ZipCode = userProfile.ZipCode;
+                user.State = userProfile.State;
+                user.PhoneNumber = userProfile.PhoneNumber;
+
+
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return View("Error", new String[] { "There was a problem editing this profile.", ex.Message });
+            }
+
+            //send the user back to the view with all the suppliers
+            return RedirectToAction(nameof(Settings));
+        }
+
+
+        //GET: Account/Index
+        public IActionResult Index()
         {
             IndexViewModel ivm = new IndexViewModel();
 
@@ -291,6 +367,18 @@ public IActionResult Index()
 
             //send data to the view
             return View(ivm);
+        }
+
+
+        // GET: /Account/ManageUsers
+        public ActionResult ManageUsersIndex()
+        {
+            List<AppUser> appUsers = new List<AppUser>();
+
+            appUsers = _context.Users.ToList();
+
+
+            return View(appUsers);
         }
 
 
