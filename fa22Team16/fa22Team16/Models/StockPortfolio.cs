@@ -54,7 +54,7 @@ namespace fa22Team16.Models
         }
 
         //cash-value portion of portfolio
-        [Display(Name = "Available Cash")]
+        [Display(Name = "Cash-Value")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal StockPortfolioCashBalance
         {
