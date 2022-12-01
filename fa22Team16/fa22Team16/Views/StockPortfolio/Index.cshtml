@@ -6,13 +6,45 @@
 
 <h1>Stock Portfolio</h1>
 
+<<<<<<< Updated upstream
 <h5>Portfolio Status:</h5>
+=======
+<h2>Portfolio Status:</h2>
+>>>>>>> Stashed changes
 <!-- fuck this
 Html.DisplayFor(model => model.Status)
 -->
 
 <!--Total balance-->
 <h5>Your Total Balance Is:</h5>
+<<<<<<< Updated upstream
+=======
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Value)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<!--Cash-Value Portion-->
+
+<!--Stock Portion-->
+>>>>>>> Stashed changes
 <table class="table">
     <thead>
         <tr>
