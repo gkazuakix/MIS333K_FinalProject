@@ -48,6 +48,7 @@ namespace fa22Team16
         [Authorize(Roles = "Customer")]
         public IActionResult Create()
         {
+            ViewBag.AllTransactions = GetAllTransactionsSelectList();
             return View();
         }
 
@@ -57,18 +58,35 @@ namespace fa22Team16
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Customer")]
-        public async Task<IActionResult> Create([Bind("DisputeID")] Dispute dispute)
+        public async Task<IActionResult> Create([Bind("DisputeID,Transaction,Description,Status,CorrectAmount,RequestDeleteTransaction")] Dispute dispute)
         {
             if (ModelState.IsValid == false)
             {
                 return View(dispute);
             }
+
             _context.Add(dispute);
             await _context.SaveChangesAsync();
-            return View(dispute);
+            return RedirectToAction("Index", "Dispute", new { dispute.DisputeID });
+            
         }
            
-        
+        public async Task<SelectList> GetAllTransactionsSelectList()
+        {
+            List<Transaction> allTransactions = new List<Transaction>();
+
+            foreach (Transaction dbTransaction in _context.Transactions)
+            {
+                if (dbTransaction.Account.appUser.UserName == User.Identity.Name)
+                {
+                    allTransactions.Add(dbTransaction);
+                }           
+            }
+            SelectList slAllTransactions = new SelectList(allTransactions, nameof(Transaction.TransactionID), nameof(Transaction.TransactionNum));
+            return slAllTransactions;
+
+        }
+
 
         // GET: Dispute/Edit/5
         public async Task<IActionResult> Edit(int? id)

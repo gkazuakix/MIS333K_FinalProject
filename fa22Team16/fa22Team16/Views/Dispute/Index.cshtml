@@ -52,17 +52,20 @@
                 @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Transaction.TransactionNum)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Transaction.Amount)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transaction.TransactionNum)
+            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.CorrectAmount)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RequestDeleteTransaction)
             </td>
+
+
             @*<td>
             @Html.DisplayFor(modelItem => item.TransactionName)
         </td>
@@ -76,7 +79,7 @@
         </tr>
 
 
-            @*}*@
+           
 
 
 
