@@ -7,9 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using fa22Team16.DAL;
 using fa22Team16.Models;
-
+using Microsoft.AspNetCore.Authorization;
 namespace fa22Team16
 {
+    [Authorize] 
     public class DisputeController : Controller
     {
         private readonly AppDbContext _context;
@@ -44,6 +45,7 @@ namespace fa22Team16
         }
 
         // GET: Dispute/Create
+        [Authorize(Roles = "Customer")]
         public IActionResult Create()
         {
             return View();
@@ -54,16 +56,19 @@ namespace fa22Team16
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Customer")]
         public async Task<IActionResult> Create([Bind("DisputeID")] Dispute dispute)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid == false)
             {
-                _context.Add(dispute);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return View(dispute);
             }
+            _context.Add(dispute);
+            await _context.SaveChangesAsync();
             return View(dispute);
         }
+           
+        
 
         // GET: Dispute/Edit/5
         public async Task<IActionResult> Edit(int? id)

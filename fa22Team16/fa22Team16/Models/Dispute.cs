@@ -13,6 +13,9 @@ namespace fa22Team16.Models
     {
         Submitted, Accepted, Rejected, Adjusted
     }
+
+
+
     public class Dispute
     {
         // todo: Check this?
@@ -30,6 +33,11 @@ namespace fa22Team16.Models
         [Display(Name = "Correct Amount")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal CorrectAmount { get; set; }
+
+        [Display(Name = "Would you like to request to delete this transaction?")]
+        public Boolean RequestDeleteTransaction { get; set; }
+
+
 
         //[Display(Name = "Transaction")]
         //public Account Account { get; set; }
