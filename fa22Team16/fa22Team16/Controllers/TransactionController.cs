@@ -40,7 +40,9 @@ namespace fa22Team16
             ////        }
             ////    }
             ////}
-            transactions = _context.Transactions.Where(o => o.Account.appUser.UserName == User.Identity.Name).ToList();
+            transactions = _context.Transactions
+                .Include(o => o.Account).Where(o => o.Account.appUser.UserName == User.Identity.Name)
+                .OrderBy(o => o.TransactionNum).ToList();
 
             return View(transactions);
             //return View(await _context.Transactions.ToListAsync());
