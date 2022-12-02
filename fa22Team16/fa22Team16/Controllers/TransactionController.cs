@@ -183,7 +183,7 @@ namespace fa22Team16
                 {
                     transaction.Approved = Approved.No;
                 }
-                if (transaction.Approved == Approved.Yes)
+                else
                 {
                     transaction.Account = _context.BankAccounts.Find(SelectedAccount);
                     transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
@@ -313,8 +313,10 @@ namespace fa22Team16
         private SelectList GetAllAccountsSelectList()
         {
             //Get the list of months from the database
-            List<BankAccount> bankAccountList = _context.BankAccounts.ToList();
-            //List<BankAccount> bankAccountList = new List<BankAccount>();
+            //List<BankAccount> bankAccountList = _context.BankAccounts.ToList()
+
+            List<BankAccount> bankAccounts = _context.BankAccounts.Where(o => o.appUser.UserName == User.Identity.Name).ToList();
+
 
             //foreach (BankAccount bankAccount in _context.BankAccounts)
             //{
@@ -324,10 +326,11 @@ namespace fa22Team16
             //    }
             //}
 
+
             //convert the list to a SelectList by calling SelectList constructor
             //MonthID and MonthName are the names of the properties on the Month class
             //MonthID is the primary key
-            SelectList accountSelectList = new SelectList(bankAccountList, nameof(BankAccount.BankAccountID), nameof(BankAccount.AccountName));
+            SelectList accountSelectList = new SelectList(bankAccounts, nameof(BankAccount.BankAccountID), nameof(BankAccount.AccountName));
 
             //return the electList
             return accountSelectList;
