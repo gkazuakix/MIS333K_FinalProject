@@ -43,12 +43,17 @@ namespace fa22Team16
                 return NotFound();
             }
 
-            var account = await _context.BankAccounts
+            BankAccount account = await _context.BankAccounts
+                .Include(o => o.Transactions)
+                .Include(o => o.appUser)
                 .FirstOrDefaultAsync(m => m.BankAccountID == id);
             if (account == null)
             {
                 return NotFound();
             }
+
+            //Transaction transaction = await _context.Transactions
+            //    .Include(c => c.Account)
 
             return View(account);
         }
