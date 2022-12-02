@@ -7,7 +7,6 @@
 <h1>Details</h1>
 
 <div>
-    <h4>Account</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -42,6 +41,14 @@
         </dd>
     </dl>
 </div>
+
+
+<a asp-action="DetailedSearch" class="btn btn-success">Detailed Search</a>
+
+<p>
+    Displaying @ViewBag.SelectedRepositories of @ViewBag.AllRepositories Repositories
+</p>
+
 
 <h5>Transactions Associated with this Account</h5>
 <table class="table table-primary">

@@ -259,7 +259,17 @@ namespace fa22Team16.Seeding
                 AccountType = AccountType.IRA,
                 Balance = 3500.0m,
                 ActiveStatus = true,
-            }) ; 
+            }) ;
+
+            AllBankAccounts.Add(new BankAccount
+            {
+                AccountNumber = Convert.ToInt64(2290000028),
+                appUser = db.Users.FirstOrDefault(u => u.Email == "Dixon@aool.com"),
+                AccountName = "Shan's Checking",
+                AccountType = AccountType.Checking,
+                Balance = 2657.81m,
+                ActiveStatus = true,
+            });
 
             //create a counter and flag to help with debugging
             Int64 intAccountNum = 0;

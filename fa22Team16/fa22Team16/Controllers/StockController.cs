@@ -23,7 +23,8 @@ namespace fa22Team16
         // GET: Stock
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Stocks.ToListAsync());
+              return View(await _context.Stocks
+                  .Include(o => o.StockType).ToListAsync());
         }
 
         // GET: Stock/Details/5

@@ -58,5 +58,10 @@ namespace fa22Team16.Models
                 Transactions = new List<Transaction>();
             }
         }
+
+        internal dynamic Count()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

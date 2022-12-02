@@ -37,25 +37,30 @@ namespace fa22Team16
         // GET: BankAccount/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+
             if (id == null || _context.BankAccounts == null)
             {
                 return NotFound();
             }
 
             BankAccount account = await _context.BankAccounts
-                .Include(o => o.Transactions)
-                .Include(o => o.appUser)
-                .FirstOrDefaultAsync(m => m.BankAccountID == id);
+            .Include(o => o.Transactions)
+            .Include(o => o.appUser)
+            .FirstOrDefaultAsync(m => m.BankAccountID == id);
+
             if (account == null)
             {
                 return NotFound();
             }
 
-            //Transaction transaction = await _context.Transactions
-            //    .Include(c => c.Account)
+            //this is the normal state
+            ViewBag.AllTransactions = account.Transactions.Count();
+            ViewBag.SelectedTransactions = account.Transactions.Count();
 
             return View(account);
         }
+
+        //POST: BankAccount/Details
 
         // GET: BankAccount/Create
         [Authorize(Roles="Customer")]
@@ -164,7 +169,77 @@ namespace fa22Team16
             return RedirectToAction(nameof(Index));
         }
 
+        //SEARCH
 
+        public ActionResult DetailedSearch()
+        {
+            return View();
+        }
+
+        public ActionResult DisplaySearchResults(SearchViewModel svm)
+        {
+            var query = from r in _context.Transactions
+                        .Where(o => o.Account.appUser.UserName == User.Identity.Name) select r;
+
+            //query for searching by title
+            if (svm.Comments != null && svm.Comments != "")
+            {
+                query = query.Where(r => r.Comments.Contains(svm.Comments));
+            }
+
+            /*
+            //query for searching by description
+            if (svm.Description != null && svm.Description != "")
+            {
+                query = query.Where(r => r.Description.Contains(svm.Description));
+            }
+
+            //query for searching by category
+            if (svm.SelectedCategory != null)
+            {
+                query = query.Where(r => r.Category == svm.SelectedCategory);
+            }
+
+
+            //query for searching by language
+            if (svm.SelectedLanguage != 0)
+            {
+                query = query.Where(r => r.Language.LanguageID == svm.SelectedLanguage);
+            }
+
+
+            //query for searching through star count
+            if (svm.StarCount != null)
+            {
+                //query for selected order for star count
+                switch (svm.SelectedOrder)
+                {
+                    case StarOrder.GreaterThan:
+                        query = query.Where(r => r.StarCount >= svm.StarCount);
+                        break;
+                    case StarOrder.LessThan:
+                        query = query.Where(r => r.StarCount <= svm.StarCount);
+                        break;
+                }
+            }
+
+            //query for date
+            if (svm.UpdatedAfter != null)
+            {
+                query = query.Where(r => r.LastUpdate >= svm.UpdatedAfter);
+            }
+            */
+
+            //execute the query
+            List<Transaction> SelectedTransactions = query.ToList();
+
+            //Populate the view bag with a count of all repositories
+            ViewBag.AllRepositories = _context.Transactions.Count();
+            //Populate the view bag with a count of selected repositories
+            ViewBag.SelectedTransactions = SelectedTransactions.Count;
+
+            return View("Details", SelectedTransactions.OrderByDescending(r => r.TransactionNum));
+        }
     }
 }
 
