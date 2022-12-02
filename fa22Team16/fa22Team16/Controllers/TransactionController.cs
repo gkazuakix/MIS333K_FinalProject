@@ -187,11 +187,13 @@ namespace fa22Team16
                 {
                     transaction.Account = _context.BankAccounts.Find(SelectedAccount);
                     transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
+                    transaction.Account.appUser = _context.Users.FirstOrDefault(a => a.UserName == User.Identity.Name);
                     Transaction deposit = new Transaction();
+                    deposit.Account = transaction.Account;
                     deposit.Date = transaction.Date;
                     deposit.Amount = transaction.Amount;
                     deposit.Comments = transaction.Comments;
-                    _context.Add(deposit);
+                    _context.Transactions.Add(deposit);
                     await _context.SaveChangesAsync();
                 }
              return RedirectToAction(nameof(Index));
