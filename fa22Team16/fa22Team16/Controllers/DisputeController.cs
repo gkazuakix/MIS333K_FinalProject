@@ -83,6 +83,7 @@ namespace fa22Team16
                 }           
             }
             SelectList slAllTransactions = new SelectList(allTransactions, nameof(Transaction.TransactionID), nameof(Transaction.TransactionNum));
+   
             return slAllTransactions;
 
            
