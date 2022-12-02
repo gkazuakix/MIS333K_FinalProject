@@ -190,6 +190,7 @@ namespace fa22Team16
                     transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
                     transaction.Account.appUser = _context.Users.FirstOrDefault(a => a.UserName == User.Identity.Name);
                     Transaction deposit = new Transaction();
+                    deposit.TransactionNum = Utilities.GenerateNextTransactionNumber.GetNextTransactionNumber(_context);
                     deposit.Account = transaction.Account;
                     deposit.Date = transaction.Date;
                     deposit.Amount = transaction.Amount;
@@ -236,6 +237,7 @@ namespace fa22Team16
                     transaction.Account.Balance = transaction.Account.Balance - transaction.Amount;
                     transaction.Account.appUser = _context.Users.FirstOrDefault(a => a.UserName == User.Identity.Name);
                     Transaction withdraw = new Transaction();
+                    withdraw.TransactionNum = Utilities.GenerateNextTransactionNumber.GetNextTransactionNumber(_context);
                     withdraw.Type = TransactionType.Withdraw;
                     withdraw.Account = transaction.Account;
                     withdraw.Date = transaction.Date;
