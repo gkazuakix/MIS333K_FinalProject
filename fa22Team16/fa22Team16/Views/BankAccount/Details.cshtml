@@ -42,39 +42,36 @@
         </dd>
     </dl>
 </div>
-<th>Transactions </th>
-@if (User.Identity.IsAuthenticated)
-{
-        <table>
-            @foreach (Transaction transaction in Model.Transactions)
-            {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => transaction.TransactionID)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => transaction.Amount)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => transaction.Account)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => transaction.Type)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => transaction.Comments)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => transaction.Approved)</td>
-                </tr>
-            }
-        </table>
-}
+
+<h5>Transactions Associated with this Account</h5>
+<table class="table table-primary">
+    <tr>
+        <th>TransactionID</th>
+        <th>Amount</th>
+        <th>Account</th>
+        <th>Type</th>
+        <th>Comments</th>
+        <th>Approval</th>
+    </tr>
+    @foreach (Transaction transaction1 in Model.Transactions)
+    {
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => transaction1.TransactionID)</td>
+            <td>@Html.DisplayFor(ModelItem => transaction1.Amount)</td>
+            <td>@Html.DisplayFor(ModelItem => transaction1.Account.AccountName)</td>
+            <td>@Html.DisplayFor(ModelItem => transaction1.Type)</td>
+            <td>@Html.DisplayFor(ModelItem => transaction1.Comments)</td>
+            <td>@Html.DisplayFor(ModelItem => transaction1.Approved)</td>
+        </tr>
+    }
+</table>
+
 <div>
     @if (User.IsInRole("Admin"))
     {
-            <p>
-                <a asp-action="Edit" asp-route-id="@Model?.BankAccountID">Edit</a>
-            </p>
+        <p>
+            <a asp-action="Edit" asp-route-id="@Model?.BankAccountID">Edit</a>
+        </p>
     }
     <a asp-action="Index">Back to List</a>
 </div>

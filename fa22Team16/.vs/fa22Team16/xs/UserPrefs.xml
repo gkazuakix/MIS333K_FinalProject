@@ -5,12 +5,14 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Controllers/TransactionController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Controllers/BankAccountController.cs">
     <Files>
-      <File FileName="fa22Team16/Models/BankAccount.cs" Line="1" Column="1" IsPinned="True" />
-      <File FileName="fa22Team16/Controllers/StockController.cs" />
-      <File FileName="fa22Team16/Views/Stock/Create.cshtml" />
-      <File FileName="fa22Team16/Controllers/TransactionController.cs" Line="321" Column="39" />
+      <File FileName="fa22Team16/Views/Transaction/Index.cshtml" Line="89" Column="86" />
+      <File FileName="fa22Team16/Models/Transaction.cs" Line="37" Column="32" />
+      <File FileName="fa22Team16/Seeding/SeedTransactions.cs" Line="1" Column="1" />
+      <File FileName="fa22Team16/Controllers/TransactionController.cs" Line="192" Column="59" />
+      <File FileName="fa22Team16/Views/BankAccount/Details.cshtml" Line="1" Column="1" />
+      <File FileName="fa22Team16/Controllers/BankAccountController.cs" Line="54" Column="43" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +22,10 @@
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="BankAccountController.cs" selected="True" />
+              </Node>
+              <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
