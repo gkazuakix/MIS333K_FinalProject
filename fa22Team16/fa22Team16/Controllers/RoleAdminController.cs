@@ -202,5 +202,25 @@ namespace fa22Team16.Controllers
             //show the user the error page
             return View("Error", new string[] { "Role Not Found" });
         }
+
+        public async Task<IActionResult> ManageUsersIndex()
+        {
+            return View();
+        }
+        public async Task<IActionResult> ManageEmployees()
+        {
+            return View();
+        }
+        public async Task<IActionResult> ModifyEmployeeProfiles()
+        {
+            return View();
+        }
+
     }
 }
+
+
+
+
+
+            
