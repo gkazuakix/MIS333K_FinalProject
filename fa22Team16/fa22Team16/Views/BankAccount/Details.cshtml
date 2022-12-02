@@ -46,7 +46,7 @@
 <a asp-action="DetailedSearch" class="btn btn-success">Detailed Search</a>
 
 <p>
-    Displaying @ViewBag.SelectedRepositories of @ViewBag.AllRepositories Repositories
+    Displaying @ViewBag.SelectedTransactions Results
 </p>
 
 
@@ -63,7 +63,7 @@
     @foreach (Transaction transaction1 in Model.Transactions)
     {
         <tr>
-            <td>@Html.DisplayFor(ModelItem => transaction1.TransactionID)</td>
+            <td>@Html.DisplayFor(ModelItem => transaction1.TransactionNum)</td>
             <td>@Html.DisplayFor(ModelItem => transaction1.Amount)</td>
             <td>@Html.DisplayFor(ModelItem => transaction1.Account.AccountName)</td>
             <td>@Html.DisplayFor(ModelItem => transaction1.Type)</td>

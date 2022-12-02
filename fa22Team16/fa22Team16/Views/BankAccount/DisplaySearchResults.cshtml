@@ -1,0 +1,37 @@
+@model IEnumerable<fa22Team16.Models.Transaction>
+
+@{
+    ViewData["Title"] = "Search Results";
+}
+
+<h1>Search Results</h1>
+
+<a asp-action="Index" class="btn btn-success">Back to List of Accounts</a>
+
+<p>
+    Displaying @ViewBag.SelectedTransactions Results
+</p>
+
+
+<h5>Transactions Associated with this Account</h5>
+<table class="table table-primary">
+    <tr>
+        <th>TransactionID</th>
+        <th>Amount</th>
+        <th>Account</th>
+        <th>Type</th>
+        <th>Comments</th>
+        <th>Approval</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.TransactionNum)</td>
+            <td>@Html.DisplayFor(ModelItem => item.Amount)</td>
+            <td>@Html.DisplayFor(ModelItem => item.Account.AccountName)</td>
+            <td>@Html.DisplayFor(ModelItem => item.Type)</td>
+            <td>@Html.DisplayFor(ModelItem => item.Comments)</td>
+            <td>@Html.DisplayFor(ModelItem => item.Approved)</td>
+        </tr>
+    }
+</table>
