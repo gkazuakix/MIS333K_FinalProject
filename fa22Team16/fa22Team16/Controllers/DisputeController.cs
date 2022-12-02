@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using fa22Team16.DAL;
 using fa22Team16.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Data.Common;
+
 namespace fa22Team16
 {
-    [Authorize] 
+    [Authorize]
     public class DisputeController : Controller
     {
         private readonly AppDbContext _context;
@@ -23,7 +25,7 @@ namespace fa22Team16
         // GET: Dispute
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Disputes.ToListAsync());
+            return View(await _context.Disputes.ToListAsync());
         }
 
         // GET: Dispute/Details/5
@@ -46,48 +48,96 @@ namespace fa22Team16
 
         // GET: Dispute/Create
         [Authorize(Roles = "Customer")]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewBag.AllTransactions = GetAllTransactionsSelectList();
-            return View();
+            {
+                ViewBag.AllTransactions = GetAllTransactionsSelectList();
+                return View();
+            }
         }
+
+
+        //[Authorize(Roles = "Customer")]
+        //public IActionResult Create()
+        //{
+        //    ViewBag.AllTransactions = GetAllTransactionsSelectList();
+        //    return View();
+        //}
 
         // POST: Dispute/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Customer")]
-        public async Task<IActionResult> Create([Bind("DisputeID,Transaction,Description,Status,CorrectAmount,RequestDeleteTransaction")] Dispute dispute)
-        {
-            if (ModelState.IsValid == false)
-            {
-                return View(dispute);
-            }
-              
-            _context.Add(dispute);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("Index", "Dispute", new { dispute.DisputeID });
-            
-        }
-           
-        public async Task<SelectList> GetAllTransactionsSelectList()
-        {
-            List<Transaction> allTransactions = new List<Transaction>();
+        //[Authorize(Roles = "Customer")]
+        public async Task<IActionResult> Create(Dispute dispute, int SelectedTransaction)
 
-            foreach (Transaction dbTransaction in _context.Transactions)
+        {
+            if (ModelState.IsValid)
             {
-                if (dbTransaction.Account.appUser.UserName == User.Identity.Name)
-                {
-                    allTransactions.Add(dbTransaction);
-                }           
+                //Dispute newDispute = new Dispute();
+                dispute.Transaction = _context.Transactions.FirstOrDefault(t => t.TransactionID == SelectedTransaction);
+                dispute.Status = Status.Submitted;
+                _context.Add(dispute);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-            SelectList slAllTransactions = new SelectList(allTransactions, nameof(Transaction.TransactionID), nameof(Transaction.TransactionNum));
-   
-            return slAllTransactions;
-
-           
+            return View(dispute);
+            // Transaction dbTransaction = _context.Transactions.Include(t => t.Disputes.FirstOrDefault(t => t.TransactionID == transactionID);
+            //foreach (Dispute dis in dbTransaction.Disputes)
+            //{ 
+            //    if (dis.DisputeStatus == DisputeStatus.Accepted)
+            //    {
+            //        return View("NoDisputes");
+            //    }
+            // dispute.DisputeTransaction = dbTransaction;
+            // Dispute dispute = new Dispute();
+            // Transaction dbTransaction = _context.Transactions.FirstOrDefault(t => t.TransactionID == Id);
+            // dispute.CorrectAmount = dbTransaction.TransactionAmount;
+            // dispute.CorrectAmount = dbTransaction.TransactionAmount;
+            // dispute.DisputeTransaction = dbTransaction;
+            //return View(Dispute);
+            //_context.Add(dispute);
+            //await _context.SaveChangesAsync();
         }
+       
+
+      
+
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //[Authorize(Roles = "Customer")]
+        //public async Task<IActionResult> Create([Bind("DisputeID,Transaction,Description,Status,CorrectAmount,RequestDeleteTransaction")] Dispute dispute)
+        //{
+        //    if (ModelState.IsValid == false)
+        //    {
+        //        return View(dispute);
+        //    }
+
+        //    _context.Add(dispute);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction("Index", "Dispute", new { dispute.DisputeID });
+
+        //}
+
+        //public async Task<SelectList> GetAllTransactionsSelectList()
+        //{
+        //    List<Transaction> allTransactions = new List<Transaction>();
+
+        //    foreach (Transaction dbTransaction in _context.Transactions)
+        //    {
+        //        if (dbTransaction.Account.appUser.UserName == User.Identity.Name)
+        //        {
+        //            allTransactions.Add(dbTransaction);
+        //        }           
+        //    }
+        //    SelectList slAllTransactions = new SelectList(allTransactions, nameof(Transaction.TransactionID), nameof(Transaction.TransactionNum));
+
+        //    return slAllTransactions;
+
+
+        //}
 
 
         // GET: Dispute/Edit/5
@@ -177,8 +227,30 @@ namespace fa22Team16
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        private SelectList GetAllTransactionsSelectList()
+        {
+            //Get the list of months from the database
+            List<Transaction> transactionList = _context.Transactions.Where(o => o.Account.appUser.UserName == User.Identity.Name).ToList();
+            //List<BankAccount> bankAccountList = new List<BankAccount>();
 
-        private bool DisputeExists(int id)
+            //foreach (BankAccount bankAccount in _context.BankAccounts)
+            //{
+            //    if (bankAccount.appUser.Email == User.Identity.Name)
+            //    {
+            //        bankAccountList.Add(bankAccount);
+            //    }
+            //}
+
+            //convert the list to a SelectList by calling SelectList constructor
+            //MonthID and MonthName are the names of the properties on the Month class
+            //MonthID is the primary key
+            SelectList transactionSelectList = new SelectList(transactionList, nameof(Transaction.TransactionID), nameof(Transaction.TransactionNum));
+
+            //return the electList
+            return transactionSelectList;
+        }
+
+            private bool DisputeExists(int id)
         {
           return _context.Disputes.Any(e => e.DisputeID == id);
         }
