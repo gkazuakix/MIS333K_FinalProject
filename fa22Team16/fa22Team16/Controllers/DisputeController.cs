@@ -189,7 +189,7 @@ namespace fa22Team16
             {
                 try
                 {
-                    Dispute editeddispute = _context.Disputes.Include(d => d.Transaction).Include(d => d.Transaction.Account).FirstOrDefault(d => d.DisputeID == dispute.DisputeID);
+                    Dispute editeddispute = _context.Disputes.Include(d => d.Transaction).Include(d => d.Transaction.Account).Include(d => d.Transaction.Account.appUser).FirstOrDefault(d => d.DisputeID == dispute.DisputeID);
                     editeddispute.Status = dispute.Status;
                     if (dispute.Status == Status.Accepted)
                     {
@@ -207,7 +207,7 @@ namespace fa22Team16
 
                         editeddispute.Transaction.Amount = editeddispute.CorrectAmount;
                         await _context.SaveChangesAsync();
-                        
+                        Utilities.EmailMessaging.SendEmail(editeddispute.Transaction.Account.appUser.Email, "Your dispute was resolved", "You have successfully petitioned your transaction and got your dispute accepted");
                         return RedirectToAction(nameof(ManageDispute));
                     }
                     else if (dispute.Status == Status.Adjusted)

@@ -61,7 +61,6 @@ namespace fa22Team16
         }
 
         //POST: BankAccount/Details
-        [HttpPost]
 
         // GET: BankAccount/Create
         [Authorize(Roles="Customer")]

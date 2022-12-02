@@ -90,7 +90,7 @@ namespace fa22Team16.Controllers
                 //You may or may not want to log a user in directly after they register - check
                 //the business rules!
                 Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
-
+                Utilities.EmailMessaging.SendEmail(newUser.Email, "Congrats on registering for your account", "You have successfully registered");
                 //Send the user to the home page
                 return RedirectToAction("Index", "Home");
             }
