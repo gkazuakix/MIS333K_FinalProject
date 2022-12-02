@@ -174,7 +174,7 @@ namespace fa22Team16
         [HttpPost]
         [ValidateAntiForgeryToken]
         //public async Task<IActionResult> Create(DepositCreateViewModel transaction, int AccountNumber, int[] SelectedAccount)
-        public async Task<IActionResult> Create(DepositCreateViewModel transaction, Int64 SelectedAccount)
+        public async Task<IActionResult> DepositCreate(DepositCreateViewModel transaction, int SelectedAccount)
 
         {
             if (ModelState.IsValid)
@@ -327,7 +327,7 @@ namespace fa22Team16
             //convert the list to a SelectList by calling SelectList constructor
             //MonthID and MonthName are the names of the properties on the Month class
             //MonthID is the primary key
-            SelectList accountSelectList = new SelectList(bankAccountList.OrderBy(m => m.BankAccountID), "BankAccountID", "BankAccountName");
+            SelectList accountSelectList = new SelectList(bankAccountList, nameof(BankAccount.BankAccountID), nameof(BankAccount.AccountName));
 
             //return the electList
             return accountSelectList;
