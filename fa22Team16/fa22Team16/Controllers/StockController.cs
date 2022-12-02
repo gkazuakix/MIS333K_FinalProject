@@ -48,6 +48,8 @@ namespace fa22Team16
         // GET: Stock/Create
         public IActionResult Create()
         {
+            ViewBag.AllStockTypes = GetAllStockTypeSelectList();
+
             return View();
         }
 
@@ -56,15 +58,17 @@ namespace fa22Team16
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StockID,Ticker,Price")] Stock stock)
+        public async Task<IActionResult> Create(Stock stock, int SelectedStockType)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid == false)
             {
-                _context.Add(stock);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                ViewBag.AllStockTypes = GetAllStockTypeSelectList();
+                return View(stock);
             }
-            return View(stock);
+
+            _context.Add(stock);
+            await _context.SaveChangesAsync();
+            return View("Index");
         }
 
         // GET: Stock/Edit/5
@@ -158,6 +162,17 @@ namespace fa22Team16
         private bool StockExists(int id)
         {
           return _context.Stocks.Any(e => e.StockID == id);
+        }
+
+        //select list for stock types
+        private SelectList GetAllStockTypeSelectList()
+        {
+            List<StockType> allStocks = _context.StockTypes.ToList();
+
+            //use the constructor on select list to create a new select list with the options
+            SelectList slAllStockTypes = new SelectList(allStocks, nameof(StockType.StockTypeID), nameof(StockType.TypeName));
+
+            return slAllStockTypes;
         }
     }
 }
