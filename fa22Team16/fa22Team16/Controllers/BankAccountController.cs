@@ -59,11 +59,7 @@ namespace fa22Team16
             return View(account);
         }
 
-<<<<<<< Updated upstream
-        //POST: BankAccount/Details
 
-=======
->>>>>>> Stashed changes
         // GET: BankAccount/Create
         [Authorize(Roles="Customer")]
         public IActionResult Create()
