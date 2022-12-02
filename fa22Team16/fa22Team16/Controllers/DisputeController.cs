@@ -36,6 +36,14 @@ namespace fa22Team16
             return View(Disputes);
         }
 
+        // Get:Dispute/SeeAllDispute
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> SeeAllDispute()
+        {
+            List<Dispute> Disputes = _context.Disputes.Include(o => o.Transaction).Include(o => o.Transaction.Account.appUser).ToList();
+            return View(Disputes);
+        }
+
         // GET: Dispute/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -156,7 +164,8 @@ namespace fa22Team16
                 return NotFound();
             }
 
-            var dispute = await _context.Disputes.FindAsync(id);
+            var dispute = _context.Disputes.Include(o => o.Transaction).FirstOrDefault(o => o.DisputeID == id);
+
             if (dispute == null)
             {
                 return NotFound();
@@ -180,18 +189,32 @@ namespace fa22Team16
             {
                 try
                 {
-                    Dispute editeddispute = _context.Disputes.FirstOrDefault(d => d.DisputeID == dispute.DisputeID);
+                    Dispute editeddispute = _context.Disputes.Include(d => d.Transaction).Include(d => d.Transaction.Account).FirstOrDefault(d => d.DisputeID == dispute.DisputeID);
                     editeddispute.Status = dispute.Status;
                     if (dispute.Status == Status.Accepted)
                     {
+                        Decimal balancechange = 0;
+                        if (editeddispute.Transaction.Type == TransactionType.Deposit)
+                        {
+                            balancechange = (editeddispute.Transaction.Amount - editeddispute.CorrectAmount);
+                            editeddispute.Transaction.Account.Balance = editeddispute.Transaction.Account.Balance - balancechange;
+                        }
+                        else if (editeddispute.Transaction.Type == TransactionType.Transfer)
+                        {
+                            balancechange = (editeddispute.Transaction.Amount + editeddispute.CorrectAmount);
+                            editeddispute.Transaction.Account.Balance = editeddispute.Transaction.Account.Balance + balancechange;
+                        }
+
                         editeddispute.Transaction.Amount = editeddispute.CorrectAmount;
                         await _context.SaveChangesAsync();
+                        
                         return RedirectToAction(nameof(ManageDispute));
                     }
                     else if (dispute.Status == Status.Adjusted)
                     {
                         await _context.SaveChangesAsync();
-                        return RedirectToAction("Edit", "Transaction", new { DisputeID = dispute.DisputeID });
+                        return RedirectToAction(nameof(ManageDispute));
+                        // return RedirectToAction(nameof(EditTransactionAmount));
                     }
                     else if (dispute.Status == Status.Rejected)
                     {
@@ -218,6 +241,31 @@ namespace fa22Team16
             }
             return View(dispute);
         }
+
+        //public async Task<IActionResult> EditTransactionAmount(int? id)
+        //{
+        //    //var dispute = _context.Disputes.FirstOrDefault(o => o.DisputeID == id);
+        //    ETAViewModel etavm = new ETAViewModel();
+        //    if (id != null)
+        //    {
+        //        etavm.DisputeID = id;
+        //    }
+        //    return View(etavm);
+        //}
+
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> EditTransactionAmount(ETAViewModel etavm)
+        //{
+        //    etavm.Transaction
+        //    Dispute newDispute = _context.Disputes.Include(o => o.Transaction).FirstOrDefault(o => o.DisputeID == dispute.DisputeID);
+        //    newDispute.Transaction.Amount = correctamount;
+        //    return RedirectToAction(nameof(ManageDispute));
+
+
+        //}
+
 
         // GET: Dispute/Delete/5
         public async Task<IActionResult> Delete(int? id)
