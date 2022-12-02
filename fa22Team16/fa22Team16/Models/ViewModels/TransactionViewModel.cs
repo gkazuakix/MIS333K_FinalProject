@@ -65,6 +65,35 @@ namespace fa22Team16.Models
         public String? Comments { get; set; }
     }
 
+    //public class TransferCreateViewModel
+    //{
+    //    public Int32 TransactionID { get; set; }
+
+    //    public Int32 TransactionNum { get; set; }
+
+    //    [Display(Name = "Amount")]
+    //    [Required(ErrorMessage = "Amount is required.")]
+    //    [DisplayFormat(DataFormatString = "{0:c}")]
+    //    public Decimal Amount { get; set; }
+
+    //    //[Display(Name = "ToAccount")]
+    //    public BankAccount? ToAccount { get; set; }
+
+    //    [Display(Name = "Account Name")]
+    //    public String? AccountName { get; set; }
+
+    //    public Approved Approved { get; set; }
+
+    //    //[Display(Name = "Stock Portfolio")]
+    //    //public StockPortfolio? StockPortfolio { get; set; }
+
+    //    [Display(Name = "Date")]
+    //    public DateTime Date { get; set; }
+
+    //    [Display(Name = "Comments")]
+    //    public String? Comments { get; set; }
+    //}
+
     ////NOTE: This is the view model used to register a user
     ////When the user registers, they only need to specify the
     ////properties listed in this model
