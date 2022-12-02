@@ -180,9 +180,30 @@ namespace fa22Team16
             {
                 try
                 {
-                    _context.Update(dispute);
-                    await _context.SaveChangesAsync();
+                    Dispute editeddispute = _context.Disputes.FirstOrDefault(d => d.DisputeID == dispute.DisputeID);
+                    editeddispute.Status = dispute.Status;
+                    if (dispute.Status == Status.Accepted)
+                    {
+                        editeddispute.Transaction.Amount = editeddispute.CorrectAmount;
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(ManageDispute));
+                    }
+                    else if (dispute.Status == Status.Adjusted)
+                    {
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction("Edit", "Transaction", new { DisputeID = dispute.DisputeID });
+                    }
+                    else if (dispute.Status == Status.Rejected)
+                    {
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(ManageDispute));
+                    }
                 }
+                //try
+                //{
+                //    _context.Update(dispute);
+                    
+                
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!DisputeExists(dispute.DisputeID))
@@ -194,7 +215,6 @@ namespace fa22Team16
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(ManageDispute));
             }
             return View(dispute);
         }

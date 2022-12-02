@@ -266,10 +266,10 @@ namespace fa22Team16
             }
 
             var transaction = await _context.Transactions.FindAsync(id);
-            //if (transaction == null)
-            //{
-            //    return NotFound();
-            //}
+            if (transaction == null)
+            {
+                return NotFound();
+            }
 
             //if (User.IsInRole("Admin") == false && transaction.Account.appUser.UserName != User.Identity.Name)
             //{
@@ -309,7 +309,7 @@ namespace fa22Team16
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Manage Dispute", "Dispute");
             }
             return View(transaction);
         }

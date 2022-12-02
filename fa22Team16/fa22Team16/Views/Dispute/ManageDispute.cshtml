@@ -19,8 +19,8 @@
                 @Html.DisplayNameFor(model => model.Transaction.Account.appUser.LastName)
             </td>
             @*<td>
-                @Html.DisplayNameFor(model => model.Transaction.Account.appUser.Id)
-            </td>*@
+            @Html.DisplayNameFor(model => model.Transaction.Account.appUser.Id)
+        </td>*@
             <td>
                 @Html.DisplayNameFor(model => model.Transaction.Amount)
             </td>
@@ -33,6 +33,9 @@
             <td>
                 @Html.DisplayNameFor(model => model.RequestDeleteTransaction)
             </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Status)
+            </td>
         </tr>
     </thead>
     <tbody>
@@ -40,42 +43,45 @@
         {
             @*if (item.Status == Status.Submitted)
                 {*@
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.LastName)
-                </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.Id)
-                </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Transaction.Amount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Transaction.TransactionNum)
-                </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.LastName)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.Id)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Transaction.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transaction.TransactionNum)
+            </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.CorrectAmount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RequestDeleteTransaction)
-                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorrectAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestDeleteTransaction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
 
 
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.TransactionName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Amount)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CorrectTransactionAmount)
-                    </td>*@
-                <td>
-            </tr>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.TransactionName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CorrectTransactionAmount)
+        </td>*@
+            <td>
+        </tr>
 
 
 

@@ -20,8 +20,8 @@
                 @Html.DisplayNameFor(model => model.Transaction.Account.appUser.LastName)
             </td>
             @*<td>
-                @Html.DisplayNameFor(model => model.Transaction.Account.appUser.Id)
-            </td>*@
+            @Html.DisplayNameFor(model => model.Transaction.Account.appUser.Id)
+        </td>*@
             <td>
                 @Html.DisplayNameFor(model => model.Transaction.Amount)
             </td>
@@ -33,6 +33,9 @@
             </td>
             <td>
                 @Html.DisplayNameFor(model => model.RequestDeleteTransaction)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Status)
             </td>
             </th>
         </tr></thead>
@@ -49,8 +52,8 @@
                 @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.LastName)
             </td>
             @*<td>
-                @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.Id)
-            </td>*@
+            @Html.DisplayFor(modelItem => item.Transaction.Account.appUser.Id)
+        </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Transaction.Amount)
             </td>
@@ -63,6 +66,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RequestDeleteTransaction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
 
 
