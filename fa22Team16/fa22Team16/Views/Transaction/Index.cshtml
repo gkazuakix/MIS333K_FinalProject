@@ -7,11 +7,9 @@
 <h1>Transaction History</h1>
 
 @if (User.Identity.IsAuthenticated)
-
 {
     @if (User.IsInRole("Customer"))
     {
-
         <p>
             <a asp-action="DepositCreate">Make a Deposit</a>
             <a asp-action="WithdrawCreate">Make a Withdrawal</a>
@@ -21,12 +19,9 @@
 }
 
 
-@if (User.Identity.IsAuthenticated)
-
+@if (User.Identity.IsAuthenticated && User.IsInRole("Customer"))
 {
-    @if (User.IsInRole("Customer"))
-    {
-        <table class="table">
+    <table class="table">
             <thead>
                 <tr>
                     <th>
@@ -56,51 +51,43 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    @*if ((item.Account != null && item.Account.appUser.UserName == User.Identity.Name) || (item.Account != null && item.StockPortfolio.AppUser.UserName == User.Identity.Name))*@
-                    {
-                        <td>
-                            @Html.DisplayFor(modelItem => item.TransactionNum)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Amount)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Date)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Comments)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Approved)
-                        </td>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransactionNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comments)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Approved)
+                    </td>
 
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Type)
-                        </td>
-                        if (item.Account == null)
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @if (item.Account == null)
                         {
-                            <td>
-                                @Html.DisplayFor(modelItem => item.StockPortfolio.StockPortfolioID)
-                            </td>
+                            @Html.DisplayFor(modelItem => item.StockPortfolio.StockPortfolioID)
                         }
                         else
                         {
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Account.AccountNumber)
-                            </td>
+                            @Html.DisplayFor(modelItem => item.Account.AccountNumber)
                         }
-
-                }
-                <tr>
-
+                    </td>
                     <td>
                         <a asp-action="Details" asp-route-id="@item.TransactionID">Details</a>
                     </td>
                 </tr>
-            }
-                </tbody>
-            </table>
-        }
+                 }
+           </tbody>
+    </table>
 }
 
 
