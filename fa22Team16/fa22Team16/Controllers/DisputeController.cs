@@ -25,7 +25,11 @@ namespace fa22Team16
         // GET: Dispute
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Disputes.Include(o=> o.Transaction).Include(o=>o.Transaction.Account.appUser).ToListAsync());
+            if (User.IsInRole("Customer"))
+            {
+                return View(await _context.Disputes.Include(o => o.Transaction).Include(o => o.Transaction.Account.appUser).Where(o => o.Transaction.Account.appUser.UserName == User.Identity.Name).ToListAsync());
+            }
+            return View(await _context.Disputes.Include(o => o.Transaction).Include(o => o.Transaction.Account.appUser).ToListAsync());
         }
 
         // GET: Dispute/ManageDispute

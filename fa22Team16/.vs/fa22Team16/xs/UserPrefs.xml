@@ -1,38 +1,12 @@
 ﻿<Properties StartupConfiguration="{0F79FFD2-1FE6-4186-A055-DDC567664E64}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Controllers/StockPortfolioController.cs">
     <Files>
-      <File FileName="fa22Team16/Views/Dispute/Index.cshtml" Line="84" Column="1" />
-      <File FileName="fa22Team16/Views/Dispute/ManageDispute.cshtml" Line="54" Column="63" />
-      <File FileName="fa22Team16/Controllers/DisputeController.cs" Line="7" Column="27" />
-      <File FileName="fa22Team16/Models/StockTransaction.cs" Line="54" Column="1" />
-      <File FileName="fa22Team16/Views/Home/Index.cshtml" Line="108" Column="1" />
-      <File FileName="fa22Team16/Controllers/RoleAdminController.cs" Line="219" Column="6" />
-      <File FileName="fa22Team16/Controllers/AccountController.cs" Line="278" Column="56" />
-      <File FileName="fa22Team16/Controllers/HomeController.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Controllers/TransactionController.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Views/RoleAdmin/Index.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Controllers/BankAccountController.cs" Line="26" Column="49" />
-      <File FileName="fa22Team16/Views/Dispute/Create.cshtml" Line="5" Column="2" />
-      <File FileName="fa22Team16/Views/RoleAdmin/Create.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Models/ViewModels/RoleViewModels.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Models/AppUser.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Models/ViewModels/TransactionViewModel.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Models/BankAccount.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Models/Dispute.cs" Line="19" Column="12" />
-      <File FileName="fa22Team16/Models/ViewModels/AccountViewModels.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Views/Account/ManageAccount.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Views/BankAccount/Create.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Views/BankAccount/Index.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Controllers/SeedController.cs" Line="26" Column="13" />
-      <File FileName="fa22Team16/Views/RoleAdmin/ManageUsersIndex.cshtml" Line="2" Column="22" />
-      <File FileName="fa22Team16/Views/RoleAdmin/Edit.cshtml" Line="4" Column="2" />
-      <File FileName="fa22Team16/Views/RoleAdmin/ModifyEmployeeProfiles.cshtml" Line="1" Column="2" />
-      <File FileName="fa22Team16/Views/RoleAdmin/ManageEmployees.cshtml" Line="1" Column="26" />
-      <File FileName="fa22Team16/Controllers/StockController.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Controllers/StockPortfolioController.cs" Line="1" Column="1" />
+      <File FileName="fa22Team16/Controllers/StockPortfolioController.cs" Line="36" Column="65" />
+      <File FileName="fa22Team16/Views/StockPortfolio/Index.cshtml" Line="96" Column="20" />
+      <File FileName="fa22Team16/Controllers/BankAccountController.cs" Line="49" Column="61" />
+      <File FileName="fa22Team16/Views/BankAccount/Details.cshtml" Line="1" Column="1" />
+      <File FileName="fa22Team16/Models/StockPortfolio.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -40,9 +14,11 @@
           <Node name="fa22Team16" expanded="True">
             <Node name="fa22Team16" expanded="True">
               <Node name="Dependencies" expanded="True">
-                <Node name="FrameworkReferences" expanded="True" />
+                <Node name="PackageDependencies" expanded="True" />
               </Node>
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="BankAccountController.cs" selected="True" />
+              </Node>
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
@@ -50,29 +26,21 @@
               <Node name="Seeding" expanded="True" />
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
                 <Node name="BankAccount" expanded="True" />
-                <Node name="Dispute" expanded="True" />
-                <Node name="Home" expanded="True" />
-                <Node name="RoleAdmin" expanded="True" />
-                <Node name="Seed" expanded="True" />
-                <Node name="Shared" expanded="True" />
                 <Node name="Stock" expanded="True" />
+                <Node name="StockPortfolio" expanded="True" />
+                <Node name="Transaction" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <Debugger.DebugSourceFolders>
-    <String>/Users/sofiachang/Documents/MIS333k</String>
-  </Debugger.DebugSourceFolders>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>

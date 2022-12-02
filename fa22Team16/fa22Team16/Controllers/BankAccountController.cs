@@ -54,13 +54,11 @@ namespace fa22Team16
             }
 
             //this is the normal state
-            ViewBag.AllTransactions = account.Transactions.Count();
             ViewBag.SelectedTransactions = account.Transactions.Count();
 
             return View(account);
         }
 
-        //POST: BankAccount/Details
 
         // GET: BankAccount/Create
         [Authorize(Roles="Customer")]
@@ -181,64 +179,49 @@ namespace fa22Team16
             var query = from r in _context.Transactions
                         .Where(o => o.Account.appUser.UserName == User.Identity.Name) select r;
 
-            //query for searching by title
+            //query for searching by comment/description
             if (svm.Comments != null && svm.Comments != "")
             {
                 query = query.Where(r => r.Comments.Contains(svm.Comments));
             }
 
-            /*
-            //query for searching by description
-            if (svm.Description != null && svm.Description != "")
+            if (svm.Type != null)
             {
-                query = query.Where(r => r.Description.Contains(svm.Description));
+                query = query.Where(r => r.Type == svm.Type);
             }
 
-            //query for searching by category
-            if (svm.SelectedCategory != null)
+            if (svm.MinAmount != null)
             {
-                query = query.Where(r => r.Category == svm.SelectedCategory);
+                query = query.Where(r => r.Amount >= svm.MinAmount);
             }
 
-
-            //query for searching by language
-            if (svm.SelectedLanguage != 0)
+            if (svm.MaxAmount != null)
             {
-                query = query.Where(r => r.Language.LanguageID == svm.SelectedLanguage);
+                query = query.Where(r => r.Amount <= svm.MaxAmount);
             }
 
-
-            //query for searching through star count
-            if (svm.StarCount != null)
+            if (svm.TransactionNum != null)
             {
-                //query for selected order for star count
-                switch (svm.SelectedOrder)
-                {
-                    case StarOrder.GreaterThan:
-                        query = query.Where(r => r.StarCount >= svm.StarCount);
-                        break;
-                    case StarOrder.LessThan:
-                        query = query.Where(r => r.StarCount <= svm.StarCount);
-                        break;
-                }
+                query = query.Where(r => r.TransactionNum == svm.TransactionNum);
             }
 
-            //query for date
-            if (svm.UpdatedAfter != null)
+            if (svm.MinDate != null)
             {
-                query = query.Where(r => r.LastUpdate >= svm.UpdatedAfter);
+                query = query.Where(r => r.Date >= svm.MinDate);
             }
-            */
+
+            if (svm.MaxDate != null)
+            {
+                query = query.Where(r => r.Date <= svm.MaxDate);
+            }
 
             //execute the query
-            List<Transaction> SelectedTransactions = query.ToList();
+            List<Transaction> SelectedTransactions = query.Include(r => r.Account).ToList();
 
-            //Populate the view bag with a count of all repositories
-            ViewBag.AllRepositories = _context.Transactions.Count();
             //Populate the view bag with a count of selected repositories
             ViewBag.SelectedTransactions = SelectedTransactions.Count;
 
-            return View("Details", SelectedTransactions.OrderByDescending(r => r.TransactionNum));
+            return View(SelectedTransactions.OrderByDescending(r => r.TransactionNum));
         }
     }
 }
