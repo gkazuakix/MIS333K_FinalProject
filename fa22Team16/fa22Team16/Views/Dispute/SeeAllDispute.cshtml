@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<fa22Team16.Models.Dispute>
 
 @{
-    ViewData["Title"] = "ManageDispute";
+    ViewData["Title"] = "SeeAllDispute";
 }
 
-<h1>See all disputes that have not been dealt with</h1>
+<h1>See all disputes regardless of status </h1>
 
 @*<p>
-    <a asp-action="Create">Create New</a>
-</p>*@
+        <a asp-action="Create">Create New</a>
+    </p>*@
 <table class="table">
     <thead>
         <tr>
@@ -95,7 +95,12 @@
                 <a asp-action="Delete" asp-route-id="@item.DisputeID">Delete</a>*@
         </td>
     }
-        <a asp-action="SeeAllDispute" asp-controller="Dispute">See all Disputes, regardless of status </a> |
 
         </tbody>
     </table>
+<td>
+
+    <a asp-action="ManageDispute" asp-controller="Dispute">Return to Managing Dispute</a> |
+    @*<a asp-action="Details" asp-route-id="@item.DisputeID">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.DisputeID">Delete</a>*@
+</td>
