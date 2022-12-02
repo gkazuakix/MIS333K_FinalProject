@@ -13,6 +13,11 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="DisputeID" />
+            <label asp-for="Status" class="control-label"></label><br />
+            <input type="radio" class="radio" asp-for="Status" value="@Status.Submitted" checked="checked" /> Submitted<br />
+            <input type="radio" class="radio" asp-for="Status" value="@Status.Accepted" /> Accepted<br />
+            <input type="radio" class="radio" asp-for="Status" value="@Status.Rejected" /> Rejected<br />
+            <input type="radio" class="radio" asp-for="Status" value="@Status.Adjusted" /> Adjusted<br />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

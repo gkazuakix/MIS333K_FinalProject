@@ -25,7 +25,15 @@ namespace fa22Team16
         // GET: Dispute
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Disputes.ToListAsync());
+            return View(await _context.Disputes.Include(o=> o.Transaction).Include(o=>o.Transaction.Account.appUser).ToListAsync());
+        }
+
+        // GET: Dispute/ManageDispute
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ManageDispute()
+        {
+            List<Dispute> Disputes = _context.Disputes.Include(o => o.Transaction).Include(o => o.Transaction.Account.appUser).Where(d => d.Status == Status.Submitted).ToList();
+            return View(Disputes);
         }
 
         // GET: Dispute/Details/5
@@ -161,7 +169,7 @@ namespace fa22Team16
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DisputeID")] Dispute dispute)
+        public async Task<IActionResult> Edit(int id, [Bind("DisputeID,Transaction,Description,Status,CorrectAmount,RequestDeleteTransaction")] Dispute dispute)
         {
             if (id != dispute.DisputeID)
             {
@@ -186,7 +194,7 @@ namespace fa22Team16
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ManageDispute));
             }
             return View(dispute);
         }
