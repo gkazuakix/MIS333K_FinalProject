@@ -27,20 +27,12 @@ namespace fa22Team16
         public async Task<IActionResult> Index()
         {
 
-            //need to allow only the user who owns portfolio to see
+            List<StockPortfolio> stockPortfolios = new List<StockPortfolio>();
 
-            List<StockPortfolio> myportfolio;
+            stockPortfolios = _context.StockPortfolios.Where(o => o.AppUser.UserName == User.Identity.Name).ToList();
 
-            myportfolio = _context.StockPortfolios
-                .Where(m => m.AppUser.UserName == User.Identity.Name)
-                .ToList();
 
-            if (myportfolio == null)
-            {
-                return NotFound();
-            }
-
-            return View(myportfolio);
+            return View(stockPortfolios);
 
 
 
@@ -55,14 +47,18 @@ namespace fa22Team16
                 return NotFound();
             }
 
-            var stockPortfolio = await _context.StockPortfolios
+            StockPortfolio myportfolio = await _context.StockPortfolios
+                .Include(o => o.StockTransactions)
+                .ThenInclude(o => o.Stock)
+                .Where(m => m.AppUser.UserName == User.Identity.Name)
                 .FirstOrDefaultAsync(m => m.StockPortfolioID == id);
-            if (stockPortfolio == null)
+
+            if (myportfolio == null)
             {
                 return NotFound();
             }
 
-            return View(stockPortfolio);
+            return View(myportfolio);
         }
 
         // GET: StockPortfolio/Create

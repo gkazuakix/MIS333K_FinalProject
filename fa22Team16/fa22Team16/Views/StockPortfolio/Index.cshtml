@@ -6,22 +6,16 @@
 
 <h1>Stock Portfolio</h1>
 
-<h5>Portfolio Status:</h5>
-
-<!-- fuck this
-Html.DisplayFor(model => model.Status)
--->
-<!--Total balance-->
-<h5>Your Total Balance Is:</h5>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Value)
+                @Html.DisplayNameFor(model => model.StockPortfolioID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fees)
+                @Html.DisplayNameFor(model => model.AccountName)
             </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -29,79 +23,22 @@ Html.DisplayFor(model => model.Status)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Value)
+                    @Html.DisplayFor(modelItem => item.StockPortfolioID)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Fees)
+                    @Html.DisplayFor(modelItem => item.AccountName)
+                </td>
+                <td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>
+                            <a asp-action="Edit" asp-route-id="@item.StockPortfolioID">Edit</a> |
+
+                        </li>
+                    }
+                    <a asp-action="Details" asp-route-id="@item.StockPortfolioID">Details</a> |
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-
-
-<!--Cash-Value Portion-->
-<h5>Cash-Value of Portfolio:</h5>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.StockPortfolioCashBalance)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gains)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fees)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Balance)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StockPortfolioCashBalance)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gains)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Fees)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Balance)
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-
-
-<!--Stock Portion-->
-<h5>Your Stocks</h5>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Value)
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
