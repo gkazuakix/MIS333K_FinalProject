@@ -10,7 +10,6 @@ using fa22Team16.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 
-
 namespace fa22Team16
 {
     [Authorize]

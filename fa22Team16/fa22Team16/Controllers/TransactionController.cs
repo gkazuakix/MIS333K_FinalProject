@@ -40,7 +40,9 @@ namespace fa22Team16
             ////        }
             ////    }
             ////}
-            transactions = _context.Transactions.Where(o => o.Account.appUser.UserName == User.Identity.Name).ToList();
+            transactions = _context.Transactions
+                .Include(o => o.Account).Where(o => o.Account.appUser.UserName == User.Identity.Name)
+                .OrderBy(o => o.TransactionNum).ToList();
 
             return View(transactions);
             //return View(await _context.Transactions.ToListAsync());
@@ -182,6 +184,7 @@ namespace fa22Team16
                 if (transaction.Amount > 5000)
                 {
                     transaction.Approved = Approved.No;
+                    return View("Error", new string[] { "This deposit amount needs to be authorized!" });
                 }
                 else
                 {
@@ -189,6 +192,7 @@ namespace fa22Team16
                     transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
                     transaction.Account.appUser = _context.Users.FirstOrDefault(a => a.UserName == User.Identity.Name);
                     Transaction deposit = new Transaction();
+                    deposit.TransactionNum = Utilities.GenerateNextTransactionNumber.GetNextTransactionNumber(_context);
                     deposit.Account = transaction.Account;
                     deposit.Date = transaction.Date;
                     deposit.Amount = transaction.Amount;
@@ -204,17 +208,52 @@ namespace fa22Team16
             return View(transaction);
         }
 
+        [Authorize(Roles = "Customer")]
         public async Task<IActionResult> WithdrawCreate(Transaction transaction)
         {
-            if (transaction.Amount < transaction.Account.Balance)
-            { 
-                transaction.Account.Balance = transaction.Account.Balance - transaction.Amount;
-                return RedirectToAction("Index", "Transaction");
-            }
-            else
+            ViewBag.AllAccounts = GetAllAccountsSelectList();
+            WithdrawCreateViewModel wdvm = new WithdrawCreateViewModel();
+            wdvm.Date = DateTime.Now;
+
+            return View(wdvm);
+        }
+
+        // Post: Transaction/Withdraw Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create(DepositCreateViewModel transaction, int AccountNumber, int[] SelectedAccount)
+        public async Task<IActionResult> WithdrawCreate(WithdrawCreateViewModel transaction, int SelectedAccount)
+
+        {
+            if (ModelState.IsValid)
             {
-                return View("Error", new string[] { "You don't have enough money to withdraw this amount" });
+                transaction.Account = _context.BankAccounts.Find(SelectedAccount);
+
+                if (transaction.Amount > transaction.Account.Balance)
+                {
+                    transaction.Approved = Approved.No;
+                    return View("Error", new string[] { "You do not have enough funds!" });
+                }
+                else
+                {
+                    transaction.Account.Balance = transaction.Account.Balance - transaction.Amount;
+                    transaction.Account.appUser = _context.Users.FirstOrDefault(a => a.UserName == User.Identity.Name);
+                    Transaction withdraw = new Transaction();
+                    withdraw.TransactionNum = Utilities.GenerateNextTransactionNumber.GetNextTransactionNumber(_context);
+                    withdraw.Type = TransactionType.Withdraw;
+                    withdraw.Account = transaction.Account;
+                    withdraw.Date = transaction.Date;
+                    withdraw.Amount = transaction.Amount;
+                    withdraw.Comments = transaction.Comments;
+                    _context.Transactions.Add(withdraw);
+                    await _context.SaveChangesAsync();
+                }
+                return RedirectToAction(nameof(Index));
+
             }
+
+            // await _context.SaveChangesAsync();
+            return View(transaction);
         }
 
         // GET: Transaction/Edit/5
