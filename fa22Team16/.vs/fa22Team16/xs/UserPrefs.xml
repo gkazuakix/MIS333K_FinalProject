@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Controllers/DisputeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Views/Dispute/Create.cshtml">
     <Files>
       <File FileName="fa22Team16/Controllers/AccountController.cs" Line="196" Column="13" />
       <File FileName="fa22Team16/Controllers/BankAccountController.cs" Line="89" Column="14" />
@@ -23,14 +23,14 @@
       <File FileName="fa22Team16/Views/Account/Settings.cshtml" Line="15" Column="11" />
       <File FileName="fa22Team16/Utilities/AddUser.cs" Line="1" Column="1" />
       <File FileName="fa22Team16/Views/Account/ChangePassword.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Controllers/DisputeController.cs" Line="74" Column="69" />
+      <File FileName="fa22Team16/Controllers/DisputeController.cs" Line="87" Column="38" />
       <File FileName="fa22Team16/Views/Dispute/Index.cshtml" Line="46" Column="1" />
-      <File FileName="fa22Team16/Views/Dispute/Create.cshtml" Line="23" Column="44" />
+      <File FileName="fa22Team16/Views/Dispute/Create.cshtml" Line="26" Column="1" />
       <File FileName="fa22Team16/Views/StockTransaction/Edit.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Controllers/TransactionController.cs" Line="82" Column="29" />
+      <File FileName="fa22Team16/Controllers/TransactionController.cs" Line="192" Column="57" />
       <File FileName="fa22Team16/Models/Transaction.cs" Line="18" Column="6" />
-      <File FileName="fa22Team16/Views/Transaction/Index.cshtml" Line="1" Column="1" />
-      <File FileName="fa22Team16/Models/Dispute.cs" Line="18" Column="1" />
+      <File FileName="fa22Team16/Views/Transaction/Index.cshtml" Line="41" Column="22" />
+      <File FileName="fa22Team16/Models/Dispute.cs" Line="31" Column="43" />
       <File FileName="fa22Team16/Views/Dispute/Details.cshtml" Line="1" Column="1" />
       <File FileName="fa22Team16/Views/Dispute/Edit.cshtml" Line="1" Column="1" />
       <File FileName="fa22Team16/Views/RoleAdmin/Index.cshtml" Line="1" Column="1" />
@@ -39,28 +39,18 @@
       <File FileName="fa22Team16/Seeding/SeedTransactions.cs" Line="1" Column="1" />
       <File FileName="fa22Team16/Seeding/SeedDisputes.cs" Line="1" Column="1" />
       <File FileName="fa22Team16/Controllers/StockTypeController.cs" Line="1" Column="1" />
-      <File FileName="fa22Team16/Views/Transaction/DepositCreate.cshtml" Line="1" Column="18" />
+      <File FileName="fa22Team16/Views/Transaction/DepositCreate.cshtml" Line="37" Column="34" />
+      <File FileName="fa22Team16/Views/Transaction/Edit.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="fa22Team16" expanded="True">
             <Node name="fa22Team16" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="DisputeController.cs" selected="True" />
-              </Node>
-              <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True" />
-              </Node>
-              <Node name="Properties" expanded="True" />
-              <Node name="Seeding" expanded="True" />
-              <Node name="Utilities" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
-                <Node name="BankAccount" expanded="True" />
                 <Node name="Dispute" expanded="True" />
-                <Node name="Home" expanded="True" />
-                <Node name="RoleAdmin" expanded="True" />
                 <Node name="Transaction" expanded="True" />
               </Node>
             </Node>

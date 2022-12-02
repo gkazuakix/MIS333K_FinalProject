@@ -21,14 +21,15 @@
             </div>
             <div class="form-group">
                 @*<label asp-for="Transaction" class="control-label"></label>*@
-                @Html.DropDownList("Transaction", (SelectList)ViewBag.AllTransactions, new { @class = "form-control" })
+                @Html.DropDownList("TransactionNum", (SelectList)ViewBag.AllTransactions, new { @class = "form-control" })
             </div>
 
 
             <!--<div class="form-group">-->
-            @*<label asp-for="BankAccountID" class="control-label"></label>*@
-            <!--@Html.DropDownList("SelectedAccount", (SelectList)ViewBag.AllAccounts, new { @class = "form-control" })
-    </div>-->
+                @*<label asp-for="Transaction" class="control-label"></label>*@
+                <!--@Html.DropDownList("TransactionNum", (SelectList)ViewBag.AllTransactions, new { @class = "form-control" })
+            </div>-->
+
 
             <div class="form-group">
                 <label asp-for="CorrectAmount" class="control-label"></label>
