@@ -167,6 +167,67 @@ namespace fa22Team16
             return RedirectToAction(nameof(Index));
         }
 
+
+        // GET: BankAccount/EditNickname/5
+        // public async Task<IActionResult> Edit(int? id);
+        [Authorize(Roles = "Customer")]
+        public IActionResult EditNickname(int? id)
+        {
+            //did not specify an account to edit
+            if (id == null)
+            {
+                return View("Error", new String[] { "Please specify an account to edit" });
+            }
+            BankAccount BankAccount = _context.BankAccounts.FirstOrDefault(m => m.BankAccountID == id);//
+
+            //account was not found in the database
+            if (BankAccount == null)
+            {
+                return View("Error", new String[] { "This account was not found!" });
+            }
+
+            return View(BankAccount);
+            //return RedirectToAction("Edit", "BankAccount", new { accountID = BankAccount.BankAccountID });
+        }
+
+        // POST: BankAccount/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditNickname(int id, [Bind("AccountName")] BankAccount account)
+        {
+            BankAccount editedAccount = _context.BankAccounts.Include(d => d.Transactions).Include(d => d.appUser).FirstOrDefault(d => d.BankAccountID == id);
+            //this is a security measure to make sure the user is editing the correct account
+            //if (id != account.BankAccountID)
+            //{
+            //    return View("Error", new String[] { "There was a problem editing this account. Try again!" });
+            //}
+
+            //if there is something wrong with this order, try again
+            if (ModelState.IsValid == false)
+            {
+                return View(account);
+            }
+
+            //if code gets this far, update the record
+            try
+            {
+                //find the record in the database
+                editedAccount.AccountName = account.AccountName;
+                _context.Update(editedAccount);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return View("Error", new String[] { "There was an error updating this account!", ex.Message });
+            }
+
+            //send the user to the Orders Index page.
+            return RedirectToAction("Index");
+        }
+
+
         //SEARCH
 
         public ActionResult DetailedSearch()
@@ -192,12 +253,12 @@ namespace fa22Team16
 
             if (svm.MinAmount != null)
             {
-                query = query.Where(r => r.Amount >= svm.MinAmount);
+                query = query.Where(r => Math.Abs(r.Amount) >= svm.MinAmount);
             }
 
             if (svm.MaxAmount != null)
             {
-                query = query.Where(r => r.Amount <= svm.MaxAmount);
+                query = query.Where(r => Math.Abs(r.Amount) <= svm.MaxAmount);
             }
 
             if (svm.TransactionNum != null)

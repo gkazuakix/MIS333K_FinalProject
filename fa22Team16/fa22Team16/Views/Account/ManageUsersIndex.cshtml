@@ -1,0 +1,48 @@
+﻿@model IEnumerable<fa22Team16.Models.AppUser>
+
+@{
+    ViewData["Title"] = "ManageUserIndex";
+}
+
+<h1>Manage all your users and deactivate as needed</h1>
+
+<p>
+    <a asp-action="ManageUsersIndex">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+    
+            <th>
+                @Html.DisplayNameFor(model => model.ActiveStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActiveStatus)
+                </td>
+               
+            </tr>
+    <td>
+        <a asp-action="ManageUsers" asp-route-id ="@item.Id">Deactivate this user</a>
+    </td>
+        }
+    </tbody>
+</table>

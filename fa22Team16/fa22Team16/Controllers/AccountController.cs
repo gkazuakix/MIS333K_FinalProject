@@ -369,16 +369,79 @@ namespace fa22Team16.Controllers
             return View(ivm);
         }
 
-
         // GET: /Account/ManageUsers
-        public ActionResult ManageUsersIndex()
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ManageUsersIndex()
         {
             List<AppUser> appUsers = new List<AppUser>();
 
-            appUsers = _context.Users.ToList();
+            appUsers = _context.Users.Include(ba => ba.BankAccounts).Include(ba => ba.StockPortfolio).ToList();
 
 
             return View(appUsers);
+        }
+
+
+        // GET: /Account/ManageUsers
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ManageUsers(string? id)
+        {
+            if (id == null || _context.Users == null)
+            {
+                return NotFound();
+            }
+
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            //if (User.IsInRole("Admin") == false && transaction.Account.appUser.UserName != User.Identity.Name)
+            //{
+            //    return View("Error", new string[] { "You are not authorized to edit this transaction!" });
+            //}
+
+            return View(user);
+        }
+
+        // POST: Transaction/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ManageUsers(string id, AppUser appUser)
+        {
+            //if (id != transaction.TransactionID)
+            //{
+            //    return NotFound();
+            //}
+
+            //if (ModelState.IsValid)
+            //{
+                AppUser editedUser = _context.Users.Include(d => d.BankAccounts).Include(d => d.StockPortfolio).FirstOrDefault(d => d.Id == id);
+                //try
+                //{
+                    editedUser.ActiveStatus = false;
+                    //editedUser.Account.Balance = editedTransaction.Account.Balance + editedTransaction.Amount;
+                    _context.Update(editedUser);
+                    await _context.SaveChangesAsync();
+                    //Utilities.EmailMessaging.SendEmail(editedTransaction.Account.appUser.Email, "Your deposit was approved", "You have successfully deposited your money");
+                //}
+                //catch (DbUpdateConcurrencyException)
+                //{
+                //    if (!TransactionExists(transaction.TransactionID))
+                //    {
+                //        return NotFound();
+                //    }
+                //    else
+                //    {
+                //        throw;
+                //    }
+                //}
+                return RedirectToAction("ManageUsersIndex", "Account");
+            //}
+            //return View();
         }
 
 

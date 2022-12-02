@@ -40,10 +40,23 @@ namespace fa22Team16
             ////        }
             ////    }
             ////}
-            transactions = _context.Transactions
+            ///
+            if (User.IsInRole("Customer"))
+            {
+                transactions = _context.Transactions
                 .Include(o => o.Account).Where(o => o.Account.appUser.UserName == User.Identity.Name)
                 .OrderBy(o => o.TransactionNum).ToList();
 
+                return View(transactions);
+            }
+            else if (User.IsInRole("Admin"))
+            {
+                transactions = _context.Transactions
+                .Include(o => o.Account).Where(o => o.Approved == Approved.No)
+                .OrderBy(o => o.TransactionNum).ToList();
+
+                return View(transactions);
+            }
             return View(transactions);
             //return View(await _context.Transactions.ToListAsync());
             //create a new instance of the RegistrationDetail class
@@ -59,7 +72,7 @@ namespace fa22Team16
             }
             Transaction transaction = new Transaction();
 
-            transaction = _context.Transactions.FirstOrDefault(m => m.TransactionID == id);
+            transaction = _context.Transactions.Include(t => t.Account).Include(t => t.Account.appUser).FirstOrDefault(m => m.TransactionID == id);
 
             if (transaction == null)
             {
@@ -387,6 +400,69 @@ namespace fa22Team16
             }
             return View(transaction);
         }
+
+        // Get: Transaction/ManageDeposit/5
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ManageDeposit(int? id)
+        {
+            if (id == null || _context.Transactions == null)
+            {
+                return NotFound();
+            }
+
+            var transaction = await _context.Transactions.FindAsync(id);
+            if (transaction == null)
+            {
+                return NotFound();
+            }
+
+            //if (User.IsInRole("Admin") == false && transaction.Account.appUser.UserName != User.Identity.Name)
+            //{
+            //    return View("Error", new string[] { "You are not authorized to edit this transaction!" });
+            //}
+
+            return View(transaction);
+        }
+
+        // POST: Transaction/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ManageDeposit(int id, Transaction transaction)
+        {
+            if (id != transaction.TransactionID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                Transaction editedTransaction = _context.Transactions.Include(d => d.Account).Include(d => d.Disputes).Include(d=>d.Account.appUser).FirstOrDefault(d => d.TransactionID == transaction.TransactionID);
+                try
+                {
+                    editedTransaction.Approved = Approved.Yes;
+                    editedTransaction.Account.Balance = editedTransaction.Account.Balance + editedTransaction.Amount;
+                    _context.Update(editedTransaction);
+                    await _context.SaveChangesAsync();
+                    Utilities.EmailMessaging.SendEmail(editedTransaction.Account.appUser.Email, "Your deposit was approved", "You have successfully deposited your money");
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!TransactionExists(transaction.TransactionID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(transaction);
+        }
+
 
         // GET: Transaction/Delete/5
         [Authorize(Roles = "Admin")]

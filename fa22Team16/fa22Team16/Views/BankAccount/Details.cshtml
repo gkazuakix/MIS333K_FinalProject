@@ -70,6 +70,9 @@
             <td>@Html.DisplayFor(ModelItem => transaction1.Comments)</td>
             <td>@Html.DisplayFor(ModelItem => transaction1.Approved)</td>
         </tr>
+        <td>
+            <a asp-action="Details" asp-controller="Transaction" asp-route-id=@transaction1.TransactionID>Details</a>
+        </td>
     }
 </table>
 

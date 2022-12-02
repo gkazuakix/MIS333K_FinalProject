@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model fa22Team16.Models.AppUser
+
+@{
+    ViewData["Title"] = "ManageUsers";
+}
+
+<h1>Deactivate User</h1>
+
+
+<h4>Do you want to deactivate this user? This will deactivate them if they're a customer or fire them if they are an employee </h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @*<Input type="hidden" asp-for="Id" />
+        <form asp-action="Edit">*@
+            <form asp-action="ManageUsers">
+                @*@Html.HiddenFor(m => m.Id)*@
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<input type="hidden" asp-for="Id" />*@
+            <div class="form-group">
+                <label asp-for="ActiveStatus" class="control-label"></label>
+                <input type="radio" class="radio" asp-for="ActiveStatus" value="true" checked="checked" /> Active<br />
+                <input type="radio" class="radio" asp-for="ActiveStatus" value="false" /> Inactive<br />                    
+            </div>
+                <div class="form-group">
+                    <input type="submit" value="Yes" class="btn btn-primary" />
+                </div>
+</form>
+</div>
+</div>
+
+<div>
+    <a asp-action="ManageUserIndex">Back to List of Users</a>
+</div>
+

@@ -56,6 +56,13 @@
 
                     </li>
                 }
+                @if (User.IsInRole("Customer"))
+                {
+                    <li>
+                        <a asp-action="EditNickname" asp-route-id="@item.BankAccountID">Edit Nickname</a> |
+
+                    </li>
+                }
                 <a asp-action="Details" asp-route-id="@item.BankAccountID">Details</a> |
             </td>
         </tr>

@@ -1,29 +1,32 @@
 ﻿<Properties StartupConfiguration="{A8C7B090-E00F-40D3-A4F2-637F588CE7B3}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/StockTransaction/Create.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Transaction/Details.cshtml">
     <Files>
-      <File FileName="Views/StockPortfolio/Index.cshtml" />
+      <File FileName="Views/StockPortfolio/Index.cshtml" Line="1" Column="1" />
       <File FileName="Views/StockTransaction/Create.cshtml" Line="1" Column="1" />
+      <File FileName="Views/BankAccount/DisplaySearchResults.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Transaction/Details.cshtml" Line="67" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="fa22Team16" expanded="True">
             <Node name="fa22Team16" expanded="True">
-              <Node name="Views" expanded="True">
-                <Node name="StockPortfolio" expanded="True" />
-                <Node name="StockTransaction" expanded="True" />
-              </Node>
+              <Node name="Views" expanded="True" />
+              <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -61,6 +61,7 @@
 <div class="text-center">
     <h1> Welcome to Longhorn Bank and Trust! </h1>
     <h2>@User.Identity.Name</h2>
+
 </div>
 
 <br />
@@ -79,6 +80,8 @@
                     @*<a asp-action="Index" asp-controller="AccountController" class="btn btn-outline-success">Create Profile</a>*@
                     <!--<a asp-action="Settings" asp-controller="Account" class="btn btn-outline-success">Manage Profile</a>-->
                     <a asp-action="DepositCreate" asp-controller="Transaction" class="btn btn-outline-success">Make a deposit</a>
+                    <a asp-action="Index" asp-controller="Dispute" class="btn btn-outline-success">View your past disputes</a>
+
                     <a asp-action="WithdrawCreate" asp-controller="Transaction" class="btn btn-outline-success">Make a withdraw</a>
                     <a asp-action="TransferCreate" asp-controller="Transaction" class="btn btn-outline-success">Make a transfer</a>
                     <a asp-action="Create" asp-controller="Dispute" class="btn btn-outline-success">Create a dispute</a>
@@ -98,8 +101,8 @@
 {
     <div class="text-center">
         <div class="btn-group-lg">
-            <a asp-action="ManageUsersIndex" asp-controller="RoleAdmin" class="btn btn-outline-success">Manage Users</a>
-
+            <a asp-action="ManageUsersIndex" asp-controller="Account" class="btn btn-outline-success">Manage Users</a>
+            <a asp-action="Index" asp-controller="Transaction" class="btn btn-outline-success">Approve Deposit</a>
 
             <a asp-action="ManageDispute" asp-controller="Dispute" class="btn btn-outline-success">Manage Dispute</a>
             <a asp-action="ModifyEmployeeProfiles" asp-controller="RoleAdmin" class="btn btn-outline-success">Modify Employee Profiles</a>
@@ -120,7 +123,7 @@
         <div class="btn-group-lg">
 
             <a asp-action="Settings" asp-controller="Account" class="btn btn-outline-success">Manage Profile</a>
-            <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Manage Users</a>
+            <a asp-action="ManageUsers" asp-controller="Account" class="btn btn-outline-success">Manage Users</a>
             <a asp-action="Index" asp-controller="" class="btn btn-outline-success">Transaction Search</a>
 
 

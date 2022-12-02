@@ -22,35 +22,35 @@
 @if (User.Identity.IsAuthenticated && User.IsInRole("Customer"))
 {
     <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.TransactionNum)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Amount)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Date)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Comments)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Approved)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Type)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Account.AccountNumber)
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TransactionNum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comments)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Approved)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Account.AccountNumber)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.TransactionNum)
@@ -85,8 +85,8 @@
                         <a asp-action="Details" asp-route-id="@item.TransactionID">Details</a>
                     </td>
                 </tr>
-                 }
-           </tbody>
+            }
+        </tbody>
     </table>
 }
 
@@ -97,6 +97,8 @@
 {
     @if (User.IsInRole("Admin"))
     {
+        <h1>Transactions that are not yet approved</h1>
+
         <table class="table">
             <thead>
                 <tr>
@@ -165,9 +167,9 @@
                 <tr>
 
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.TransactionID">Edit</a> |
+                        <a asp-action="ManageDeposit" asp-route-id="@item.TransactionID">Approve Deposit</a> |
                         <a asp-action="Details" asp-route-id="@item.TransactionID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.TransactionID">Delete</a>
+                        @*<a asp-action="Delete" asp-route-id="@item.TransactionID">Delete</a>*@
                     </td>
                 </tr>
             }
@@ -179,27 +181,27 @@
 
 
 @*<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Amount)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Amount)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.TransactionID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.TransactionID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.TransactionID">Delete</a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>*@
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.TransactionID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.TransactionID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.TransactionID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
