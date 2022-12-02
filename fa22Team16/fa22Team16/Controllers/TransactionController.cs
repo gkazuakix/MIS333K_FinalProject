@@ -181,6 +181,13 @@ namespace fa22Team16
         {
             if (ModelState.IsValid)
             {
+                //if (_context.BankAccounts.Find(SelectedAccount).AccountType == AccountType.IRA)
+                //{
+                //    if (DateTime.Now.Year - transaction.Account.appUser.Birthday.Year) >= 70))
+                //    {
+
+                //    }
+                //}
                 if (transaction.Amount > 5000)
                 {
                     transaction.Approved = Approved.No;
@@ -255,6 +262,73 @@ namespace fa22Team16
             // await _context.SaveChangesAsync();
             return View(transaction);
         }
+
+        //// Get/TransferCreate
+        //[Authorize(Roles = "Customer")]
+        //public async Task<IActionResult> TransferCreate()
+        //{
+        //    ViewBag.AllAccounts = GetAllAccountsSelectList();
+        //    //find the registration that should be associated with this registration
+        //    //BankAccount dbBankAccount = _context.BankAccounts.Find(TransactionID);
+
+        //    //set the new registration detail's registration equal to the registration you just found
+        //    //dpvm.Account = dbBankAccount;
+
+
+        //    //Transaction transaction = new Transaction();
+
+        //    ////find the registration that should be associated with this registration
+        //    //BankAccount dbBankAccount = _context.BankAccounts.Find(TransactionID);
+
+        //    ////set the new registration detail's registration equal to the registration you just found
+        //    //transaction.Account = dbBankAccount;
+
+        //    ////populate the ViewBag with a list of existing courses
+        //    //ViewBag.AllBankAccounts = GetAllAccountsSelectList();
+
+        //    ////pass the newly created registration detail to the view
+        //    //return View(transaction);
+        //    Transaction transfer = new Transaction();
+        //    return View(transfer);
+        //}
+
+        //// Post: Transaction/Deposit Create
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        ////public async Task<IActionResult> Create(DepositCreateViewModel transaction, int AccountNumber, int[] SelectedAccount)
+        //public async Task<IActionResult> TransferCreate(Transaction transaction, int SelectedAccount)
+
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (transaction.Amount > 5000)
+        //        {
+        //            transaction.Approved = Approved.No;
+        //            return View("Error", new string[] { "This deposit amount needs to be authorized!" });
+        //        }
+        //        else
+        //        {
+        //            transaction.Account = _context.BankAccounts.Find(SelectedAccount);
+        //            transaction.Account.Balance = transaction.Account.Balance + transaction.Amount;
+        //            transaction.Account.appUser = _context.Users.FirstOrDefault(a => a.UserName == User.Identity.Name);
+        //            Transaction deposit = new Transaction();
+        //            deposit.TransactionNum = Utilities.GenerateNextTransactionNumber.GetNextTransactionNumber(_context);
+        //            deposit.Account = transaction.Account;
+        //            deposit.Date = transaction.Date;
+        //            deposit.Amount = transaction.Amount;
+        //            deposit.Comments = transaction.Comments;
+        //            _context.Transactions.Add(deposit);
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        return RedirectToAction(nameof(Index));
+
+        //    }
+
+        //    // await _context.SaveChangesAsync();
+        //    return View(transaction);
+        //}
+
+
 
         // GET: Transaction/Edit/5
         [Authorize(Roles = "Admin")]
