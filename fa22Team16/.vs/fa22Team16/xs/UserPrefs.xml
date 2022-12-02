@@ -1,9 +1,13 @@
 ﻿<Properties StartupConfiguration="{0F79FFD2-1FE6-4186-A055-DDC567664E64}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Controllers/DisputeController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="fa22Team16/Controllers/BankAccountController.cs">
     <Files>
-      <File FileName="fa22Team16/Views/Dispute/Index.cshtml" Line="58" Column="38" />
-      <File FileName="fa22Team16/Views/Dispute/ManageDispute.cshtml" Line="54" Column="51" />
-      <File FileName="fa22Team16/Controllers/DisputeController.cs" Line="7" Column="27" />
+      <File FileName="fa22Team16/Controllers/BankAccountController.cs" Line="34" Column="17" IsPinned="True" />
+      <File FileName="fa22Team16/Models/Transaction.cs" />
+      <File FileName="fa22Team16/Models/ViewModels/TransactionViewModel.cs" Line="1" Column="1" />
+      <File FileName="fa22Team16/Views/BankAccount/Details.cshtml" />
+      <File FileName="fa22Team16/Controllers/StockController.cs" Line="22" Column="1" />
+      <File FileName="../../../../../../../../../../usr/local/share/dotnet/x64/sdk/6.0.400/Microsoft.Common.CurrentVersion.targets" Line="4702" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,12 +15,11 @@
           <Node name="fa22Team16" expanded="True">
             <Node name="fa22Team16" expanded="True">
               <Node name="Dependencies" expanded="True">
-                <Node name="FrameworkReferences" expanded="True" />
-                <Node name="PackageDependencies" expanded="True" />
+                <Node name="PackageDependencies" expanded="True">
+                  <Node name="MessagePackAnalyzer" selected="True" />
+                </Node>
               </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="DisputeController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
@@ -24,32 +27,19 @@
               <Node name="Seeding" expanded="True" />
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
                 <Node name="BankAccount" expanded="True" />
-                <Node name="Dispute" expanded="True" />
-                <Node name="Home" expanded="True" />
-                <Node name="Seed" expanded="True" />
-                <Node name="Shared" expanded="True" />
-                <Node name="Stock" expanded="True" />
                 <Node name="Transaction" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.fa22Team16 PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <Debugger.DebugSourceFolders>
-    <String>/Users/sofiachang/Documents/MIS333k</String>
-  </Debugger.DebugSourceFolders>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
