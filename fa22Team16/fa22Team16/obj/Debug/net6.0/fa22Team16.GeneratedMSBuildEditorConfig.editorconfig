@@ -51,6 +51,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/DetailedSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvRGV0YWlsZWRTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/BankAccount/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFua0FjY291bnQvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -85,6 +89,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/ManageDispute.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzcHV0ZS9NYW5hZ2VEaXNwdXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Dispute/SeeAllDispute.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzcHV0ZS9TZWVBbGxEaXNwdXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/gloriawang/Documents/GitHub/fa22ModelPractice1/MIS333K_FinalProject/fa22Team16/fa22Team16/Views/Home/Index.cshtml]
