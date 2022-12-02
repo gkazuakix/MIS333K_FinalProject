@@ -64,7 +64,7 @@ namespace fa22Team16
             {
                 return View(dispute);
             }
-
+              
             _context.Add(dispute);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Dispute", new { dispute.DisputeID });
@@ -85,6 +85,7 @@ namespace fa22Team16
             SelectList slAllTransactions = new SelectList(allTransactions, nameof(Transaction.TransactionID), nameof(Transaction.TransactionNum));
             return slAllTransactions;
 
+           
         }
 
 
